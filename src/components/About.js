@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const SectionContent = styled.div``;
+
 const About = () => {
-  return <div>About</div>;
+  return <SectionContent>About</SectionContent>;
 };
 
 export default About;

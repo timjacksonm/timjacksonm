@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const SectionContent = styled.div``;
+
 const Projects = () => {
-  return <div>Projects</div>;
+  return <SectionContent>Projects</SectionContent>;
 };
 
 export default Projects;
