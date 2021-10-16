@@ -1,36 +1,68 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../globalHelpers';
 import { ReactComponent as GithubIcon } from '../assets/github-icon.svg';
 import { ReactComponent as TwitterIcon } from '../assets/twitter.svg';
-import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin, FaFilePdf } from 'react-icons/fa';
 
 const SectionContent = styled.div`
   position: fixed;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   width: 100%;
-  max-height: 10%;
   z-index: 50;
 `;
-export const LinkContainer = styled.div`
+const LinkContainer = styled.div`
+  position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   flex: 1;
-  margin: 3em;
+  height: 3em;
+  max-width: 10em;
+  margin: 1em 0;
+
+  @media ${device.laptop} {
+    margin: 3em;
+    max-width: 13em;
+  }
 `;
-export const Link = styled.a`
+const Line = styled.span`
+  @media ${device.laptop} {
+    position: absolute;
+    top: 50%;
+    right: -40%;
+    width: 40%;
+    border-bottom: 2px solid #f27d42;
+  }
+`;
+const Link = styled.a`
   text-decoration: none;
-  margin: 0 0.5em;
   cursor: pointer;
+  width: 2em;
   color: #fff;
   & svg {
     width: fit-content;
-    height: 2.8vh;
+    height: 1.25em;
   }
   &:hover {
-    color: #f27d42;
+    & svg {
+      transition: height 0.5s;
+      height: 1.5em;
+    }
     & svg path {
-      fill: #f27d42;
+      fill: #55bdca;
+    }
+  }
+  @media ${device.laptop} {
+    & svg {
+      height: 1.75em;
+    }
+    &:hover {
+      & svg {
+        height: 1.9em;
+      }
     }
   }
 `;
@@ -47,6 +79,10 @@ const Navbar = () => {
         <Link target="_blank" href="https://www.linkedin.com/in/timjacksonm/">
           <FaLinkedin color="#0e76a8" />
         </Link>
+        <Link target="_blank" href="/">
+          <FaFilePdf color=" #272341" />
+        </Link>
+        <Line />
       </LinkContainer>
     </SectionContent>
   );
