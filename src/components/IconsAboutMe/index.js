@@ -61,7 +61,6 @@ const IconsAboutMe = () => {
       },
     ])
   );
-  console.log(iconArray);
   return (
     <Container>
       <Icons data={iconArray.splice(0, 8)} top />

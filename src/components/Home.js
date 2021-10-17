@@ -76,6 +76,12 @@ const NavTitle = styled.div`
     background-position: -100% 0;
   }
 `;
+const Temporary = styled.h6`
+  margin: 0;
+  @media ${device.laptop} {
+    margin: 1em 0;
+  }
+`;
 
 const Home = () => {
   return (
@@ -94,6 +100,7 @@ const Home = () => {
           <NavTitle>About</NavTitle>
           <NavTitle>Contact</NavTitle>
         </NavContainer>
+        <Temporary>(Full Site Coming Soon!)</Temporary>
       </Container>
       <IconsAboutMe />
     </SectionContent>
