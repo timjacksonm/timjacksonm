@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Home from './components/Home';
-import Navbar from './components/Navbar';
+import SocialsNavbar from './components/SocialsNavbar/SocialsNavbar';
 import ReactTooltip from 'react-tooltip';
 import CalibreBoldItalic from './assets/Calibre-BoldItalic.ttf';
 import MontserrratBold from './assets/Montserrat-ExtraBold.ttf';
@@ -21,7 +21,7 @@ const GlobalStyles = styled.div`
 const App = () => {
   return (
     <GlobalStyles>
-      <Navbar />
+      <SocialsNavbar />
       <Home />
       <ReactTooltip />
     </GlobalStyles>

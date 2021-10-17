@@ -10,12 +10,12 @@ import {
   FaCat,
   FaRocket,
   FaCode,
+  FaHome,
 } from 'react-icons/fa';
 import { ImWoman } from 'react-icons/im';
 import { GiDeer, GiDeerTrack, GiCoffeeMug, GiDiplodocus } from 'react-icons/gi';
-import { RiTeamFill } from 'react-icons/ri';
-import { MdCottage } from 'react-icons/md';
-import { MdOutdoorGrill } from 'react-icons/md';
+import { IoIosPeople } from 'react-icons/io';
+import { IoRestaurant } from 'react-icons/io5';
 
 const Container = styled.div`
   position: absolute;
@@ -37,11 +37,11 @@ const IconsAboutMe = () => {
       },
       { src: <FaRocket data-tip="Space flight" /> },
       {
-        src: <RiTeamFill data-tip="Immediate family" />,
+        src: <IoIosPeople data-tip="Immediate family" />,
       },
-      { src: <MdCottage data-tip="Home owner" /> },
+      { src: <FaHome data-tip="Home owner" /> },
       {
-        src: <MdOutdoorGrill data-tip="Summer grilling" />,
+        src: <IoRestaurant data-tip="Summer grilling" />,
       },
       { src: <FaCode data-tip="Programming" /> },
       { src: <GiDiplodocus data-tip="Dinosaurs" /> },

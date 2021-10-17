@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
 import IconsAboutMe from './IconsAboutMe/index';
+import { motion } from 'framer-motion';
 
 const SectionContent = styled.div`
 position: relative;
@@ -84,23 +85,67 @@ const Temporary = styled.h6`
 `;
 
 const Home = () => {
+  const titleVariant = {
+    hidden: {
+      x: '-40px',
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        damping: 13,
+        stiffness: 50,
+        duration: 1.3,
+        when: 'beforeChildren',
+      },
+    },
+  };
+  const taglineVariant = {
+    hidden: {
+      x: '-30px',
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        damping: 13,
+        stiffness: 50,
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <SectionContent id="section">
-      <Container id="container">
+      <Container
+        as={motion.div}
+        variants={titleVariant}
+        initial="hidden"
+        animate="visible"
+        id="container"
+      >
         <TitleContainer>
           <Intro id="intro">Hi, my name is</Intro>
           <Name id="name">Tim Jackson.</Name>
         </TitleContainer>
-        <Tagline id="tagline">
+        <Tagline>
           Full stack developer with a critical thinking personality.
         </Tagline>
-        <NavContainer id="navContainer">
+        <NavContainer
+          as={motion.div}
+          variants={taglineVariant}
+          id="navContainer"
+        >
           <NavTitle>Skills</NavTitle>
           <NavTitle>Projects</NavTitle>
           <NavTitle>About</NavTitle>
           <NavTitle>Contact</NavTitle>
         </NavContainer>
-        <Temporary>(Full Site Coming Soon!)</Temporary>
+        <Temporary as={motion.h6} variants={taglineVariant}>
+          (Full Site Coming Soon!)
+        </Temporary>
       </Container>
       <IconsAboutMe />
     </SectionContent>
