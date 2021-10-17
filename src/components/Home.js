@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
-import IconsAboutMe from './IconsAboutMe';
+import IconsAboutMe from './IconsAboutMe/index';
 
 const SectionContent = styled.div`
 position: relative;
@@ -13,15 +13,13 @@ height 100vh;
 font-family: 'CalibreBoldItalic';
 font-size: clamp(1rem, 8vw, 3rem);
 color: #272341;
-margin: 0 2em;
 @media ${device.laptop} {
   align-items: unset;
   margin: 0;
-  padding: 0 5.6rem;
 }
 `;
 const Container = styled.div`
-  margin: 1em 0;
+  margin: 0 2em;
 `;
 const TitleContainer = styled.div`
   display: flex;
@@ -72,21 +70,16 @@ const NavTitle = styled.div`
   background-size: 200% 100%;
   background-image: linear-gradient(to right, transparent 50%, #55bdca 50%);
   transition: background-position 0.5s;
+  z-index: 1;
   &:hover {
     color: #fff;
     background-position: -100% 0;
   }
 `;
-const Temporary = styled.h4`
-  position: absolute;
-  top: 15%;
-  margin: 0;
-`;
 
 const Home = () => {
   return (
     <SectionContent id="section">
-      {/* <Temporary>(Full Site Coming Soon!)</Temporary> */}
       <Container id="container">
         <TitleContainer>
           <Intro id="intro">Hi, my name is</Intro>
@@ -102,6 +95,7 @@ const Home = () => {
           <NavTitle>Contact</NavTitle>
         </NavContainer>
       </Container>
+      <IconsAboutMe />
     </SectionContent>
   );
 };
