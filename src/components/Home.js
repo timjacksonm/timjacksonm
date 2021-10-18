@@ -141,9 +141,9 @@ const Home = () => {
           variants={taglineVariant}
           id="navContainer"
         >
+          <NavTitle>About</NavTitle>
           <NavTitle>Skills</NavTitle>
           <NavTitle>Projects</NavTitle>
-          <NavTitle>About</NavTitle>
           <NavTitle>Contact</NavTitle>
         </NavContainer>
         <Temporary as={motion.h6} variants={taglineVariant}>

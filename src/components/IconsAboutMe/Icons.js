@@ -7,6 +7,9 @@ const Top = styled.div`
   padding: 1em 0;
   & div {
     display: flex;
+    & svg {
+      cursor: pointer;
+    }
   }
   & div:nth-child(even) {
     & svg {
@@ -42,6 +45,9 @@ const Bottom = styled.div`
   padding: 1em 0;
   & div {
     display: flex;
+    & svg {
+      cursor: pointer;
+    }
   }
   & div:nth-child(even) {
     & svg {

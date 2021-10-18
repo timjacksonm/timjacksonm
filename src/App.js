@@ -27,9 +27,9 @@ const App = () => {
     <GlobalStyles>
       <SocialsNavbar />
       <Home />
+      <About />
       <Skills />
       <Projects />
-      <About />
       <Contact />
       <ReactTooltip />
     </GlobalStyles>
