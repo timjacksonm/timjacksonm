@@ -10,7 +10,7 @@ const SectionContent = styled.div`
   right: 0;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 50;
   @media ${device.laptop} {
     top: 38vh;
   }

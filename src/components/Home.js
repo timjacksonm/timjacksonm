@@ -18,6 +18,9 @@ color: #272341;
   align-items: unset;
   margin: 0;
 }
+@media ${device.desktop} {
+  font-size: clamp(1rem, 8vw, 4rem);
+}
 `;
 const Container = styled.div`
   margin: 0 2em;
