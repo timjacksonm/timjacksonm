@@ -36,7 +36,7 @@ const Title = styled.h3`
 const Skills = () => {
   return (
     <SectionContent>
-      <Container>
+      <Container id="skills">
         <Title>Skills</Title>
       </Container>
     </SectionContent>

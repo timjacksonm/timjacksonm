@@ -60,12 +60,13 @@ const NavContainer = styled.div`
     margin: 0;
   }
 `;
-const NavTitle = styled.div`
+const NavTitle = styled.a`
   padding: 0.225em 1em;
   font-weight: 600;
   font-size: 0.525em;
   text-align: center;
   color: #55bdca;
+  text-decoration: none;
   border-width: 2px;
   border-style: solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
@@ -141,10 +142,10 @@ const Home = () => {
           variants={taglineVariant}
           id="navContainer"
         >
-          <NavTitle>About</NavTitle>
-          <NavTitle>Skills</NavTitle>
-          <NavTitle>Projects</NavTitle>
-          <NavTitle>Contact</NavTitle>
+          <NavTitle href="/#about">About</NavTitle>
+          <NavTitle href="/#skills">Skills</NavTitle>
+          <NavTitle href="/#projects">Projects</NavTitle>
+          <NavTitle href="/#contact">Contact</NavTitle>
         </NavContainer>
         <Temporary as={motion.h6} variants={taglineVariant}>
           (Full Site Coming Soon!)

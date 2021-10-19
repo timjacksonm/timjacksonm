@@ -14,6 +14,7 @@ const SectionContent = styled.div`
   align-items: center;
   color: #fff;
   font-size: clamp(1rem, 8vw, 3rem);
+  font-family: CalibreBoldItalic;
   @media ${device.tablet} {
     height: 1024px;
   }
@@ -32,8 +33,9 @@ const Container = styled.div`
     height: 55%;
   }
 `;
-const Title = styled.h3`
-  font-family: CalibreBoldItalic;
+const Title = styled.h3``;
+const Summary = styled.h6`
+  width: 50%;
 `;
 
 const About = () => {
@@ -49,8 +51,19 @@ const About = () => {
         style={{ position: 'absolute', bottom: 0, width: '100%' }}
         alt="wave"
       />
-      <Container>
+      <Container id="about">
         <Title>About Me</Title>
+        <Summary>
+          Hey! My name is Tim Jackson. I recently got married on Sept 25th, 2021
+          to my wife Brooke. I am currently working at home with my two pets
+          Zander(bossy-cat) and Bandit(dog). My working career involves a lot of
+          customer service mostly within the insurance realm of Medical and
+          Dental. I am highly technical while also creative. I spend most of
+          free time working on personal projects with a lineup of interesting
+          applications I want to create. I am a self taught developer that is
+          friendly and easy to work with - I gaurentee you and your clients will
+          love me!
+        </Summary>
       </Container>
     </SectionContent>
   );

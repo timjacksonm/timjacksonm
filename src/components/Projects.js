@@ -49,7 +49,7 @@ const Projects = () => {
   // }, []);
   // console.log(projects);
   return (
-    <SectionContent>
+    <SectionContent id="projects">
       <Title>Projects</Title>
       {projects &&
         projects.map(

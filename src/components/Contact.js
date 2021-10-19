@@ -36,7 +36,7 @@ const Title = styled.h3`
 const Contact = () => {
   return (
     <SectionContent>
-      <Container>
+      <Container id="contact">
         <Title>Contact Me</Title>
       </Container>
     </SectionContent>
