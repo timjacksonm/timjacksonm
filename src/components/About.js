@@ -33,9 +33,15 @@ const Container = styled.div`
     height: 55%;
   }
 `;
-const Title = styled.h3``;
-const Summary = styled.h6`
-  width: 50%;
+const Title = styled.h3`
+  margin: 1em;
+`;
+const Summary = styled.p`
+  font-size: clamp(1rem, 4vw, 2rem);
+  margin: 0 2em;
+  @media ${device.laptop} {
+    max-width: 50vw;
+  }
 `;
 
 const About = () => {
@@ -54,15 +60,16 @@ const About = () => {
       <Container id="about">
         <Title>About Me</Title>
         <Summary>
-          Hey! My name is Tim Jackson. I recently got married on Sept 25th, 2021
-          to my wife Brooke. I am currently working at home with my two pets
-          Zander(bossy-cat) and Bandit(dog). My working career involves a lot of
-          customer service mostly within the insurance realm of Medical and
-          Dental. I am highly technical while also creative. I spend most of my
-          free time working on personal projects with a lineup of interesting
-          applications I want to create. I am a self taught developer that is
-          friendly and easy to work with - I guarantee you and your clients will
-          love me!
+          My name is Tim Jackson. I recently got married on Sept 25th, 2021 to
+          my wife Brooke. I am currently working at home with my two pets Zander
+          (bossy-cat) and Bandit (dog). <br />
+          <br /> My working career involves a lot of customer service mostly
+          within the insurance realm of medical and dental. I am friendly and
+          easy to work with - I guarantee your team and clients will love me!
+          <br />
+          <br />I spend most of my free time working on personal projects with a
+          lineup of interesting applications I want to create. I am a
+          self-taught developer that is creative and enjoys a challenge.
         </Summary>
       </Container>
     </SectionContent>

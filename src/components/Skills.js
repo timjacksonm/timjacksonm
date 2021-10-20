@@ -39,15 +39,24 @@ const Title = styled.h3`
   margin: 0;
 `;
 const Heading = styled.h6`
-  margin: 0.5em 0;
+  margin: 0.5em 0 0 0.2em;
 `;
-const IconContainer = styled.div``;
+const IconContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  & svg {
+    margin: 0.2em;
+  }
+  & img {
+    margin: 0.2em;
+  }
+`;
 const FrontEnd = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   margin: 0 auto;
-  width: 50vw;
+  width: 70vw;
   min-width: 14rem;
 `;
 const Tools = styled.div`
@@ -55,7 +64,7 @@ const Tools = styled.div`
   flex-direction: column;
   position: relative;
   margin: 0 auto;
-  width: 50vw;
+  width: 70vw;
   min-width: 14rem;
 `;
 const BackEnd = styled.div`
@@ -63,7 +72,7 @@ const BackEnd = styled.div`
   flex-direction: column;
   position: relative;
   margin: 0 auto;
-  width: 50vw;
+  width: 70vw;
   min-width: 14rem;
 `;
 const JavascriptIcon = styled(FaJsSquare)`
