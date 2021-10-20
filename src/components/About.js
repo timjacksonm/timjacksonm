@@ -58,10 +58,10 @@ const About = () => {
           to my wife Brooke. I am currently working at home with my two pets
           Zander(bossy-cat) and Bandit(dog). My working career involves a lot of
           customer service mostly within the insurance realm of Medical and
-          Dental. I am highly technical while also creative. I spend most of
+          Dental. I am highly technical while also creative. I spend most of my
           free time working on personal projects with a lineup of interesting
           applications I want to create. I am a self taught developer that is
-          friendly and easy to work with - I gaurentee you and your clients will
+          friendly and easy to work with - I guarantee you and your clients will
           love me!
         </Summary>
       </Container>
