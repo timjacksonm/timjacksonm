@@ -18,9 +18,10 @@ const SectionContent = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: clamp(1rem, 8vw, 3rem);
-  margin: 0 2em;
+  margin: 0 1em;
   @media ${device.tablet} {
     height: 1024px;
+    margin: 0 2em;
   }
 `;
 const Container = styled.div`
