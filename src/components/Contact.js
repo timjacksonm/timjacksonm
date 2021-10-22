@@ -108,7 +108,8 @@ const Contact = () => {
     <SectionContent>
       <Container id="contact">
         <Title>Contact Me</Title>
-        <FormContainer action="POST" data-netlify="true">
+        <FormContainer name="contact" method="POST">
+          <input type="hidden" name="form-name" value="contact" />
           <InputRow>
             <Name type="text" name="name" id="name" placeholder="Name" />
             <Email type="email" name="email" id="email" placeholder="Email" />
