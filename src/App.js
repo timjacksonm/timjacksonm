@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import ReactTooltip from 'react-tooltip';
 import CalibreBoldItalic from './assets/Calibre-BoldItalic.ttf';
 import MontserrratBold from './assets/Montserrat-ExtraBold.ttf';
+import Footer from './components/SocialsNavbar/Footer';
 
 const GlobalStyles = styled.div`
   display: flex;
@@ -31,6 +32,7 @@ const App = () => {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
       <ReactTooltip />
     </GlobalStyles>
   );

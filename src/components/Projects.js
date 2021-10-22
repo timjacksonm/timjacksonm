@@ -28,7 +28,7 @@ const SectionContent = styled.div`
 `;
 const SectionTitle = styled.h3`
   font-family: CalibreBoldItalic;
-  color: #55bdca;
+  color: #fff;
   margin-top: 0;
 `;
 const ProjectContainer = styled.div`
@@ -45,16 +45,25 @@ const ProjectContainer = styled.div`
     justify-content: unset;
   }
 `;
-const ProjectTitle = styled.h6`
+const ProjectTitle = styled.h5`
   margin: 0;
   font-family: CalibreBoldItalic;
-  color: #55bdca;
+  color: #f27d42;
 `;
-const Skills = styled.p`
+const SkillsContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
   font-size: 16px;
+  padding: 0;
+`;
+const Skill = styled.li`
+  list-style: none;
+  background-color: #55bdca;
+  padding: 0.5em;
+  margin: 0.2em;
 `;
 const Summary = styled.p`
-  font-size: 2rem;
+  font-size: clamp(1rem, 5vw, 1.6rem);
   font-family: CalibreBoldItalic;
 `;
 const LeftColumn = styled.div`
@@ -104,7 +113,7 @@ const Buttons = styled.div`
   }
 `;
 const LineBreak = styled.div`
-  border-bottom: 2px solid #f27d42;
+  border-bottom: 1px solid #96ffff;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -159,7 +168,11 @@ const Projects = () => {
               />
               <LeftColumn>
                 <ProjectTitle>{title}</ProjectTitle>
-                <Skills>{skills}</Skills>
+                <SkillsContainer>
+                  {skills.map((skill, i) => (
+                    <Skill key={i}>{skill}</Skill>
+                  ))}
+                </SkillsContainer>
                 <Summary>{summary}</Summary>
                 <Buttons>
                   <Link href={liveUrl}>Live Demo</Link>

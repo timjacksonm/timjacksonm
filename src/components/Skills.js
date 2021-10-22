@@ -130,7 +130,7 @@ const FirebaseIcon = styled.img`
 const Skills = () => {
   return (
     <SectionContent>
-      <Container id="container">
+      <Container id="skills">
         <Title>Skills</Title>
 
         <FrontEnd id="frontend">
