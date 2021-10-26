@@ -5,6 +5,7 @@ import TopPeak from '../assets/peak1.svg';
 import BottomPeak from '../assets/peak2.svg';
 import sanityClient from '../client.js';
 import imageUrlBuilder from '@sanity/image-url';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -118,17 +119,43 @@ const LineBreak = styled.div`
   bottom: 0;
   width: 100%;
 `;
+const ShowContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  z-index: 50;
+  color: #fff;
+  & svg path {
+    fill: #fff;
+  }
+  &:hover {
+    color: #55bdca;
+    & svg path {
+      fill: #55bdca;
+    }
+  }
+`;
 const Projects = () => {
   const [projects, setProjects] = useState(null);
+  const [showMore, setShowMore] = useState(false);
+  const [showAmountProjects, setshowAmountProjects] = useState(3);
 
   const changeImage = (e, gifImage) => {
     e.target.setAttribute('src', urlFor(gifImage));
+  };
+
+  const toggleProjectList = () => {
+    setShowMore(!showMore);
+    setshowAmountProjects(showMore ? 3 : projects.length);
   };
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "project"]{
           title,
+          position,
           liveUrl,
           repoUrl,
           summary,
@@ -137,7 +164,7 @@ const Projects = () => {
           gifImage
         }`
       )
-      .then((data) => setProjects(data))
+      .then((data) => setProjects(data.sort((a, b) => a.position - b.position)))
       .catch(console.error);
   }, []);
   return (
@@ -154,35 +181,41 @@ const Projects = () => {
       />
       <SectionTitle>Projects</SectionTitle>
       {projects &&
-        projects.map(
-          (
-            { title, liveUrl, repoUrl, summary, skills, mainImage, gifImage },
-            i
-          ) => (
-            <ProjectContainer key={i} id="container">
-              <Preview
-                src={urlFor(mainImage)}
-                onMouseEnter={(e) => changeImage(e, gifImage)}
-                onMouseLeave={(e) => changeImage(e, mainImage)}
-                alt=""
-              />
-              <LeftColumn>
-                <ProjectTitle>{title}</ProjectTitle>
-                <SkillsContainer>
-                  {skills.map((skill, i) => (
-                    <Skill key={i}>{skill}</Skill>
-                  ))}
-                </SkillsContainer>
-                <Summary>{summary}</Summary>
-                <Buttons>
-                  <Link href={liveUrl}>Live Demo</Link>
-                  <Link href={repoUrl}>GitHub</Link>
-                </Buttons>
-              </LeftColumn>
-              <LineBreak />
-            </ProjectContainer>
-          )
-        )}
+        projects
+          .slice(0, showAmountProjects)
+          .map(
+            (
+              { title, liveUrl, repoUrl, summary, skills, mainImage, gifImage },
+              i
+            ) => (
+              <ProjectContainer key={i} id="container">
+                <Preview
+                  src={urlFor(mainImage)}
+                  onMouseEnter={(e) => changeImage(e, gifImage)}
+                  onMouseLeave={(e) => changeImage(e, mainImage)}
+                  alt=""
+                />
+                <LeftColumn>
+                  <ProjectTitle>{title}</ProjectTitle>
+                  <SkillsContainer>
+                    {skills.map((skill, i) => (
+                      <Skill key={i}>{skill}</Skill>
+                    ))}
+                  </SkillsContainer>
+                  <Summary>{summary}</Summary>
+                  <Buttons>
+                    <Link href={liveUrl}>Live Demo</Link>
+                    <Link href={repoUrl}>GitHub</Link>
+                  </Buttons>
+                </LeftColumn>
+                <LineBreak />
+              </ProjectContainer>
+            )
+          )}
+      <ShowContainer onClick={toggleProjectList}>
+        <p>{showMore ? 'Show Less' : 'Show All'}</p>
+        {showMore ? <FaArrowUp size="2em" /> : <FaArrowDown size="2em" />}
+      </ShowContainer>
     </SectionContent>
   );
 };

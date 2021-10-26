@@ -81,12 +81,6 @@ const NavTitle = styled.a`
     background-position: -100% 0;
   }
 `;
-const Temporary = styled.h6`
-  margin: 0;
-  @media ${device.laptop} {
-    margin: 1em 0;
-  }
-`;
 
 const Home = () => {
   const titleVariant = {
@@ -147,9 +141,6 @@ const Home = () => {
           <NavTitle href="/#projects">Projects</NavTitle>
           <NavTitle href="/#contact">Contact</NavTitle>
         </NavContainer>
-        <Temporary as={motion.h6} variants={taglineVariant}>
-          (Full Site Coming Soon!)
-        </Temporary>
       </Container>
       <IconsAboutMe />
     </SectionContent>
