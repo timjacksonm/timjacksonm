@@ -13,7 +13,7 @@ const LinkContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   flex: 1;
-  width: 3em;
+  width: 3.5em;
   min-height: 11em;
   margin: 1em 0;
   background-color: #c8eff9;
@@ -33,12 +33,12 @@ const Link = styled.a`
   align-items: center;
   & svg {
     width: fit-content;
-    height: 1.25em;
+    height: 1.5em;
   }
   &:hover {
     & svg {
       transition: height 0.5s;
-      height: 1.5em;
+      height: 1.75em;
     }
     & svg path {
       fill: #f27d42;
@@ -97,6 +97,7 @@ const Navigation = () => {
           href="https://github.com/timjacksonm"
           as={motion.a}
           variants={iconVariant}
+          data-tip="Github"
         >
           <GithubIcon />
         </Link>
@@ -105,6 +106,7 @@ const Navigation = () => {
           href="https://twitter.com/timjacksonm"
           as={motion.a}
           variants={iconVariant}
+          data-tip="Twitter"
         >
           <TwitterIcon />
         </Link>
@@ -113,10 +115,17 @@ const Navigation = () => {
           href="https://www.linkedin.com/in/timjacksonm/"
           as={motion.a}
           variants={iconVariant}
+          data-tip="LinkedIn"
         >
           <FaLinkedin color="#0e76a8" />
         </Link>
-        <Link href="/" as={motion.a} variants={iconVariant}>
+        <Link
+          target="_blank"
+          href="/"
+          as={motion.a}
+          variants={iconVariant}
+          data-tip="Resume"
+        >
           <FaFilePdf color="#272341" />
         </Link>
         <Line />

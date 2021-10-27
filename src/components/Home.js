@@ -33,11 +33,11 @@ const TitleContainer = styled.div`
   }
 `;
 const Intro = styled.h3`
-  color: #f27d42;
+  color: #55bdca;
   margin: 0;
 `;
 const Name = styled.h3`
-  color: #55bdca;
+  color: #f27d42;
   margin: 0;
   @media ${device.laptop} {
     margin: 0 0.2em;
