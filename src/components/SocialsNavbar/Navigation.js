@@ -121,7 +121,7 @@ const Navigation = () => {
         </Link>
         <Link
           target="_blank"
-          href="/"
+          href="https://drive.google.com/file/d/1mHur6--M3Szi3VzSF6Tw7Dxvb1fwPKNo/view?usp=sharing"
           as={motion.a}
           variants={iconVariant}
           data-tip="Resume"
