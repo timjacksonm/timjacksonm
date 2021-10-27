@@ -131,6 +131,7 @@ const MobileNavigation = () => {
           href="https://github.com/timjacksonm"
           as={motion.a}
           variants={iconVariant}
+          data-tip="Github"
         >
           <GithubIcon />
         </Link>
@@ -139,6 +140,7 @@ const MobileNavigation = () => {
           href="https://twitter.com/timjacksonm"
           as={motion.a}
           variants={iconVariant}
+          data-tip="Twitter"
         >
           <TwitterIcon />
         </Link>
@@ -147,10 +149,16 @@ const MobileNavigation = () => {
           href="https://www.linkedin.com/in/timjacksonm/"
           as={motion.a}
           variants={iconVariant}
+          data-tip="LinkedIn"
         >
           <FaLinkedin color="#0e76a8" />
         </Link>
-        <Link href="/" as={motion.a} variants={iconVariant}>
+        <Link
+          href="https://drive.google.com/file/d/1mHur6--M3Szi3VzSF6Tw7Dxvb1fwPKNo/view?usp=sharing"
+          as={motion.a}
+          variants={iconVariant}
+          data-tip="Resume"
+        >
           <FaFilePdf color=" #272341" />
         </Link>
         <Line />
