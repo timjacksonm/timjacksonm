@@ -1,14 +1,170 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from '../globalHelpers';
+import { FaJsSquare, FaReact, FaSass } from 'react-icons/fa';
+import { SiStyledcomponents, SiTailwindcss, SiJest } from 'react-icons/si';
+import css3 from '../assets/css3.png';
+import firebase from '../assets/firebase.png';
+import git from '../assets/git.png';
+import html5 from '../assets/html5.png';
+import nodejs from '../assets/nodejs.svg';
+import webpack from '../assets/webpack.png';
 
-const SectionContent = styled.div`
-  height: 100vh;
-  padding: 0 5.6rem;
-  background-color: #55bdca;
+const Section = styled.div`
+  height: 640px;
+  position: relative;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(1rem, 8vw, 3rem);
+  margin: 0 1em;
+  @media ${device.tablet} {
+    height: 1024px;
+    margin: 0 2em;
+  }
+`;
+const SkillsContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 2em 0;
+  z-index: 1;
+`;
+const SectionTitle = styled.h3`
+  font-family: CalibreBoldItalic;
+  color: #f27d42;
+  align-self: center;
+  margin: 0;
+`;
+const FrontEnd = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  width: 70vw;
+  min-width: 14rem;
+`;
+const Tools = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  width: 70vw;
+  min-width: 14rem;
+`;
+const BackEnd = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  width: 70vw;
+  min-width: 14rem;
+`;
+const Heading = styled.h6`
+  margin: 0.5em 0 0 0.2em;
+`;
+const IconContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  & svg {
+    margin: 0.2em;
+  }
+  & img {
+    margin: 0.2em;
+  }
+`;
+const JavascriptIcon = styled(FaJsSquare)`
+  fill: #f0db4f;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const ReactIcon = styled(FaReact)`
+  fill: #61dbfb;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const StyledComponentIcon = styled(SiStyledcomponents)`
+  fill: #be54a9;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const SassIcon = styled(FaSass)`
+  fill: #cc6699;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const TailwindIcon = styled(SiTailwindcss)`
+  fill: #03a9f4;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const JestIcon = styled(SiJest)`
+  fill: #c63d14;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const Html5Icon = styled.img`
+  width: 48px;
+  height: 48px;
+`;
+const Css3Icon = styled.img`
+  width: 48px;
+  height: 48px;
+`;
+const GitIcon = styled.img`
+  width: 48px;
+`;
+const WebpackIcon = styled.img`
+  width: 43px;
+`;
+const NodejsIcon = styled.img`
+  width: 79px;
+`;
+const FirebaseIcon = styled.img`
+  width: 36px;
 `;
 
 const Skills = () => {
-  return <SectionContent>Skills</SectionContent>;
+  return (
+    <Section id="skills">
+      <SkillsContent>
+        <SectionTitle>Skills</SectionTitle>
+
+        <FrontEnd>
+          <Heading>Front End</Heading>
+          <IconContainer>
+            <Html5Icon src={html5} data-tip="Html5" />
+            <Css3Icon src={css3} data-tip="Css3" />
+            <JavascriptIcon data-tip="Javascript" />
+            <ReactIcon data-tip="React & React Native" />
+            <StyledComponentIcon data-tip="Styled-Components" />
+            <SassIcon data-tip="Sass" />
+            <TailwindIcon data-tip="Tailwindcss" />
+            <JestIcon data-tip="Jest" />
+          </IconContainer>
+        </FrontEnd>
+
+        <Tools>
+          <Heading>Tools</Heading>
+          <IconContainer>
+            <GitIcon src={git} data-tip="Git" />
+            <WebpackIcon src={webpack} data-tip="Webpack" />
+          </IconContainer>
+        </Tools>
+
+        <BackEnd>
+          <Heading>Back End</Heading>
+          <IconContainer>
+            <NodejsIcon src={nodejs} data-tip="Node.js" />
+            <FirebaseIcon src={firebase} data-tip="Firebase" />
+          </IconContainer>
+        </BackEnd>
+      </SkillsContent>
+    </Section>
+  );
 };
 
 export default Skills;

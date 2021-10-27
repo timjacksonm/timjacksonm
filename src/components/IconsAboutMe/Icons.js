@@ -4,7 +4,13 @@ import styled from 'styled-components';
 const Top = styled.div`
   display: flex;
   justify-content: space-evenly;
-  padding: 2em 0;
+  padding: 1em 0;
+  & div {
+    display: flex;
+    & svg {
+      cursor: pointer;
+    }
+  }
   & div:nth-child(even) {
     & svg {
       margin: 1.5em 0;
@@ -13,21 +19,21 @@ const Top = styled.div`
   & div:nth-child(3n - 2) {
     & svg {
       & path {
-        color: #f27d42;
+        fill: #f27d42;
       }
     }
   }
   & div:nth-child(3n - 1) {
     & svg {
       & path {
-        color: #55bdca;
+        fill: #55bdca;
       }
     }
   }
   & div:nth-child(3n - 0) {
     & svg {
       & path {
-        color: #022949;
+        fill: #022949;
       }
     }
   }
@@ -37,6 +43,12 @@ const Bottom = styled.div`
   justify-content: space-evenly;
   align-items: flex-end;
   padding: 1em 0;
+  & div {
+    display: flex;
+    & svg {
+      cursor: pointer;
+    }
+  }
   & div:nth-child(even) {
     & svg {
       margin: 1.5em 0;
@@ -45,21 +57,21 @@ const Bottom = styled.div`
   & div:nth-child(3n - 2) {
     & svg {
       & path {
-        color: #022949;
+        fill: #022949;
       }
     }
   }
   & div:nth-child(3n - 1) {
     & svg {
       & path {
-        color: #f27d42;
+        fill: #f27d42;
       }
     }
   }
   & div:nth-child(3n - 0) {
     & svg {
       & path {
-        color: #55bdca;
+        fill: #55bdca;
       }
     }
   }
