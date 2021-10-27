@@ -41,7 +41,7 @@ const Link = styled.a`
       height: 1.75em;
     }
     & svg path {
-      fill: #f27d42;
+      fill: #55bdca;
     }
   }
 `;

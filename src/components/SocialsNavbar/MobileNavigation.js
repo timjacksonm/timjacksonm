@@ -57,7 +57,7 @@ const Link = styled.a`
       height: 1.5em;
     }
     & svg path {
-      fill: #f27d42;
+      fill: #55bdca;
     }
   }
   @media ${device.laptop} {
