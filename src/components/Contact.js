@@ -2,30 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
 
-const SectionContent = styled.div`
+const Section = styled.div`
   height: 90vh;
   position: relative;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: clamp(1rem, 8vw, 3rem);
 `;
-const Container = styled.div`
+const ContactMeContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 80%;
+  height: 100%;
   z-index: 1;
-  @media ${device.laptop} {
-    height: 55%;
-  }
 `;
-const Title = styled.h3`
+const SectionTitle = styled.h3`
+  display: flex;
+  align-items: center;
+  flex: 1;
   font-family: CalibreBoldItalic;
   color: #022949;
+`;
+const Text = styled.h6`
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0 1em;
+  font-family: CalibreBoldItalic;
+  color: #022949;
+  @media ${device.laptop} {
+    margin: 0 2em;
+  }
 `;
 const FormContainer = styled.form`
   display: flex;
@@ -89,8 +99,7 @@ const Submit = styled.input`
   text-align: center;
   color: #55bdca;
   text-decoration: none;
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
   border-image-slice: 1;
   cursor: pointer;
@@ -105,9 +114,14 @@ const Submit = styled.input`
 `;
 const Contact = () => {
   return (
-    <SectionContent>
-      <Container id="contact">
-        <Title>Contact Me</Title>
+    <Section id="contact">
+      <ContactMeContent>
+        <SectionTitle>Contact Me</SectionTitle>
+        <Text>
+          If you are interested in talking to me, I would love to hear from you.{' '}
+          <br></br>
+          Please send me a message below and I will respond swiftly!
+        </Text>
         <FormContainer name="contact" method="POST">
           <input type="hidden" name="form-name" value="contact" />
           <InputRow>
@@ -117,8 +131,8 @@ const Contact = () => {
           <Message name="message" id="message" placeholder="Message" rows="7" />
           <Submit type="submit" value="Send Message" />
         </FormContainer>
-      </Container>
-    </SectionContent>
+      </ContactMeContent>
+    </Section>
   );
 };
 

@@ -12,7 +12,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const SectionContent = styled.div`
+const Section = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ const Summary = styled.p`
   font-size: clamp(1rem, 5vw, 1.6rem);
   font-family: CalibreBoldItalic;
 `;
-const LeftColumn = styled.div`
+const ProjectDetails = styled.div`
   margin: 0 1em;
   max-width: 700px;
 `;
@@ -89,8 +89,7 @@ const Link = styled.a`
   text-align: center;
   color: #55bdca;
   text-decoration: none;
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
   border-image-slice: 1;
   cursor: pointer;
@@ -150,6 +149,7 @@ const Projects = () => {
     setShowMore(!showMore);
     setshowAmountProjects(showMore ? 3 : projects.length);
   };
+
   useEffect(() => {
     sanityClient
       .fetch(
@@ -168,7 +168,7 @@ const Projects = () => {
       .catch(console.error);
   }, []);
   return (
-    <SectionContent id="projects">
+    <Section>
       <img
         src={TopPeak}
         style={{ position: 'absolute', top: 0, width: '100%' }}
@@ -179,7 +179,7 @@ const Projects = () => {
         style={{ position: 'absolute', bottom: 0, width: '100%' }}
         alt="wave"
       />
-      <SectionTitle>Projects</SectionTitle>
+      <SectionTitle id="projects">Projects</SectionTitle>
       {projects &&
         projects
           .slice(0, showAmountProjects)
@@ -188,14 +188,14 @@ const Projects = () => {
               { title, liveUrl, repoUrl, summary, skills, mainImage, gifImage },
               i
             ) => (
-              <ProjectContainer key={i} id="container">
+              <ProjectContainer key={i}>
                 <Preview
                   src={urlFor(mainImage)}
                   onMouseEnter={(e) => changeImage(e, gifImage)}
                   onMouseLeave={(e) => changeImage(e, mainImage)}
-                  alt=""
+                  alt={`preview of ${title}`}
                 />
-                <LeftColumn>
+                <ProjectDetails>
                   <ProjectTitle>{title}</ProjectTitle>
                   <SkillsContainer>
                     {skills.map((skill, i) => (
@@ -207,7 +207,7 @@ const Projects = () => {
                     <Link href={liveUrl}>Live Demo</Link>
                     <Link href={repoUrl}>GitHub</Link>
                   </Buttons>
-                </LeftColumn>
+                </ProjectDetails>
                 <LineBreak />
               </ProjectContainer>
             )
@@ -216,7 +216,7 @@ const Projects = () => {
         <p>{showMore ? 'Show Less' : 'Show All'}</p>
         {showMore ? <FaArrowUp size="2em" /> : <FaArrowDown size="2em" />}
       </ShowContainer>
-    </SectionContent>
+    </Section>
   );
 };
 

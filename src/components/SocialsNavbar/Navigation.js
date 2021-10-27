@@ -117,7 +117,7 @@ const Navigation = () => {
           <FaLinkedin color="#0e76a8" />
         </Link>
         <Link href="/" as={motion.a} variants={iconVariant}>
-          <FaFilePdf color=" #272341" />
+          <FaFilePdf color="#272341" />
         </Link>
         <Line />
       </LinkContainer>

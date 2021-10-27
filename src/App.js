@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import ReactTooltip from 'react-tooltip';
 import CalibreBoldItalic from './assets/Calibre-BoldItalic.ttf';
 import MontserrratBold from './assets/Montserrat-ExtraBold.ttf';
-import Footer from './components/SocialsNavbar/Footer';
+import Footer from './components/Footer';
 
 const GlobalStyles = styled.div`
   display: flex;

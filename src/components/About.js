@@ -4,7 +4,7 @@ import { device } from '../globalHelpers';
 import TopWave from '../assets/wave1.svg';
 import BottomWave from '../assets/wave2.svg';
 
-const SectionContent = styled.div`
+const Section = styled.div`
   height: 640px;
   position: relative;
   background-color: #55bdca;
@@ -22,7 +22,7 @@ const SectionContent = styled.div`
     height: 1440px;
   }
 `;
-const Container = styled.div`
+const AboutMeContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +46,7 @@ const Summary = styled.p`
 
 const About = () => {
   return (
-    <SectionContent>
+    <Section>
       <img
         src={TopWave}
         style={{ position: 'absolute', top: 0, width: '100%' }}
@@ -57,7 +57,7 @@ const About = () => {
         style={{ position: 'absolute', bottom: 0, width: '100%' }}
         alt="wave"
       />
-      <Container id="about">
+      <AboutMeContent id="about">
         <Title>About Me</Title>
         <Summary>
           My name is Tim Jackson. I recently got married on Sept 25th, 2021 to
@@ -71,8 +71,8 @@ const About = () => {
           lineup of interesting applications I want to create. I am a
           self-taught developer that is creative and enjoys a challenge.
         </Summary>
-      </Container>
-    </SectionContent>
+      </AboutMeContent>
+    </Section>
   );
 };
 

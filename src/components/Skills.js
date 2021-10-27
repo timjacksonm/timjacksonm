@@ -10,7 +10,7 @@ import html5 from '../assets/html5.png';
 import nodejs from '../assets/nodejs.svg';
 import webpack from '../assets/webpack.png';
 
-const SectionContent = styled.div`
+const Section = styled.div`
   height: 640px;
   position: relative;
   background-color: #fff;
@@ -24,7 +24,7 @@ const SectionContent = styled.div`
     margin: 0 2em;
   }
 `;
-const Container = styled.div`
+const SkillsContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,24 +33,11 @@ const Container = styled.div`
   padding: 2em 0;
   z-index: 1;
 `;
-const Title = styled.h3`
+const SectionTitle = styled.h3`
   font-family: CalibreBoldItalic;
   color: #f27d42;
   align-self: center;
   margin: 0;
-`;
-const Heading = styled.h6`
-  margin: 0.5em 0 0 0.2em;
-`;
-const IconContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  & svg {
-    margin: 0.2em;
-  }
-  & img {
-    margin: 0.2em;
-  }
 `;
 const FrontEnd = styled.div`
   display: flex;
@@ -75,6 +62,19 @@ const BackEnd = styled.div`
   margin: 0 auto;
   width: 70vw;
   min-width: 14rem;
+`;
+const Heading = styled.h6`
+  margin: 0.5em 0 0 0.2em;
+`;
+const IconContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  & svg {
+    margin: 0.2em;
+  }
+  & img {
+    margin: 0.2em;
+  }
 `;
 const JavascriptIcon = styled(FaJsSquare)`
   fill: #f0db4f;
@@ -129,13 +129,13 @@ const FirebaseIcon = styled.img`
 
 const Skills = () => {
   return (
-    <SectionContent>
-      <Container id="skills">
-        <Title>Skills</Title>
+    <Section id="skills">
+      <SkillsContent>
+        <SectionTitle>Skills</SectionTitle>
 
-        <FrontEnd id="frontend">
+        <FrontEnd>
           <Heading>Front End</Heading>
-          <IconContainer id="iconContainer">
+          <IconContainer>
             <Html5Icon src={html5} data-tip="Html5" />
             <Css3Icon src={css3} data-tip="Css3" />
             <JavascriptIcon data-tip="Javascript" />
@@ -147,23 +147,23 @@ const Skills = () => {
           </IconContainer>
         </FrontEnd>
 
-        <Tools id="tools">
+        <Tools>
           <Heading>Tools</Heading>
-          <IconContainer id="iconContainer">
+          <IconContainer>
             <GitIcon src={git} data-tip="Git" />
             <WebpackIcon src={webpack} data-tip="Webpack" />
           </IconContainer>
         </Tools>
 
-        <BackEnd id="backend">
+        <BackEnd>
           <Heading>Back End</Heading>
-          <IconContainer id="iconContainer">
+          <IconContainer>
             <NodejsIcon src={nodejs} data-tip="Node.js" />
             <FirebaseIcon src={firebase} data-tip="Firebase" />
           </IconContainer>
         </BackEnd>
-      </Container>
-    </SectionContent>
+      </SkillsContent>
+    </Section>
   );
 };
 

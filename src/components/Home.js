@@ -4,7 +4,7 @@ import { device } from '../globalHelpers';
 import IconsAboutMe from './IconsAboutMe/index';
 import { motion } from 'framer-motion';
 
-const SectionContent = styled.div`
+const Section = styled.div`
 position: relative;
 display: flex;
 flex-direction: column;
@@ -22,7 +22,7 @@ color: #272341;
   font-size: clamp(1rem, 8vw, 4rem);
 }
 `;
-const Container = styled.div`
+const HomeContent = styled.div`
   margin: 0 2em;
 `;
 const TitleContainer = styled.div`
@@ -49,7 +49,7 @@ const Tagline = styled.h5`
     margin-bottom: 1em;
   }
 `;
-const NavContainer = styled.div`
+const PageNavigation = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -60,15 +60,14 @@ const NavContainer = styled.div`
     margin: 0;
   }
 `;
-const NavTitle = styled.a`
+const PageLink = styled.a`
   padding: 0.225em 1em;
   font-weight: 600;
   font-size: 0.525em;
   text-align: center;
   color: #55bdca;
   text-decoration: none;
-  border-width: 2px;
-  border-style: solid;
+  border: 2px solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
   border-image-slice: 1;
   cursor: pointer;
@@ -116,34 +115,29 @@ const Home = () => {
     },
   };
   return (
-    <SectionContent id="section">
-      <Container
+    <Section id="home">
+      <HomeContent
         as={motion.div}
         variants={titleVariant}
         initial="hidden"
         animate="visible"
-        id="container"
       >
         <TitleContainer>
-          <Intro id="intro">Hi, my name is</Intro>
-          <Name id="name">Tim Jackson.</Name>
+          <Intro>Hi, my name is</Intro>
+          <Name>Tim Jackson.</Name>
         </TitleContainer>
         <Tagline>
           Full stack developer with a critical thinking personality.
         </Tagline>
-        <NavContainer
-          as={motion.div}
-          variants={taglineVariant}
-          id="navContainer"
-        >
-          <NavTitle href="/#about">About</NavTitle>
-          <NavTitle href="/#skills">Skills</NavTitle>
-          <NavTitle href="/#projects">Projects</NavTitle>
-          <NavTitle href="/#contact">Contact</NavTitle>
-        </NavContainer>
-      </Container>
+        <PageNavigation as={motion.div} variants={taglineVariant}>
+          <PageLink href="/#about">About</PageLink>
+          <PageLink href="/#skills">Skills</PageLink>
+          <PageLink href="/#projects">Projects</PageLink>
+          <PageLink href="/#contact">Contact</PageLink>
+        </PageNavigation>
+      </HomeContent>
       <IconsAboutMe />
-    </SectionContent>
+    </Section>
   );
 };
 

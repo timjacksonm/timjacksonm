@@ -7,7 +7,7 @@ import { FaLinkedin, FaFilePdf, FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const HamburgerMenu = styled(FaBars)`
-  margin: 1em;
+  margin: 1.5em 1em;
   width: 1.5em;
   height: 1.5em;
   @media ${device.laptop} {
@@ -15,7 +15,7 @@ const HamburgerMenu = styled(FaBars)`
   }
 `;
 const CloseIcon = styled(FaTimes)`
-  margin: 1em auto;
+  margin: 1.5em auto;
   width: 1.5em;
   height: 1.5em;
   @media ${device.laptop} {
@@ -38,15 +38,6 @@ const LinkContainer = styled.div`
   @media ${device.laptop} {
     display: none;
     margin: 3em;
-  }
-`;
-const Line = styled.span`
-  @media ${device.laptop} {
-    position: absolute;
-    top: 50%;
-    right: -40px;
-    width: 35px;
-    border-bottom: 2px solid #f27d42;
   }
 `;
 const Link = styled.a`
@@ -78,6 +69,15 @@ const Link = styled.a`
         height: 1.9em;
       }
     }
+  }
+`;
+const Line = styled.span`
+  @media ${device.laptop} {
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    width: 35px;
+    border-bottom: 2px solid #f27d42;
   }
 `;
 
