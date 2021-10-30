@@ -8,19 +8,39 @@ import About from './components/About';
 import Contact from './components/Contact';
 import ReactTooltip from 'react-tooltip';
 import CalibreBoldItalic from './assets/Calibre-BoldItalic.ttf';
-import MontserrratBold from './assets/Montserrat-ExtraBold.ttf';
+import CalibreRegular from './assets/Calibre-Regular.ttf';
+import MontserratBold from './assets/Montserrat-Bold.ttf';
+import MontserratExtraBold from './assets/Montserrat-ExtraBold.ttf';
+import MontserratExtraBoldItalic from './assets/Montserrat-ExtraBoldItalic.ttf';
 import Footer from './components/Footer';
 
 const GlobalStyles = styled.div`
   display: flex;
   flex-direction: column;
   @font-face {
-    font-family: 'CalibreBoldItalic';
+    font-family: CalibreRegular;
+    font-display: block;
+    src: url(${CalibreRegular}) format('truetype');
+  }
+  @font-face {
+    font-family: CalibreBoldItalic;
+    font-display: block;
     src: url(${CalibreBoldItalic}) format('truetype');
   }
-  font-face {
-    font-family: 'MontserrratBold';
-    src: url(${MontserrratBold}) format('truetype');
+  @font-face {
+    font-family: MontserratBold;
+    font-display: block;
+    src: url(${MontserratBold}) format('truetype');
+  }
+  @font-face {
+    font-family: MontserratExtraBold;
+    font-display: block;
+    src: url(${MontserratExtraBold}) format('truetype');
+  }
+  @font-face {
+    font-family: MontserratExtraBoldItalic;
+    font-display: block;
+    src: url(${MontserratExtraBoldItalic}) format('truetype');
   }
 `;
 const App = () => {

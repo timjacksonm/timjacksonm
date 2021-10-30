@@ -12,12 +12,17 @@ const FooterContent = styled.div`
   padding: 1em 0;
   position: relative;
   color: #fff;
-  fontfamily: CalibreBoldItalic;
+  font-family: CalibreRegular;
   fontsize: clamp(1rem, 4vw, 1.25rem);
   & a {
     text-decoration: none;
   }
 `;
+// font-family: CalibreRegular;
+//     font-family: CalibreBoldItalic;
+//     font-family: MontserratBold;
+//     font-family: MontserratExtraBold;
+//     font-family: MontserratExtraBoldItalic;
 const Icon = styled(FaArrowUp)`
   fill: #fff;
   &:hover {

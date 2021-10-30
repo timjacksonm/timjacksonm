@@ -18,6 +18,7 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #022949;
+  font-family: CalibreRegular;
   font-size: clamp(1rem, 8vw, 3rem);
   padding: 10rem 0;
   @media ${device.laptop} {
@@ -28,9 +29,9 @@ const Section = styled.div`
   }
 `;
 const SectionTitle = styled.h3`
-  font-family: CalibreBoldItalic;
   color: #fff;
   margin-top: 0;
+  font-family: CalibreBoldItalic;
 `;
 const ProjectContainer = styled.div`
   position: relative;
@@ -48,14 +49,16 @@ const ProjectContainer = styled.div`
 `;
 const ProjectTitle = styled.h5`
   margin: 0;
-  font-family: CalibreBoldItalic;
   color: #f27d42;
+  font-family: CalibreBoldItalic;
 `;
 const SkillsContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   font-size: 16px;
   padding: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
 `;
 const Skill = styled.li`
   list-style: none;
@@ -65,7 +68,6 @@ const Skill = styled.li`
 `;
 const Summary = styled.p`
   font-size: clamp(1rem, 5vw, 1.6rem);
-  font-family: CalibreBoldItalic;
 `;
 const ProjectDetails = styled.div`
   margin: 0 1em;
@@ -80,12 +82,21 @@ const Preview = styled.img`
     max-width: 700px;
   }
 `;
+const Buttons = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 1em 0;
+  font-family: MontserratBold;
+  @media ${device.laptopL} {
+    justify-content: unset;
+  }
+`;
 const Link = styled.a`
   display: block;
-  width: 5em;
-  padding: 0.225em 1em;
-  font-weight: 600;
+  width: 6em;
   font-size: 0.525em;
+  padding: 0.225em 1em;
   text-align: center;
   color: #55bdca;
   text-decoration: none;
@@ -103,15 +114,6 @@ const Link = styled.a`
     background-position: -100% 0;
   }
 `;
-const Buttons = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  margin: 1em 0;
-  @media ${device.laptopL} {
-    justify-content: unset;
-  }
-`;
 const LineBreak = styled.div`
   border-bottom: 1px solid #96ffff;
   position: absolute;
@@ -126,6 +128,8 @@ const ShowContainer = styled.div`
   font-size: 16px;
   z-index: 50;
   color: #fff;
+  font-family: MontserratExtraBold;
+  font-weight: 600;
   & svg path {
     fill: #fff;
   }
@@ -205,7 +209,7 @@ const Projects = () => {
                   <Summary>{summary}</Summary>
                   <Buttons>
                     <Link href={liveUrl}>Live Demo</Link>
-                    <Link href={repoUrl}>GitHub</Link>
+                    <Link href={repoUrl}>Github</Link>
                   </Buttons>
                 </ProjectDetails>
                 <LineBreak />

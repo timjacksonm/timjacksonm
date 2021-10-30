@@ -10,6 +10,8 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: clamp(1rem, 8vw, 3rem);
+  font-family: CalibreBoldItalic;
+  font-weight: 600;
 `;
 const ContactMeContent = styled.div`
   display: flex;
@@ -23,16 +25,16 @@ const SectionTitle = styled.h3`
   display: flex;
   align-items: center;
   flex: 1;
-  font-family: CalibreBoldItalic;
-  color: #022949;
+  color: #f27d42;
 `;
-const Text = styled.h6`
+const Text = styled.p`
   display: flex;
   align-items: center;
+  font-size: clamp(1rem, 4vw, 1.8rem);
   flex: 1;
   margin: 0 1em;
-  font-family: CalibreBoldItalic;
-  color: #022949;
+  font-family: MontserratExtraBold;
+  color: #55bdca;
   @media ${device.laptop} {
     margin: 0 2em;
   }
@@ -41,12 +43,13 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 50px auto;
+  margin: 1em auto;
+  max-width: 700px;
+  font-family: CalibreRegular;
 `;
 const Name = styled.input`
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: inherit;
+  font-size: clamp(1rem, 4vw, 1.3rem);
   border-radius: 5px;
   line-height: 22px;
   background-color: #c8eff9;
@@ -59,9 +62,8 @@ const Name = styled.input`
   outline: 0;
 `;
 const Email = styled.input`
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: inherit;
+  font-size: clamp(1rem, 4vw, 1.3rem);
   border-radius: 5px;
   line-height: 22px;
   background-color: #c8eff9;
@@ -72,9 +74,8 @@ const Email = styled.input`
   box-sizing: border-box;
 `;
 const Message = styled.textarea`
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+  font-family: inherit;
+  font-size: clamp(1rem, 4vw, 1.3rem);
   border-radius: 5px;
   line-height: 22px;
   background-color: #c8eff9;
@@ -95,8 +96,9 @@ const Submit = styled.input`
   background: none;
   padding: 0.225em 1em;
   font-weight: 600;
-  font-size: 0.525em;
+  font-size: clamp(1rem, 4vw, 1.3rem);
   text-align: center;
+  padding: 0.5em;
   color: #55bdca;
   text-decoration: none;
   border: 2px solid;

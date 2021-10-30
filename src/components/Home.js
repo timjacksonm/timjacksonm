@@ -11,7 +11,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height 100vh;
-font-family: 'CalibreBoldItalic';
+font-family: CalibreBoldItalic;
 font-size: clamp(1rem, 8vw, 3rem);
 color: #272341;
 @media ${device.laptop} {
@@ -54,7 +54,7 @@ const PageNavigation = styled.div`
   flex-direction: column;
   text-align: center;
   margin: 1em auto;
-  font-family: MontserrratBold;
+  font-family: MontserratBold;
   @media ${device.laptop} {
     flex-direction: row;
     margin: 0;
@@ -62,7 +62,6 @@ const PageNavigation = styled.div`
 `;
 const PageLink = styled.a`
   padding: 0.225em 1em;
-  font-weight: 600;
   font-size: 0.525em;
   text-align: center;
   color: #55bdca;

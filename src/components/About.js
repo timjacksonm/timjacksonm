@@ -39,6 +39,7 @@ const Title = styled.h3`
 const Summary = styled.p`
   font-size: clamp(1rem, 4vw, 2rem);
   margin: 0 2em;
+  font-family: CalibreRegular;
   @media ${device.laptop} {
     max-width: 50vw;
   }
