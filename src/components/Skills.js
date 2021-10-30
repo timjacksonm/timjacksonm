@@ -17,6 +17,7 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: MontserratExtraBoldItalic;
   font-size: clamp(1rem, 8vw, 3rem);
   margin: 0 1em;
   @media ${device.tablet} {
@@ -34,10 +35,10 @@ const SkillsContent = styled.div`
   z-index: 1;
 `;
 const SectionTitle = styled.h3`
-  font-family: CalibreBoldItalic;
   color: #f27d42;
   align-self: center;
   margin: 0;
+  font-family: CalibreBoldItalic;
 `;
 const FrontEnd = styled.div`
   display: flex;
