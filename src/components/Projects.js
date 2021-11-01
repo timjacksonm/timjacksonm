@@ -144,9 +144,21 @@ const Projects = () => {
   const [projects, setProjects] = useState(null);
   const [showMore, setShowMore] = useState(false);
   const [showAmountProjects, setshowAmountProjects] = useState(3);
+  const [imageState, setImageState] = useState(null);
 
-  const changeImage = (e, gifImage) => {
-    e.target.setAttribute('src', urlFor(gifImage));
+  const changeImage = (e, index) => {
+    if (e.type === 'click') {
+      setImageState({
+        ...imageState,
+        ...{ [index]: { url: urlFor(projects[index].gifImage) } },
+      });
+    }
+    if (e.type === 'mouseleave') {
+      setImageState({
+        ...imageState,
+        ...{ [index]: { url: urlFor(projects[index].mainImage) } },
+      });
+    }
   };
 
   const toggleProjectList = () => {
@@ -168,7 +180,15 @@ const Projects = () => {
           gifImage
         }`
       )
-      .then((data) => setProjects(data.sort((a, b) => a.position - b.position)))
+      .then((data) => {
+        const sortedProjects = data.sort((a, b) => a.position - b.position);
+        setImageState(
+          sortedProjects.map((data) => {
+            return { url: urlFor(data.mainImage) };
+          })
+        );
+        setProjects(sortedProjects);
+      })
       .catch(console.error);
   }, []);
   return (
@@ -187,35 +207,33 @@ const Projects = () => {
       {projects &&
         projects
           .slice(0, showAmountProjects)
-          .map(
-            (
-              { title, liveUrl, repoUrl, summary, skills, mainImage, gifImage },
-              i
-            ) => (
-              <ProjectContainer key={i}>
-                <Preview
-                  src={urlFor(mainImage)}
-                  onMouseEnter={(e) => changeImage(e, gifImage)}
-                  onMouseLeave={(e) => changeImage(e, mainImage)}
-                  alt={`preview of ${title}`}
-                />
-                <ProjectDetails>
-                  <ProjectTitle>{title}</ProjectTitle>
-                  <SkillsContainer>
-                    {skills.map((skill, i) => (
-                      <Skill key={i}>{skill}</Skill>
-                    ))}
-                  </SkillsContainer>
-                  <Summary>{summary}</Summary>
-                  <Buttons>
-                    <Link href={liveUrl}>Live Demo</Link>
-                    <Link href={repoUrl}>Github</Link>
-                  </Buttons>
-                </ProjectDetails>
-                <LineBreak />
-              </ProjectContainer>
-            )
-          )}
+          .map(({ title, liveUrl, repoUrl, summary, skills }, i) => (
+            <ProjectContainer
+              id="asdf"
+              key={i}
+              onMouseLeave={(e) => changeImage(e, i)}
+            >
+              <Preview
+                src={imageState[i].url}
+                onClick={(e) => changeImage(e, i)}
+                alt={`preview of ${title}`}
+              />
+              <ProjectDetails>
+                <ProjectTitle>{title}</ProjectTitle>
+                <SkillsContainer>
+                  {skills.map((skill, i) => (
+                    <Skill key={i}>{skill}</Skill>
+                  ))}
+                </SkillsContainer>
+                <Summary>{summary}</Summary>
+                <Buttons>
+                  <Link href={liveUrl}>Live Demo</Link>
+                  <Link href={repoUrl}>Github</Link>
+                </Buttons>
+              </ProjectDetails>
+              <LineBreak />
+            </ProjectContainer>
+          ))}
       <ShowContainer onClick={toggleProjectList}>
         <p>{showMore ? 'Show Less' : 'Show All'}</p>
         {showMore ? <FaArrowUp size="2em" /> : <FaArrowDown size="2em" />}
