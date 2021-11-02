@@ -11,7 +11,7 @@ import nodejs from '../assets/nodejs.svg';
 import webpack from '../assets/webpack.png';
 
 const Section = styled.div`
-  height: 640px;
+  min-height: 640px;
   position: relative;
   background-color: #fff;
   display: flex;
@@ -21,7 +21,7 @@ const Section = styled.div`
   font-size: clamp(1rem, 8vw, 3rem);
   margin: 0 1em;
   @media ${device.tablet} {
-    height: 1024px;
+    min-height: 1024px;
     margin: 0 2em;
   }
 `;
@@ -44,38 +44,60 @@ const FrontEnd = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0 auto;
-  width: 70vw;
+  width: 100%;
   min-width: 14rem;
 `;
 const Tools = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0 auto;
-  width: 70vw;
+  width: 100%;
   min-width: 14rem;
 `;
 const BackEnd = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0 auto;
-  width: 70vw;
+  width: 100%;
   min-width: 14rem;
 `;
 const Heading = styled.h5`
-  margin: 0.5em 0 0 0.2em;
+  margin: 0.5em;
+  text-align: center;
+  @media ${device.tablet} {
+    text-align: left;
+  }
 `;
-const IconContainer = styled.div`
+const SkillsContainer = styled.ul`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+  padding: 0;
   & svg {
     margin: 0.2em;
   }
   & img {
     margin: 0.2em;
   }
+  @media ${device.tablet} {
+    justify-content: unset;
+  }
+`;
+const Skill = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0.5em;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  font-family: CalibreRegular;
+  font-weight: 600;
+  flex: 1;
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 100px;
+  max-width: 100px;
 `;
 const JavascriptIcon = styled(FaJsSquare)`
   fill: #f0db4f;
@@ -104,6 +126,7 @@ const TailwindIcon = styled(SiTailwindcss)`
 `;
 const JestIcon = styled(SiJest)`
   fill: #c63d14;
+  width: 25vw;
   min-height: 48px;
   min-width: 48px;
 `;
@@ -140,39 +163,68 @@ const Skills = () => {
 
         <FrontEnd>
           <Heading>Front End</Heading>
-          <IconContainer>
-            <Html5Icon src={html5} data-tip="Html5" alt="Html5 logo" />
-            <Css3Icon src={css3} data-tip="Css3" alt="Css3 logo" />
-            <JavascriptIcon data-tip="Javascript" alt="Javascript logo" />
-            <ReactIcon data-tip="React & React Native" alt="React logo" />
-            <StyledComponentIcon
-              data-tip="Styled-Components"
-              alt="Styled-Components logo"
-            />
-            <SassIcon data-tip="Sass" alt="Sass logo" />
-            <TailwindIcon data-tip="TailwindCSS" alt="TailwindCSS logo" />
-            <JestIcon data-tip="Jest" alt="Jest logo" />
-          </IconContainer>
+          <SkillsContainer>
+            <Skill>
+              <Html5Icon src={html5} alt="Html5 logo" />
+              HTML5
+            </Skill>
+            <Skill>
+              <Css3Icon src={css3} alt="Css3 logo" />
+              CSS3
+            </Skill>
+            <Skill>
+              <JavascriptIcon alt="Javascript logo" />
+              Javascript
+            </Skill>
+            <Skill>
+              <ReactIcon alt="React logo" />
+              React & {''} <br></br> React-Native
+            </Skill>
+            <Skill>
+              <StyledComponentIcon alt="Styled-Components logo" />
+              Styled-Components
+            </Skill>
+            <Skill>
+              <SassIcon alt="Sass logo" />
+              SASS
+            </Skill>
+            <Skill>
+              <TailwindIcon alt="TailwindCSS logo" />
+              TailwindCSS
+            </Skill>
+            <Skill>
+              <JestIcon alt="Jest logo" />
+              Jest
+            </Skill>
+          </SkillsContainer>
         </FrontEnd>
 
         <Tools>
           <Heading>Tools</Heading>
-          <IconContainer>
-            <GitIcon src={git} data-tip="Git" alt="Git logo" />
-            <WebpackIcon src={webpack} data-tip="Webpack" alt="Webpack logo" />
-          </IconContainer>
+          <SkillsContainer>
+            <Skill>
+              <GitIcon src={git} alt="Git logo" />
+              Git
+            </Skill>
+            <Skill>
+              <WebpackIcon src={webpack} alt="Webpack logo" />
+              Webpack
+            </Skill>
+          </SkillsContainer>
         </Tools>
 
         <BackEnd>
           <Heading>Back End</Heading>
-          <IconContainer>
-            <NodejsIcon src={nodejs} data-tip="Node.js" alt="Node.js logo" />
-            <FirebaseIcon
-              src={firebase}
-              data-tip="Firebase"
-              alt="firebase logo"
-            />
-          </IconContainer>
+          <SkillsContainer>
+            <Skill>
+              <NodejsIcon src={nodejs} alt="Node.js logo" />
+              Node.js
+            </Skill>
+            <Skill>
+              <FirebaseIcon src={firebase} alt="firebase logo" />
+              Firebase
+            </Skill>
+          </SkillsContainer>
         </BackEnd>
       </SkillsContent>
     </Section>

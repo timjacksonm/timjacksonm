@@ -71,12 +71,7 @@ const Summary = styled.p`
 `;
 const ProjectDetails = styled.div`
   margin: 0 1em;
-  width: 50%;
   max-width: 700px;
-`;
-const Preview = styled.img`
-  width: 100%;
-  height: 100%;
 `;
 const Buttons = styled.div`
   display: flex;
@@ -139,11 +134,17 @@ const ShowContainer = styled.div`
 const PreviewContainer = styled.div`
   position: relative;
   margin: 1em 0;
-  height: 50vh;
-  width: 50%;
-  max-height: 500px;
+  flex: 1;
   @media ${device.tablet} {
     max-width: 665px;
+    max-height: 466px;
+  }
+`;
+const Preview = styled.img`
+  width: 100%;
+  max-height: 50vh;
+  @media ${device.tablet} {
+    max-height: unset;
   }
 `;
 const ClickMe = styled(FaPlay)`
@@ -240,7 +241,12 @@ const Projects = () => {
                   onClick={(e) => changeImage(e, i)}
                   display={playIcons[i].state ? 'block' : 'none'}
                 />
-                <Preview src={imageState[i].url} alt={`preview of ${title}`} />
+                <Preview
+                  src={imageState[i].url}
+                  alt={`preview of ${title}`}
+                  width="665px"
+                  height="466px"
+                />
               </PreviewContainer>
               <ProjectDetails>
                 <ProjectTitle>{title}</ProjectTitle>
