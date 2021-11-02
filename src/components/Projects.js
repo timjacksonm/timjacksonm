@@ -5,7 +5,7 @@ import TopPeak from '../assets/peak1.svg';
 import BottomPeak from '../assets/peak2.svg';
 import sanityClient from '../client.js';
 import imageUrlBuilder from '@sanity/image-url';
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown, FaPlay } from 'react-icons/fa';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -74,13 +74,8 @@ const ProjectDetails = styled.div`
   max-width: 700px;
 `;
 const Preview = styled.img`
-  margin: 1em 0;
-  height: 50vh;
   width: 100%;
-  max-height: 500px;
-  @media ${device.tablet} {
-    max-width: 700px;
-  }
+  height: 100%;
 `;
 const Buttons = styled.div`
   display: flex;
@@ -140,20 +135,47 @@ const ShowContainer = styled.div`
     }
   }
 `;
+const PreviewContainer = styled.div`
+  position: relative;
+  margin: 1em 0;
+  height: 50vh;
+  width: 100%;
+  max-height: 500px;
+  @media ${device.tablet} {
+    max-width: 700px;
+  }
+`;
+const ClickMe = styled(FaPlay)`
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  display: ${({ display }) => display}
+  z-index: 50;
+  &:hover {
+    fill: #55bdca;
+  }
+`;
 const Projects = () => {
   const [projects, setProjects] = useState(null);
   const [showMore, setShowMore] = useState(false);
   const [showAmountProjects, setshowAmountProjects] = useState(3);
   const [imageState, setImageState] = useState(null);
+  const [playIcons, setPlayIcons] = useState(null);
 
   const changeImage = (e, index) => {
     if (e.type === 'click') {
+      setPlayIcons({ ...playIcons, ...{ [index]: { state: false } } });
       setImageState({
         ...imageState,
         ...{ [index]: { url: urlFor(projects[index].gifImage) } },
       });
     }
     if (e.type === 'mouseleave') {
+      setPlayIcons({ ...playIcons, ...{ [index]: { state: true } } });
       setImageState({
         ...imageState,
         ...{ [index]: { url: urlFor(projects[index].mainImage) } },
@@ -182,10 +204,9 @@ const Projects = () => {
       )
       .then((data) => {
         const sortedProjects = data.sort((a, b) => a.position - b.position);
+        setPlayIcons(sortedProjects.map(() => ({ state: true })));
         setImageState(
-          sortedProjects.map((data) => {
-            return { url: urlFor(data.mainImage) };
-          })
+          sortedProjects.map((data) => ({ url: urlFor(data.mainImage) }))
         );
         setProjects(sortedProjects);
       })
@@ -213,11 +234,13 @@ const Projects = () => {
               key={i}
               onMouseLeave={(e) => changeImage(e, i)}
             >
-              <Preview
-                src={imageState[i].url}
-                onClick={(e) => changeImage(e, i)}
-                alt={`preview of ${title}`}
-              />
+              <PreviewContainer>
+                <ClickMe
+                  onClick={(e) => changeImage(e, i)}
+                  display={playIcons[i].state ? 'block' : 'none'}
+                />
+                <Preview src={imageState[i].url} alt={`preview of ${title}`} />
+              </PreviewContainer>
               <ProjectDetails>
                 <ProjectTitle>{title}</ProjectTitle>
                 <SkillsContainer>
