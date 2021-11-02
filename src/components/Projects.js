@@ -71,6 +71,7 @@ const Summary = styled.p`
 `;
 const ProjectDetails = styled.div`
   margin: 0 1em;
+  width: 50%;
   max-width: 700px;
 `;
 const Preview = styled.img`
@@ -139,7 +140,7 @@ const PreviewContainer = styled.div`
   position: relative;
   margin: 1em 0;
   height: 50vh;
-  width: 100%;
+  width: 700px;
   max-height: 500px;
   @media ${device.tablet} {
     max-width: 700px;
