@@ -128,6 +128,7 @@ const MobileNavigation = () => {
       >
         <Link
           target="_blank"
+          rel="noopener"
           href="https://github.com/timjacksonm"
           as={motion.a}
           variants={iconVariant}
@@ -137,6 +138,7 @@ const MobileNavigation = () => {
         </Link>
         <Link
           target="_blank"
+          rel="noopener"
           href="https://twitter.com/timjacksonm"
           as={motion.a}
           variants={iconVariant}
@@ -146,6 +148,7 @@ const MobileNavigation = () => {
         </Link>
         <Link
           target="_blank"
+          rel="noopener"
           href="https://www.linkedin.com/in/timjacksonm/"
           as={motion.a}
           variants={iconVariant}
@@ -154,6 +157,8 @@ const MobileNavigation = () => {
           <FaLinkedin color="#0e76a8" />
         </Link>
         <Link
+          target="_blank"
+          rel="noopener"
           href="https://drive.google.com/file/d/1mHur6--M3Szi3VzSF6Tw7Dxvb1fwPKNo/view?usp=sharing"
           as={motion.a}
           variants={iconVariant}

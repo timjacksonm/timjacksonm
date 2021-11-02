@@ -64,7 +64,7 @@ const BackEnd = styled.div`
   width: 70vw;
   min-width: 14rem;
 `;
-const Heading = styled.h6`
+const Heading = styled.h5`
   margin: 0.5em 0 0 0.2em;
 `;
 const IconContainer = styled.div`
@@ -117,15 +117,19 @@ const Css3Icon = styled.img`
 `;
 const GitIcon = styled.img`
   width: 48px;
+  height: 48px;
 `;
 const WebpackIcon = styled.img`
   width: 43px;
+  height: 48px;
 `;
 const NodejsIcon = styled.img`
   width: 79px;
+  height: 48px;
 `;
 const FirebaseIcon = styled.img`
   width: 36px;
+  height: 48px;
 `;
 
 const Skills = () => {
@@ -137,30 +141,37 @@ const Skills = () => {
         <FrontEnd>
           <Heading>Front End</Heading>
           <IconContainer>
-            <Html5Icon src={html5} data-tip="Html5" />
-            <Css3Icon src={css3} data-tip="Css3" />
-            <JavascriptIcon data-tip="Javascript" />
-            <ReactIcon data-tip="React & React Native" />
-            <StyledComponentIcon data-tip="Styled-Components" />
-            <SassIcon data-tip="Sass" />
-            <TailwindIcon data-tip="Tailwindcss" />
-            <JestIcon data-tip="Jest" />
+            <Html5Icon src={html5} data-tip="Html5" alt="Html5 logo" />
+            <Css3Icon src={css3} data-tip="Css3" alt="Css3 logo" />
+            <JavascriptIcon data-tip="Javascript" alt="Javascript logo" />
+            <ReactIcon data-tip="React & React Native" alt="React logo" />
+            <StyledComponentIcon
+              data-tip="Styled-Components"
+              alt="Styled-Components logo"
+            />
+            <SassIcon data-tip="Sass" alt="Sass logo" />
+            <TailwindIcon data-tip="TailwindCSS" alt="TailwindCSS logo" />
+            <JestIcon data-tip="Jest" alt="Jest logo" />
           </IconContainer>
         </FrontEnd>
 
         <Tools>
           <Heading>Tools</Heading>
           <IconContainer>
-            <GitIcon src={git} data-tip="Git" />
-            <WebpackIcon src={webpack} data-tip="Webpack" />
+            <GitIcon src={git} data-tip="Git" alt="Git logo" />
+            <WebpackIcon src={webpack} data-tip="Webpack" alt="Webpack logo" />
           </IconContainer>
         </Tools>
 
         <BackEnd>
           <Heading>Back End</Heading>
           <IconContainer>
-            <NodejsIcon src={nodejs} data-tip="Node.js" />
-            <FirebaseIcon src={firebase} data-tip="Firebase" />
+            <NodejsIcon src={nodejs} data-tip="Node.js" alt="Node.js logo" />
+            <FirebaseIcon
+              src={firebase}
+              data-tip="Firebase"
+              alt="firebase logo"
+            />
           </IconContainer>
         </BackEnd>
       </SkillsContent>

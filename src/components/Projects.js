@@ -58,7 +58,7 @@ const SkillsContainer = styled.ul`
   font-size: 16px;
   padding: 0;
   font-family: Montserrat, sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 `;
 const Skill = styled.li`
   list-style: none;
@@ -140,10 +140,10 @@ const PreviewContainer = styled.div`
   position: relative;
   margin: 1em 0;
   height: 50vh;
-  width: 700px;
+  width: 50%;
   max-height: 500px;
   @media ${device.tablet} {
-    max-width: 700px;
+    max-width: 665px;
   }
 `;
 const ClickMe = styled(FaPlay)`
@@ -251,8 +251,12 @@ const Projects = () => {
                 </SkillsContainer>
                 <Summary>{summary}</Summary>
                 <Buttons>
-                  <Link href={liveUrl}>Live Demo</Link>
-                  <Link href={repoUrl}>Github</Link>
+                  <Link target="_blank" rel="noopener" href={liveUrl}>
+                    Live Demo
+                  </Link>
+                  <Link target="_blank" rel="noopener" href={repoUrl}>
+                    Github
+                  </Link>
                 </Buttons>
               </ProjectDetails>
               <LineBreak />
