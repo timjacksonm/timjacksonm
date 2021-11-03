@@ -83,7 +83,7 @@ const PageLink = styled.a`
 const Home = () => {
   const titleVariant = {
     hidden: {
-      x: '-40px',
+      x: '-100px',
       opacity: 0,
     },
     visible: {
@@ -100,7 +100,7 @@ const Home = () => {
   };
   const taglineVariant = {
     hidden: {
-      x: '-30px',
+      x: '-100px',
       opacity: 0,
     },
     visible: {

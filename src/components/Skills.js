@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { device } from '../globalHelpers';
+import { useInView } from 'react-intersection-observer';
 import { FaJsSquare, FaReact, FaSass } from 'react-icons/fa';
 import { SiStyledcomponents, SiTailwindcss, SiJest } from 'react-icons/si';
 import css3 from '../assets/css3.png';
@@ -156,71 +158,130 @@ const FirebaseIcon = styled.img`
 `;
 
 const Skills = () => {
+  const [skill1ref, inViewSkill1] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const [skill2ref, inViewSkill2] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  const [skill3ref, inViewSkill3] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const titleVariant = {
+    hidden: {
+      x: '-100px',
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        damping: 13,
+        stiffness: 50,
+        duration: 1,
+        when: 'beforeChildren',
+        staggerChildren: 0.5,
+      },
+    },
+  };
+  const iconVariant = {
+    hidden: {
+      x: '-100px',
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+    },
+  };
   return (
     <Section id="skills">
       <SkillsContent>
         <SectionTitle>Skills</SectionTitle>
 
-        <FrontEnd>
+        <FrontEnd
+          ref={skill1ref}
+          as={motion.div}
+          variants={titleVariant}
+          initial="hidden"
+          animate={inViewSkill1 ? 'visible' : 'hidden'}
+        >
           <Heading>Front End</Heading>
           <SkillsContainer>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <Html5Icon src={html5} alt="Html5 logo" />
               HTML5
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <Css3Icon src={css3} alt="Css3 logo" />
               CSS3
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <JavascriptIcon alt="Javascript logo" />
               Javascript
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <ReactIcon alt="React logo" />
               React & {''} <br></br> React-Native
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <StyledComponentIcon alt="Styled-Components logo" />
               Styled-Components
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <SassIcon alt="Sass logo" />
               SASS
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <TailwindIcon alt="TailwindCSS logo" />
               TailwindCSS
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <JestIcon alt="Jest logo" />
               Jest
             </Skill>
           </SkillsContainer>
         </FrontEnd>
 
-        <Tools>
+        <Tools
+          ref={skill2ref}
+          as={motion.div}
+          variants={titleVariant}
+          initial="hidden"
+          animate={inViewSkill2 ? 'visible' : 'hidden'}
+        >
           <Heading>Tools</Heading>
           <SkillsContainer>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <GitIcon src={git} alt="Git logo" />
               Git
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <WebpackIcon src={webpack} alt="Webpack logo" />
               Webpack
             </Skill>
           </SkillsContainer>
         </Tools>
 
-        <BackEnd>
+        <BackEnd
+          ref={skill3ref}
+          as={motion.div}
+          variants={titleVariant}
+          initial="hidden"
+          animate={inViewSkill3 ? 'visible' : 'hidden'}
+        >
           <Heading>Back End</Heading>
           <SkillsContainer>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <NodejsIcon src={nodejs} alt="Node.js logo" />
               Node.js
             </Skill>
-            <Skill>
+            <Skill as={motion.ul} variants={iconVariant}>
               <FirebaseIcon src={firebase} alt="firebase logo" />
               Firebase
             </Skill>

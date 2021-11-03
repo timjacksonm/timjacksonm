@@ -5,6 +5,8 @@ import TopPeak from '../assets/peak1.svg';
 import BottomPeak from '../assets/peak2.svg';
 import sanityClient from '../client.js';
 import imageUrlBuilder from '@sanity/image-url';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import { FaArrowUp, FaArrowDown, FaPlay } from 'react-icons/fa';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -111,7 +113,7 @@ const LineBreak = styled.div`
   bottom: 0;
   width: 100%;
 `;
-const ShowContainer = styled.div`
+const ShowContainer = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,6 +123,7 @@ const ShowContainer = styled.div`
   color: #fff;
   font-family: MontserratExtraBold;
   font-weight: 600;
+  text-decoration: none;
   & svg path {
     fill: #fff;
   }
@@ -167,6 +170,38 @@ const Projects = () => {
   const [showAmountProjects, setshowAmountProjects] = useState(3);
   const [imageState, setImageState] = useState(null);
   const [playIcons, setPlayIcons] = useState(null);
+
+  const [projectsRef, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const titleVariant = {
+    visible: {
+      transition: {
+        type: 'spring',
+        delay: 1,
+        damping: 13,
+        stiffness: 50,
+        duration: 1,
+        when: 'beforeChildren',
+        staggerChildren: 1,
+      },
+    },
+  };
+  const iconVariant = {
+    hidden: {
+      x: '-100vw',
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+      },
+    },
+  };
 
   const changeImage = (e, index) => {
     if (e.type === 'click') {
@@ -215,7 +250,12 @@ const Projects = () => {
       .catch(console.error);
   }, []);
   return (
-    <Section>
+    <Section
+      as={motion.div}
+      variants={titleVariant}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+    >
       <img
         src={TopPeak}
         style={{ position: 'absolute', top: 0, width: '100%' }}
@@ -226,15 +266,19 @@ const Projects = () => {
         style={{ position: 'absolute', bottom: 0, width: '100%' }}
         alt="wave"
       />
-      <SectionTitle id="projects">Projects</SectionTitle>
+      <SectionTitle ref={projectsRef} id="projects">
+        Projects
+      </SectionTitle>
       {projects &&
         projects
           .slice(0, showAmountProjects)
           .map(({ title, liveUrl, repoUrl, summary, skills }, i) => (
             <ProjectContainer
-              id="asdf"
+              id={i === 3 ? '3' : i}
               key={i}
               onMouseLeave={(e) => changeImage(e, i)}
+              as={motion.div}
+              variants={iconVariant}
             >
               <PreviewContainer>
                 <ClickMe
@@ -268,10 +312,17 @@ const Projects = () => {
               <LineBreak />
             </ProjectContainer>
           ))}
-      <ShowContainer onClick={toggleProjectList}>
-        <p>{showMore ? 'Show Less' : 'Show All'}</p>
-        {showMore ? <FaArrowUp size="2em" /> : <FaArrowDown size="2em" />}
-      </ShowContainer>
+      {showMore ? (
+        <ShowContainer onClick={toggleProjectList} href="#3">
+          Show Less
+          <FaArrowUp size="2em" />
+        </ShowContainer>
+      ) : (
+        <ShowContainer onClick={toggleProjectList} href="#0">
+          Show All
+          <FaArrowDown size="2em" />
+        </ShowContainer>
+      )}
     </Section>
   );
 };
