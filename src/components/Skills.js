@@ -51,18 +51,21 @@ const FrontEnd = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
+  margin: 0.5em 0;
 `;
 const Tools = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+  margin: 0.5em 0;
 `;
 const BackEnd = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
+  margin: 0.5em 0;
 `;
 const Heading = styled.h5`
   margin: 0.5em;

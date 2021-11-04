@@ -41,7 +41,6 @@ const ProjectContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   color: #fff;
@@ -49,6 +48,9 @@ const ProjectContainer = styled.div`
     flex-direction: row;
     margin: 0 2em;
     max-height: 600px;
+  }
+  @media ${device.desktopL} {
+    justify-content: center;
   }
 `;
 const ProjectTitle = styled.h5`
@@ -177,8 +179,8 @@ const ClickMe = styled(FaPlay)`
 `;
 const Projects = () => {
   const [projects, setProjects] = useState(null);
+  const [projectsToShow, setProjectsToShow] = useState(null);
   const [showMore, setShowMore] = useState(false);
-  const [showAmountProjects, setshowAmountProjects] = useState(3);
   const [imageState, setImageState] = useState(null);
   const [playIcons, setPlayIcons] = useState(null);
 
@@ -187,7 +189,7 @@ const Projects = () => {
     threshold: 0.3,
   });
 
-  const titleVariant = {
+  const sectionVariant = {
     visible: {
       transition: {
         type: 'spring',
@@ -200,7 +202,7 @@ const Projects = () => {
       },
     },
   };
-  const iconVariant = {
+  const projectVariant = {
     hidden: {
       x: '-100vw',
       opacity: 0,
@@ -219,21 +221,16 @@ const Projects = () => {
       setPlayIcons({ ...playIcons, ...{ [index]: { state: false } } });
       setImageState({
         ...imageState,
-        ...{ [index]: { url: urlFor(projects[index].gifImage) } },
+        ...{ [index]: { url: urlFor(projectsToShow[index].gifImage) } },
       });
     }
     if (e.type === 'mouseleave') {
       setPlayIcons({ ...playIcons, ...{ [index]: { state: true } } });
       setImageState({
         ...imageState,
-        ...{ [index]: { url: urlFor(projects[index].mainImage) } },
+        ...{ [index]: { url: urlFor(projectsToShow[index].mainImage) } },
       });
     }
-  };
-
-  const toggleProjectList = () => {
-    setShowMore(!showMore);
-    setshowAmountProjects(showMore ? 3 : projects.length);
   };
 
   useEffect(() => {
@@ -250,20 +247,22 @@ const Projects = () => {
           gifImage
         }`
       )
-      .then((data) => {
-        const sortedProjects = data.sort((a, b) => a.position - b.position);
-        setPlayIcons(sortedProjects.map(() => ({ state: true })));
-        setImageState(
-          sortedProjects.map((data) => ({ url: urlFor(data.mainImage) }))
-        );
-        setProjects(sortedProjects);
-      })
+      .then((data) => setProjects(data.sort((a, b) => a.position - b.position)))
       .catch(console.error);
   }, []);
+
+  useEffect(() => {
+    if (projects) {
+      const firstThree = projects.slice(0, 3);
+      setProjectsToShow(showMore ? projects : firstThree);
+      setPlayIcons(projects.map(() => ({ state: true })));
+      setImageState(projects.map((data) => ({ url: urlFor(data.mainImage) })));
+    }
+  }, [showMore, projects]);
   return (
     <Section
       as={motion.div}
-      variants={titleVariant}
+      variants={sectionVariant}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
     >
@@ -280,16 +279,15 @@ const Projects = () => {
       <SectionTitle ref={projectsRef} id="projects">
         Projects
       </SectionTitle>
-      {projects &&
-        projects
-          .slice(0, showAmountProjects)
-          .map(({ title, liveUrl, repoUrl, summary, skills }, i) => (
+      {projectsToShow &&
+        projectsToShow.map(
+          ({ title, liveUrl, repoUrl, summary, skills }, i) => (
             <ProjectContainer
-              id={i === 3 ? '3' : i}
+              id={i}
               key={i}
               onMouseLeave={(e) => changeImage(e, i)}
               as={motion.div}
-              variants={iconVariant}
+              variants={projectVariant}
             >
               <PreviewContainer>
                 <ClickMe
@@ -317,14 +315,15 @@ const Projects = () => {
               </ProjectDetails>
               <LineBreak />
             </ProjectContainer>
-          ))}
+          )
+        )}
       {showMore ? (
-        <ShowContainer onClick={toggleProjectList} href="#3">
+        <ShowContainer onClick={() => setShowMore(!showMore)}>
           Show Less
           <FaArrowUp size="2em" />
         </ShowContainer>
       ) : (
-        <ShowContainer onClick={toggleProjectList} href="#0">
+        <ShowContainer onClick={() => setShowMore(!showMore)}>
           Show All
           <FaArrowDown size="2em" />
         </ShowContainer>
