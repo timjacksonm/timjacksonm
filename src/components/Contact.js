@@ -12,6 +12,8 @@ const Section = styled.div`
   font-size: clamp(1rem, 8vw, 3rem);
   font-family: CalibreBoldItalic;
   font-weight: 600;
+  min-height: 568px;
+  min-width: 280px;
 `;
 const ContactMeContent = styled.div`
   display: flex;
@@ -127,10 +129,28 @@ const Contact = () => {
         <FormContainer name="contact" method="POST">
           <input type="hidden" name="form-name" value="contact" />
           <InputRow>
-            <Name type="text" name="name" id="name" placeholder="Name" />
-            <Email type="email" name="email" id="email" placeholder="Email" />
+            <Name
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              required
+            />
+            <Email
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
           </InputRow>
-          <Message name="message" id="message" placeholder="Message" rows="7" />
+          <Message
+            name="message"
+            id="message"
+            placeholder="Message"
+            rows="7"
+            required
+          />
           <Submit type="submit" value="Send Message" />
         </FormContainer>
       </ContactMeContent>

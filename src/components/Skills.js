@@ -21,10 +21,11 @@ const Section = styled.div`
   align-items: center;
   font-family: MontserratExtraBoldItalic;
   font-size: clamp(1rem, 8vw, 3rem);
-  margin: 0 1em;
+  min-height: 568px;
+  min-width: 280px;
   @media ${device.tablet} {
-    min-height: 1024px;
     margin: 0 2em;
+    padding: 0;
   }
 `;
 const SkillsContent = styled.div`
@@ -33,8 +34,11 @@ const SkillsContent = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  padding: 2em 0;
+  padding: 1em 0;
   z-index: 1;
+  @media ${device.tablet} {
+    padding: 0;
+  }
 `;
 const SectionTitle = styled.h3`
   color: #f27d42;
@@ -47,21 +51,18 @@ const FrontEnd = styled.div`
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-width: 14rem;
 `;
 const Tools = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-width: 14rem;
 `;
 const BackEnd = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-width: 14rem;
 `;
 const Heading = styled.h5`
   margin: 0.5em;
@@ -75,6 +76,7 @@ const SkillsContainer = styled.ul`
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0;
+  margin: 0 1em;
   & svg {
     margin: 0.2em;
   }
@@ -83,6 +85,7 @@ const SkillsContainer = styled.ul`
   }
   @media ${device.tablet} {
     justify-content: unset;
+    margin: 0;
   }
 `;
 const Skill = styled.li`
@@ -213,35 +216,35 @@ const Skills = () => {
         >
           <Heading>Front End</Heading>
           <SkillsContainer>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <Html5Icon src={html5} alt="Html5 logo" />
               HTML5
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <Css3Icon src={css3} alt="Css3 logo" />
               CSS3
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <JavascriptIcon alt="Javascript logo" />
               Javascript
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <ReactIcon alt="React logo" />
               React & {''} <br></br> React-Native
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <StyledComponentIcon alt="Styled-Components logo" />
               Styled-Components
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <SassIcon alt="Sass logo" />
               SASS
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <TailwindIcon alt="TailwindCSS logo" />
               TailwindCSS
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <JestIcon alt="Jest logo" />
               Jest
             </Skill>

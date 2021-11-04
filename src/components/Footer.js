@@ -14,15 +14,12 @@ const FooterContent = styled.div`
   color: #fff;
   font-family: CalibreRegular;
   fontsize: clamp(1rem, 4vw, 1.25rem);
+  min-height: 90px;
+  min-width: 280px;
   & a {
     text-decoration: none;
   }
 `;
-// font-family: CalibreRegular;
-//     font-family: CalibreBoldItalic;
-//     font-family: MontserratBold;
-//     font-family: MontserratExtraBold;
-//     font-family: MontserratExtraBoldItalic;
 const Icon = styled(FaArrowUp)`
   fill: #fff;
   &:hover {

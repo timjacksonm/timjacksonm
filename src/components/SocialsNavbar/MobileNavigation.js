@@ -86,10 +86,10 @@ const MobileNavigation = () => {
 
   const containerVariant = {
     hidden: {
-      x: '25vh',
+      x: '100vw',
       opacity: 0,
       transition: {
-        duration: 1,
+        duration: 0.8,
       },
     },
     visible: {
@@ -97,17 +97,16 @@ const MobileNavigation = () => {
       opacity: 1,
       transition: {
         type: 'spring',
-        damping: 13,
-        stiffness: 50,
-        duration: 0.2,
+        damping: 20,
+        stiffness: 100,
         when: 'beforeChildren',
-        staggerChildren: 0.2,
+        staggerChildren: 0.05,
       },
     },
   };
   const iconVariant = {
     hidden: {
-      x: -10,
+      x: 0,
       opacity: 0,
     },
     visible: {

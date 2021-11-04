@@ -23,6 +23,8 @@ const Section = styled.div`
   font-family: CalibreRegular;
   font-size: clamp(1rem, 8vw, 3rem);
   padding: 10rem 0;
+  min-height: 568px;
+  min-width: 280px;
   @media ${device.laptop} {
     padding: 15rem 0;
   }
@@ -32,7 +34,7 @@ const Section = styled.div`
 `;
 const SectionTitle = styled.h3`
   color: #fff;
-  margin-top: 0;
+  margin: 1em 0;
   font-family: CalibreBoldItalic;
 `;
 const ProjectContainer = styled.div`
@@ -46,7 +48,7 @@ const ProjectContainer = styled.div`
   @media ${device.laptopL} {
     flex-direction: row;
     margin: 0 2em;
-    justify-content: unset;
+    max-height: 600px;
   }
 `;
 const ProjectTitle = styled.h5`
@@ -124,6 +126,7 @@ const ShowContainer = styled.a`
   font-family: MontserratExtraBold;
   font-weight: 600;
   text-decoration: none;
+  margin: 1em;
   & svg path {
     fill: #fff;
   }
@@ -135,20 +138,28 @@ const ShowContainer = styled.a`
   }
 `;
 const PreviewContainer = styled.div`
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  padding-bottom: 56.25%;
   position: relative;
   margin: 1em 0;
-  flex: 1;
-  @media ${device.tablet} {
-    max-width: 665px;
-    max-height: 466px;
+  @media ${device.laptop} {
+    margin: 0;
   }
 `;
 const Preview = styled.img`
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
   width: 100%;
-  max-height: 50vh;
-  @media ${device.tablet} {
-    max-height: unset;
-  }
+  height: 100%;
+  max-width: 665px;
+  max-height: 466px;
 `;
 const ClickMe = styled(FaPlay)`
   position: absolute;
@@ -158,7 +169,7 @@ const ClickMe = styled(FaPlay)`
   top: 0;
   bottom: 0;
   text-align: center;
-  display: ${({ display }) => display}
+  display: ${({ display }) => display};
   z-index: 50;
   &:hover {
     fill: #55bdca;
@@ -285,12 +296,7 @@ const Projects = () => {
                   onClick={(e) => changeImage(e, i)}
                   display={playIcons[i].state ? 'block' : 'none'}
                 />
-                <Preview
-                  src={imageState[i].url}
-                  alt={`preview of ${title}`}
-                  width="665px"
-                  height="466px"
-                />
+                <Preview src={imageState[i].url} alt={`preview of ${title}`} />
               </PreviewContainer>
               <ProjectDetails>
                 <ProjectTitle>{title}</ProjectTitle>

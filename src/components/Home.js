@@ -14,6 +14,8 @@ height 100vh;
 font-family: CalibreBoldItalic;
 font-size: clamp(1rem, 8vw, 3rem);
 color: #272341;
+min-height: 568px;
+min-width: 280px;
 @media ${device.laptop} {
   align-items: unset;
   margin: 0;

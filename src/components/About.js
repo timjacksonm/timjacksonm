@@ -15,6 +15,8 @@ const Section = styled.div`
   color: #fff;
   font-size: clamp(1rem, 8vw, 3rem);
   font-family: CalibreBoldItalic;
+  min-height: 568px;
+  min-width: 280px;
   @media ${device.tablet} {
     height: 1024px;
   }
