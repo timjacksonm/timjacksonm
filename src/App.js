@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import SocialsNavbar from './components/SocialsNavbar/SocialsNavbar';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -46,7 +45,6 @@ const GlobalStyles = styled.div`
 const App = () => {
   return (
     <GlobalStyles>
-      <SocialsNavbar />
       <Home />
       <About />
       <Skills />

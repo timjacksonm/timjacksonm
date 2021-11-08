@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
-import IconsAboutMe from './IconsAboutMe/index';
 import { motion } from 'framer-motion';
+import Socials from './Socials';
+import BackgroundImage from '../assets/backgroundimage.svg';
 
 const Section = styled.div`
 position: relative;
@@ -16,6 +17,7 @@ font-size: clamp(1rem, 8vw, 3rem);
 color: #272341;
 min-height: 568px;
 min-width: 280px;
+overflow: hidden;
 @media ${device.laptop} {
   align-items: unset;
   margin: 0;
@@ -23,6 +25,12 @@ min-width: 280px;
 @media ${device.desktop} {
   font-size: clamp(1rem, 8vw, 4rem);
 }
+`;
+const Background = styled.img`
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  minwidth: 280px;
 `;
 const HomeContent = styled.div`
   margin: 0 2em;
@@ -71,9 +79,10 @@ const PageLink = styled.a`
   border: 2px solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
   border-image-slice: 1;
+  background: #fff;
   cursor: pointer;
   background-size: 200% 100%;
-  background-image: linear-gradient(to right, transparent 50%, #55bdca 50%);
+  background-image: linear-gradient(to right, #fff 50%, #55bdca 50%);
   transition: background-position 0.5s;
   z-index: 1;
   &:hover {
@@ -117,6 +126,8 @@ const Home = () => {
   };
   return (
     <Section id="home">
+      <Background src={BackgroundImage} alt="Wavy blue green background" />
+      <Socials />
       <HomeContent
         as={motion.div}
         variants={titleVariant}
@@ -137,7 +148,6 @@ const Home = () => {
           <PageLink href="/#contact">Contact</PageLink>
         </PageNavigation>
       </HomeContent>
-      <IconsAboutMe />
     </Section>
   );
 };

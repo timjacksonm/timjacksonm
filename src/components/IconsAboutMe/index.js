@@ -30,34 +30,34 @@ const IconsAboutMe = () => {
   const [iconArray] = useState(
     shuffle([
       {
-        src: <FaCat data-tip="My one-eyed cat Zander" />,
+        src: <FaCat data-tip="My one-eyed cat Zander" size="5vh" />,
       },
       {
-        src: <GiCoffeeMug data-tip="Cup of morning wisdom" />,
+        src: <GiCoffeeMug data-tip="Cup of morning wisdom" size="5vh" />,
       },
-      { src: <FaRocket data-tip="Space flight" /> },
+      { src: <FaRocket data-tip="Space flight" size="5vh" /> },
       {
-        src: <IoIosPeople data-tip="Immediate family" />,
+        src: <IoIosPeople data-tip="Immediate family" size="5vh" />,
       },
-      { src: <FaHome data-tip="Home owner" /> },
+      { src: <FaHome data-tip="Home owner" size="5vh" /> },
       {
-        src: <IoRestaurant data-tip="Summer grilling" />,
+        src: <IoRestaurant data-tip="Summer grilling" size="5vh" />,
       },
-      { src: <FaCode data-tip="Programming" /> },
-      { src: <GiDiplodocus data-tip="Dinosaurs" /> },
-      { src: <SiRetroarch data-tip="Retro gaming" /> },
+      { src: <FaCode data-tip="Programming" size="5vh" /> },
+      { src: <GiDiplodocus data-tip="Dinosaurs" size="5vh" /> },
+      { src: <SiRetroarch data-tip="Retro gaming" size="5vh" /> },
       {
-        src: <GiRetroController data-tip="Online gaming" />,
+        src: <GiRetroController data-tip="Online gaming" size="5vh" />,
       },
-      { src: <GiSittingDog data-tip="My dog Bandit" /> },
-      { src: <FaSnowboarding data-tip="Snowboarding" /> },
+      { src: <GiSittingDog data-tip="My dog Bandit" size="5vh" /> },
+      { src: <FaSnowboarding data-tip="Snowboarding" size="5vh" /> },
       {
-        src: <FaTruckPickup data-tip="1989 Toyota pickup" />,
+        src: <FaTruckPickup data-tip="1989 Toyota pickup" size="5vh" />,
       },
-      { src: <ImWoman data-tip="My wife Brooke" /> },
-      { src: <GiDeer data-tip="Nature" /> },
+      { src: <ImWoman data-tip="My wife Brooke" size="5vh" /> },
+      { src: <GiDeer data-tip="Nature" size="5vh" /> },
       {
-        src: <GiDeerTrack data-tip="Hunting" />,
+        src: <GiDeerTrack data-tip="Hunting" size="5vh" />,
       },
     ])
   );
