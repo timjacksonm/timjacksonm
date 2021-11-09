@@ -27,6 +27,7 @@ const Link = styled.a`
   align-items: center;
   font-size: clamp(1rem, 4vw, 3rem);
   width: 5vw;
+  max-height: 55px;
   color: #000;
   & svg {
     flex: 1;
@@ -38,7 +39,11 @@ const Link = styled.a`
       fill: #55bdca;
     }
   }
+  @media ${device.tablet} {
+    max-height: 90px;
+  }
   @media ${device.laptop} {
+    max-height: 120px;
     width: 2.4vw;
     font-size: clamp(1rem, 1vw, 3rem);
   }

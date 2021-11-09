@@ -53,12 +53,14 @@ const About = () => {
       <Title id="about">About Me</Title>
       <AboutMeContent>
         <Summary>
-          My name is Tim Jackson. I recently got married on Sept 25th, 2021 to
-          my wife Brooke. I am currently working at home with my two pets Zander
-          (bossy-cat) and Bandit (dog). <br />
+          I recently got married on Sept 25th, 2021 to my wife Brooke. I am
+          currently working at home with my two pets Zander (bossy-cat) and
+          Bandit (dog). Each icon surrounding represents a hobby or something
+          that I treasure.
+          <br />
           <br /> My working career involves a lot of customer service mostly
           within the insurance realm of medical and dental. I am friendly and
-          easy to work with - I guarantee your team and clients will love me!
+          easy to work with. I guarantee your team and clients will love me!
           <br />
           <br />I spend most of my free time working on personal projects with a
           lineup of interesting applications I want to create. I am a

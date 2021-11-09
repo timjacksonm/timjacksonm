@@ -5,12 +5,12 @@ import { device } from '../globalHelpers';
 import { useInView } from 'react-intersection-observer';
 import { FaJsSquare, FaReact, FaSass } from 'react-icons/fa';
 import { SiStyledcomponents, SiTailwindcss, SiJest } from 'react-icons/si';
-import css3 from '../assets/css3.png';
-import firebase from '../assets/firebase.png';
-import git from '../assets/git.png';
-import html5 from '../assets/html5.png';
+import css3 from '../assets/css3.webp';
+import firebase from '../assets/firebase.webp';
+import git from '../assets/git.webp';
+import html5 from '../assets/html5.webp';
 import nodejs from '../assets/nodejs.svg';
-import webpack from '../assets/webpack.png';
+import webpack from '../assets/webpack.webp';
 
 const Section = styled.div`
   min-height: 640px;
