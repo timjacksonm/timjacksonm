@@ -5,7 +5,9 @@ import TopPeak from '../assets/peak1.svg';
 import BottomPeak from '../assets/peak2.svg';
 import sanityClient from '../client.js';
 import imageUrlBuilder from '@sanity/image-url';
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { useInView } from 'react-intersection-observer';
+import { AnimatePresence, motion } from 'framer-motion';
+import { FaArrowUp, FaArrowDown, FaPlay } from 'react-icons/fa';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -21,6 +23,8 @@ const Section = styled.div`
   font-family: CalibreRegular;
   font-size: clamp(1rem, 8vw, 3rem);
   padding: 10rem 0;
+  min-height: 568px;
+  min-width: 280px;
   @media ${device.laptop} {
     padding: 15rem 0;
   }
@@ -30,27 +34,33 @@ const Section = styled.div`
 `;
 const SectionTitle = styled.h3`
   color: #fff;
-  margin-top: 0;
+  margin: 1em 0;
   font-family: CalibreBoldItalic;
 `;
 const ProjectContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
   color: #fff;
+  padding: 1em 0;
   @media ${device.laptopL} {
     flex-direction: row;
     margin: 0 2em;
-    justify-content: unset;
+    max-height: 600px;
+  }
+  @media ${device.desktopL} {
+    justify-content: center;
   }
 `;
 const ProjectTitle = styled.h5`
-  margin: 0;
+  margin: 0.5em 0;
   color: #f27d42;
   font-family: CalibreBoldItalic;
+  @media ${device.desktop} {
+    margin: 0;
+  }
 `;
 const SkillsContainer = styled.ul`
   display: flex;
@@ -58,7 +68,7 @@ const SkillsContainer = styled.ul`
   font-size: 16px;
   padding: 0;
   font-family: Montserrat, sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 `;
 const Skill = styled.li`
   list-style: none;
@@ -72,15 +82,6 @@ const Summary = styled.p`
 const ProjectDetails = styled.div`
   margin: 0 1em;
   max-width: 700px;
-`;
-const Preview = styled.img`
-  margin: 1em 0;
-  height: 50vh;
-  width: 100%;
-  max-height: 500px;
-  @media ${device.tablet} {
-    max-width: 700px;
-  }
 `;
 const Buttons = styled.div`
   display: flex;
@@ -120,7 +121,7 @@ const LineBreak = styled.div`
   bottom: 0;
   width: 100%;
 `;
-const ShowContainer = styled.div`
+const ShowContainer = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,6 +131,8 @@ const ShowContainer = styled.div`
   color: #fff;
   font-family: MontserratExtraBold;
   font-weight: 600;
+  text-decoration: none;
+  margin: 1em;
   & svg path {
     fill: #fff;
   }
@@ -140,18 +143,72 @@ const ShowContainer = styled.div`
     }
   }
 `;
+const PreviewContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  max-width: 800px;
+  position: relative;
+`;
+const Preview = styled.img`
+  aspect-ratio: 4/3;
+  width: 100%;
+  height: 100%;
+  max-width: 665px;
+  max-height: 466px;
+`;
+const PlayBtn = styled(FaPlay)`
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  display: ${({ display }) => display};
+  z-index: 50;
+  &:hover {
+    fill: #55bdca;
+  }
+`;
 const Projects = () => {
   const [projects, setProjects] = useState(null);
+  const [projectsToShow, setProjectsToShow] = useState(null);
   const [showMore, setShowMore] = useState(false);
-  const [showAmountProjects, setshowAmountProjects] = useState(3);
+  const [imageState, setImageState] = useState(null);
+  const [playIcons, setPlayIcons] = useState(null);
 
-  const changeImage = (e, gifImage) => {
-    e.target.setAttribute('src', urlFor(gifImage));
+  const [projectsRef, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  const motionProps = {
+    initial: { x: '-100vw' },
+    animate: { x: 0 },
+    exit: { x: '-100vw' },
+    transition: {
+      type: 'spring',
+      damping: 13,
+      stiffness: 50,
+      duration: 1.5,
+    },
   };
 
-  const toggleProjectList = () => {
-    setShowMore(!showMore);
-    setshowAmountProjects(showMore ? 3 : projects.length);
+  const changeImage = (e, index) => {
+    if (e.type === 'click') {
+      setPlayIcons({ ...playIcons, ...{ [index]: { state: false } } });
+      setImageState({
+        ...imageState,
+        ...{ [index]: { url: urlFor(projectsToShow[index].gifImage) } },
+      });
+    }
+    if (e.type === 'mouseleave') {
+      setPlayIcons({ ...playIcons, ...{ [index]: { state: true } } });
+      setImageState({
+        ...imageState,
+        ...{ [index]: { url: urlFor(projectsToShow[index].mainImage) } },
+      });
+    }
   };
 
   useEffect(() => {
@@ -171,8 +228,17 @@ const Projects = () => {
       .then((data) => setProjects(data.sort((a, b) => a.position - b.position)))
       .catch(console.error);
   }, []);
+
+  useEffect(() => {
+    if (projects) {
+      const firstThree = projects.slice(0, 3);
+      setProjectsToShow(showMore ? projects : firstThree);
+      setPlayIcons(projects.map(() => ({ state: true })));
+      setImageState(projects.map((data) => ({ url: urlFor(data.mainImage) })));
+    }
+  }, [showMore, projects]);
   return (
-    <Section>
+    <Section ref={projectsRef}>
       <img
         src={TopPeak}
         style={{ position: 'absolute', top: 0, width: '100%' }}
@@ -184,21 +250,28 @@ const Projects = () => {
         alt="wave"
       />
       <SectionTitle id="projects">Projects</SectionTitle>
-      {projects &&
-        projects
-          .slice(0, showAmountProjects)
-          .map(
-            (
-              { title, liveUrl, repoUrl, summary, skills, mainImage, gifImage },
-              i
-            ) => (
-              <ProjectContainer key={i}>
-                <Preview
-                  src={urlFor(mainImage)}
-                  onMouseEnter={(e) => changeImage(e, gifImage)}
-                  onMouseLeave={(e) => changeImage(e, mainImage)}
-                  alt={`preview of ${title}`}
-                />
+      <AnimatePresence>
+        {projectsToShow &&
+          inView &&
+          projectsToShow.map(
+            ({ title, liveUrl, repoUrl, summary, skills }, i) => (
+              <ProjectContainer
+                id={i}
+                key={i}
+                onMouseLeave={(e) => changeImage(e, i)}
+                as={motion.div}
+                {...motionProps}
+              >
+                <PreviewContainer>
+                  <PlayBtn
+                    onClick={(e) => changeImage(e, i)}
+                    display={playIcons[i].state ? 'block' : 'none'}
+                  />
+                  <Preview
+                    src={imageState[i].url}
+                    alt={`preview of ${title}`}
+                  />
+                </PreviewContainer>
                 <ProjectDetails>
                   <ProjectTitle>{title}</ProjectTitle>
                   <SkillsContainer>
@@ -208,18 +281,30 @@ const Projects = () => {
                   </SkillsContainer>
                   <Summary>{summary}</Summary>
                   <Buttons>
-                    <Link href={liveUrl}>Live Demo</Link>
-                    <Link href={repoUrl}>Github</Link>
+                    <Link target="_blank" rel="noopener" href={liveUrl}>
+                      Live Demo
+                    </Link>
+                    <Link target="_blank" rel="noopener" href={repoUrl}>
+                      Github
+                    </Link>
                   </Buttons>
                 </ProjectDetails>
                 <LineBreak />
               </ProjectContainer>
             )
           )}
-      <ShowContainer onClick={toggleProjectList}>
-        <p>{showMore ? 'Show Less' : 'Show All'}</p>
-        {showMore ? <FaArrowUp size="2em" /> : <FaArrowDown size="2em" />}
-      </ShowContainer>
+      </AnimatePresence>
+      {showMore ? (
+        <ShowContainer onClick={() => setShowMore(!showMore)} href="#2">
+          Show Less
+          <FaArrowUp size="2em" />
+        </ShowContainer>
+      ) : (
+        <ShowContainer onClick={() => setShowMore(!showMore)} href="#0">
+          Show All
+          <FaArrowDown size="2em" />
+        </ShowContainer>
+      )}
     </Section>
   );
 };

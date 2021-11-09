@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
-import IconsAboutMe from './IconsAboutMe/index';
 import { motion } from 'framer-motion';
+import Socials from './Socials';
+import BackgroundImage from '../assets/backgroundimage.svg';
 
 const Section = styled.div`
 position: relative;
@@ -14,6 +15,9 @@ height 100vh;
 font-family: CalibreBoldItalic;
 font-size: clamp(1rem, 8vw, 3rem);
 color: #272341;
+min-height: 760px;
+min-width: 280px;
+overflow: hidden;
 @media ${device.laptop} {
   align-items: unset;
   margin: 0;
@@ -21,6 +25,12 @@ color: #272341;
 @media ${device.desktop} {
   font-size: clamp(1rem, 8vw, 4rem);
 }
+`;
+const Background = styled.img`
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  min-width: 280px;
 `;
 const HomeContent = styled.div`
   margin: 0 2em;
@@ -69,21 +79,33 @@ const PageLink = styled.a`
   border: 2px solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
   border-image-slice: 1;
+  border-bottom: none;
+  background: #fff;
   cursor: pointer;
   background-size: 200% 100%;
-  background-image: linear-gradient(to right, transparent 50%, #55bdca 50%);
+  background-image: linear-gradient(to right, #fff 50%, #55bdca 50%);
   transition: background-position 0.5s;
   z-index: 1;
+  &:last-child {
+    border-bottom: 2px solid;
+  }
   &:hover {
     color: #fff;
     background-position: -100% 0;
+  }
+  @media ${device.laptop} {
+    border-bottom: 2px solid;
+    border-right: none;
+    &:last-child {
+      border-right: 2px solid;
+    }
   }
 `;
 
 const Home = () => {
   const titleVariant = {
     hidden: {
-      x: '-40px',
+      x: '-100px',
       opacity: 0,
     },
     visible: {
@@ -100,7 +122,7 @@ const Home = () => {
   };
   const taglineVariant = {
     hidden: {
-      x: '-30px',
+      x: '-100px',
       opacity: 0,
     },
     visible: {
@@ -115,6 +137,8 @@ const Home = () => {
   };
   return (
     <Section id="home">
+      <Background src={BackgroundImage} alt="Wavy blue green background" />
+      <Socials />
       <HomeContent
         as={motion.div}
         variants={titleVariant}
@@ -135,7 +159,6 @@ const Home = () => {
           <PageLink href="/#contact">Contact</PageLink>
         </PageNavigation>
       </HomeContent>
-      <IconsAboutMe />
     </Section>
   );
 };

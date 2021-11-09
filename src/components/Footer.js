@@ -14,20 +14,25 @@ const FooterContent = styled.div`
   color: #fff;
   font-family: CalibreRegular;
   fontsize: clamp(1rem, 4vw, 1.25rem);
+  min-height: 90px;
+  min-width: 280px;
   & a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
     text-decoration: none;
   }
+  & a:hover {
+    color: #55bdca;
+    & svg path {
+      fill: #55bdca;
+    }
+  }
 `;
-// font-family: CalibreRegular;
-//     font-family: CalibreBoldItalic;
-//     font-family: MontserratBold;
-//     font-family: MontserratExtraBold;
-//     font-family: MontserratExtraBoldItalic;
 const Icon = styled(FaArrowUp)`
   fill: #fff;
-  &:hover {
-    fill: #55bdca;
-  }
 `;
 const Text = styled.p`
   margin: 0.5em;
@@ -39,6 +44,7 @@ const Footer = () => {
     <FooterContent>
       <a href="/#home">
         <Icon size="2rem" />
+        Back to top
       </a>
       <Text>Designed & Built by Timothy Jackson</Text>
     </FooterContent>

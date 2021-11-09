@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const Top = styled.div`
   display: flex;
   justify-content: space-evenly;
-  padding: 1em 0;
+  padding: 0;
+  z-index: 50;
+  overflow: hidden;
   & div {
     display: flex;
     & svg {
@@ -26,14 +28,14 @@ const Top = styled.div`
   & div:nth-child(3n - 1) {
     & svg {
       & path {
-        fill: #55bdca;
+        fill: #fff;
       }
     }
   }
   & div:nth-child(3n - 0) {
     & svg {
       & path {
-        fill: #022949;
+        fill: #96ffff;
       }
     }
   }
@@ -42,7 +44,9 @@ const Bottom = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
-  padding: 1em 0;
+  padding: 0;
+  z-index: 50;
+  overflow: hidden;
   & div {
     display: flex;
     & svg {
@@ -57,7 +61,7 @@ const Bottom = styled.div`
   & div:nth-child(3n - 2) {
     & svg {
       & path {
-        fill: #022949;
+        fill: #96ffff;
       }
     }
   }
@@ -71,7 +75,7 @@ const Bottom = styled.div`
   & div:nth-child(3n - 0) {
     & svg {
       & path {
-        fill: #55bdca;
+        fill: #fff;
       }
     }
   }
