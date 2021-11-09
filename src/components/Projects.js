@@ -6,7 +6,7 @@ import BottomPeak from '../assets/peak2.svg';
 import sanityClient from '../client.js';
 import imageUrlBuilder from '@sanity/image-url';
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { FaArrowUp, FaArrowDown, FaPlay } from 'react-icons/fa';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -44,6 +44,7 @@ const ProjectContainer = styled.div`
   align-items: center;
   width: 100%;
   color: #fff;
+  padding: 1em 0;
   @media ${device.laptopL} {
     flex-direction: row;
     margin: 0 2em;
@@ -54,9 +55,12 @@ const ProjectContainer = styled.div`
   }
 `;
 const ProjectTitle = styled.h5`
-  margin: 0;
+  margin: 0.5em 0;
   color: #f27d42;
   font-family: CalibreBoldItalic;
+  @media ${device.desktop} {
+    margin: 0;
+  }
 `;
 const SkillsContainer = styled.ul`
   display: flex;
@@ -140,30 +144,20 @@ const ShowContainer = styled.a`
   }
 `;
 const PreviewContainer = styled.div`
-  content: '';
-  display: block;
-  width: 100%;
-  max-width: 700px;
-  padding-bottom: 56.25%;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  max-width: 800px;
   position: relative;
-  margin: 1em 0;
-  @media ${device.laptop} {
-    margin: 0;
-  }
 `;
 const Preview = styled.img`
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
+  aspect-ratio: 4/3;
   width: 100%;
   height: 100%;
   max-width: 665px;
   max-height: 466px;
 `;
-const ClickMe = styled(FaPlay)`
+const PlayBtn = styled(FaPlay)`
   position: absolute;
   margin: auto;
   left: 0;
@@ -186,33 +180,17 @@ const Projects = () => {
 
   const [projectsRef, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.5,
   });
-
-  const sectionVariant = {
-    visible: {
-      transition: {
-        type: 'spring',
-        delay: 1,
-        damping: 13,
-        stiffness: 50,
-        duration: 1,
-        when: 'beforeChildren',
-        staggerChildren: 1,
-      },
-    },
-  };
-  const projectVariant = {
-    hidden: {
-      x: '-100vw',
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-      },
+  const motionProps = {
+    initial: { x: '-100vw' },
+    animate: { x: 0 },
+    exit: { x: '-100vw' },
+    transition: {
+      type: 'spring',
+      damping: 13,
+      stiffness: 50,
+      duration: 1.5,
     },
   };
 
@@ -260,12 +238,7 @@ const Projects = () => {
     }
   }, [showMore, projects]);
   return (
-    <Section
-      as={motion.div}
-      variants={sectionVariant}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-    >
+    <Section ref={projectsRef}>
       <img
         src={TopPeak}
         style={{ position: 'absolute', top: 0, width: '100%' }}
@@ -276,54 +249,58 @@ const Projects = () => {
         style={{ position: 'absolute', bottom: 0, width: '100%' }}
         alt="wave"
       />
-      <SectionTitle ref={projectsRef} id="projects">
-        Projects
-      </SectionTitle>
-      {projectsToShow &&
-        projectsToShow.map(
-          ({ title, liveUrl, repoUrl, summary, skills }, i) => (
-            <ProjectContainer
-              id={i}
-              key={i}
-              onMouseLeave={(e) => changeImage(e, i)}
-              as={motion.div}
-              variants={projectVariant}
-            >
-              <PreviewContainer>
-                <ClickMe
-                  onClick={(e) => changeImage(e, i)}
-                  display={playIcons[i].state ? 'block' : 'none'}
-                />
-                <Preview src={imageState[i].url} alt={`preview of ${title}`} />
-              </PreviewContainer>
-              <ProjectDetails>
-                <ProjectTitle>{title}</ProjectTitle>
-                <SkillsContainer>
-                  {skills.map((skill, i) => (
-                    <Skill key={i}>{skill}</Skill>
-                  ))}
-                </SkillsContainer>
-                <Summary>{summary}</Summary>
-                <Buttons>
-                  <Link target="_blank" rel="noopener" href={liveUrl}>
-                    Live Demo
-                  </Link>
-                  <Link target="_blank" rel="noopener" href={repoUrl}>
-                    Github
-                  </Link>
-                </Buttons>
-              </ProjectDetails>
-              <LineBreak />
-            </ProjectContainer>
-          )
-        )}
+      <SectionTitle id="projects">Projects</SectionTitle>
+      <AnimatePresence>
+        {projectsToShow &&
+          inView &&
+          projectsToShow.map(
+            ({ title, liveUrl, repoUrl, summary, skills }, i) => (
+              <ProjectContainer
+                id={i}
+                key={i}
+                onMouseLeave={(e) => changeImage(e, i)}
+                as={motion.div}
+                {...motionProps}
+              >
+                <PreviewContainer>
+                  <PlayBtn
+                    onClick={(e) => changeImage(e, i)}
+                    display={playIcons[i].state ? 'block' : 'none'}
+                  />
+                  <Preview
+                    src={imageState[i].url}
+                    alt={`preview of ${title}`}
+                  />
+                </PreviewContainer>
+                <ProjectDetails>
+                  <ProjectTitle>{title}</ProjectTitle>
+                  <SkillsContainer>
+                    {skills.map((skill, i) => (
+                      <Skill key={i}>{skill}</Skill>
+                    ))}
+                  </SkillsContainer>
+                  <Summary>{summary}</Summary>
+                  <Buttons>
+                    <Link target="_blank" rel="noopener" href={liveUrl}>
+                      Live Demo
+                    </Link>
+                    <Link target="_blank" rel="noopener" href={repoUrl}>
+                      Github
+                    </Link>
+                  </Buttons>
+                </ProjectDetails>
+                <LineBreak />
+              </ProjectContainer>
+            )
+          )}
+      </AnimatePresence>
       {showMore ? (
-        <ShowContainer onClick={() => setShowMore(!showMore)}>
+        <ShowContainer onClick={() => setShowMore(!showMore)} href="#2">
           Show Less
           <FaArrowUp size="2em" />
         </ShowContainer>
       ) : (
-        <ShowContainer onClick={() => setShowMore(!showMore)}>
+        <ShowContainer onClick={() => setShowMore(!showMore)} href="#0">
           Show All
           <FaArrowDown size="2em" />
         </ShowContainer>

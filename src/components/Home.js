@@ -15,7 +15,7 @@ height 100vh;
 font-family: CalibreBoldItalic;
 font-size: clamp(1rem, 8vw, 3rem);
 color: #272341;
-min-height: 568px;
+min-height: 760px;
 min-width: 280px;
 overflow: hidden;
 @media ${device.laptop} {
@@ -30,7 +30,7 @@ const Background = styled.img`
   position: absolute;
   bottom: 0;
   width: 100vw;
-  minwidth: 280px;
+  min-width: 280px;
 `;
 const HomeContent = styled.div`
   margin: 0 2em;

@@ -6,6 +6,7 @@ const Top = styled.div`
   justify-content: space-evenly;
   padding: 0;
   z-index: 50;
+  overflow: hidden;
   & div {
     display: flex;
     & svg {
@@ -45,6 +46,7 @@ const Bottom = styled.div`
   align-items: flex-end;
   padding: 0;
   z-index: 50;
+  overflow: hidden;
   & div {
     display: flex;
     & svg {
