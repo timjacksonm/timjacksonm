@@ -65,10 +65,6 @@ const PageNavigation = styled.div`
   text-align: center;
   margin: 1em auto;
   font-family: MontserratBold;
-  & a:last-child {
-    border-image: linear-gradient(135deg, #02aab0, #00cdac);
-    border-image-slice: 1;
-  }
   @media ${device.laptop} {
     flex-direction: row;
     margin: 0;
@@ -83,15 +79,26 @@ const PageLink = styled.a`
   border: 2px solid;
   border-image: linear-gradient(135deg, #02aab0, #00cdac);
   border-image-slice: 1;
+  border-bottom: none;
   background: #fff;
   cursor: pointer;
   background-size: 200% 100%;
   background-image: linear-gradient(to right, #fff 50%, #55bdca 50%);
   transition: background-position 0.5s;
   z-index: 1;
+  &:last-child {
+    border-bottom: 2px solid;
+  }
   &:hover {
     color: #fff;
     background-position: -100% 0;
+  }
+  @media ${device.laptop} {
+    border-bottom: 2px solid;
+    border-right: none;
+    &:last-child {
+      border-right: 2px solid;
+    }
   }
 `;
 

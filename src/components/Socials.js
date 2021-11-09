@@ -12,6 +12,8 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
   min-height: 40px;
+  font-family: CalibreRegular;
+  font-weight: 600;
   @media ${device.laptop} {
     width: 20vw;
     right: 5%;
@@ -29,6 +31,7 @@ const Link = styled.a`
   & svg {
     flex: 1;
     width: 100%;
+    padding: 0.5em;
   }
   &:hover {
     & svg path {
@@ -50,7 +53,7 @@ const Socials = () => {
         href="https://www.linkedin.com/in/timjacksonm/"
       >
         <FaLinkedin size="1em" color="#0e76a8" />
-        LinkedIn
+        Linkedin
       </Link>
       <Link
         target="_blank"
