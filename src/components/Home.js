@@ -31,6 +31,7 @@ const Background = styled.img`
   bottom: 0;
   width: 100vw;
   min-width: 280px;
+  z-index: -1;
 `;
 const HomeContent = styled.div`
   margin: 0 2em;
