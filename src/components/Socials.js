@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as GithubIcon } from '../assets/github-icon.svg';
 import { ReactComponent as TwitterIcon } from '../assets/twitter.svg';
-import { FaLinkedin, FaFilePdf, FaBars, FaTimes } from 'react-icons/fa';
+import { FaLinkedin, FaFilePdf } from 'react-icons/fa';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
 

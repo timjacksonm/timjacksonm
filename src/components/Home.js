@@ -65,6 +65,10 @@ const PageNavigation = styled.div`
   text-align: center;
   margin: 1em auto;
   font-family: MontserratBold;
+  & a:last-child {
+    border-image: linear-gradient(135deg, #02aab0, #00cdac);
+    border-image-slice: 1;
+  }
   @media ${device.laptop} {
     flex-direction: row;
     margin: 0;

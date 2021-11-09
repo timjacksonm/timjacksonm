@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../globalHelpers';
-import TopWave from '../assets/wave1.svg';
 import BottomWave from '../assets/wave2.svg';
 import IconsAboutMe from './IconsAboutMe/index';
 
@@ -46,11 +45,6 @@ const Summary = styled.p`
 const About = () => {
   return (
     <Section>
-      {/* <img
-        src={TopWave}
-        style={{ position: 'absolute', top: 0, width: '100%' }}
-        alt="wave"
-      /> */}
       <img
         src={BottomWave}
         style={{ position: 'absolute', bottom: 0, width: '100%' }}
