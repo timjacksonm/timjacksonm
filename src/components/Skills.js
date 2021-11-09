@@ -263,11 +263,11 @@ const Skills = () => {
         >
           <Heading>Tools</Heading>
           <SkillsContainer>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <GitIcon src={git} alt="Git logo" />
               Git
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <WebpackIcon src={webpack} alt="Webpack logo" />
               Webpack
             </Skill>
@@ -283,11 +283,11 @@ const Skills = () => {
         >
           <Heading>Back End</Heading>
           <SkillsContainer>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <NodejsIcon src={nodejs} alt="Node.js logo" />
               Node.js
             </Skill>
-            <Skill as={motion.ul} variants={iconVariant}>
+            <Skill as={motion.li} variants={iconVariant}>
               <FirebaseIcon src={firebase} alt="firebase logo" />
               Firebase
             </Skill>
