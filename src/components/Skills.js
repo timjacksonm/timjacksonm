@@ -4,7 +4,13 @@ import { motion } from 'framer-motion';
 import { device } from '../globalHelpers';
 import { useInView } from 'react-intersection-observer';
 import { FaJsSquare, FaReact, FaSass } from 'react-icons/fa';
-import { SiStyledcomponents, SiTailwindcss, SiJest } from 'react-icons/si';
+import {
+  SiStyledcomponents,
+  SiTailwindcss,
+  SiJest,
+  SiNodedotjs,
+  SiMongodb,
+} from 'react-icons/si';
 import css3 from '../assets/css3.webp';
 import firebase from '../assets/firebase.webp';
 import git from '../assets/git.webp';
@@ -162,6 +168,18 @@ const FirebaseIcon = styled.img`
   width: 36px;
   height: 48px;
 `;
+const ExpressIcon = styled(SiNodedotjs)`
+  fill: #68a063;
+  width: 25vw;
+  min-height: 48px;
+  min-width: 48px;
+`;
+const MongodbIcon = styled(SiMongodb)`
+  fill: #589636;
+  width: 25vw;
+  min-height: 48px;
+  min-width: 48px;
+`;
 
 const Skills = () => {
   const [skill1ref, inViewSkill1] = useInView({
@@ -191,7 +209,7 @@ const Skills = () => {
         stiffness: 50,
         duration: 1,
         when: 'beforeChildren',
-        staggerChildren: 0.5,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -290,6 +308,14 @@ const Skills = () => {
             <Skill as={motion.li} variants={iconVariant}>
               <FirebaseIcon src={firebase} alt="firebase logo" />
               Firebase
+            </Skill>
+            <Skill as={motion.li} variants={iconVariant}>
+              <ExpressIcon alt="Expressjs logo" />
+              Expressjs
+            </Skill>
+            <Skill as={motion.li} variants={iconVariant}>
+              <MongodbIcon alt="MongoDB logo" />
+              MongoDB
             </Skill>
           </SkillsContainer>
         </BackEnd>
