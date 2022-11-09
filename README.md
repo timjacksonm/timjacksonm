@@ -12,10 +12,3 @@
 ![Sass](https://img.shields.io/badge/-Sass-000?&logo=Sass&style=for-the-badge)
 ![Webpack](https://img.shields.io/badge/-Webpack-000?&logo=webpack&style=for-the-badge)
 ![Firebase](https://img.shields.io/badge/-Firebase-000?&logo=firebase&style=for-the-badge)
-
-
-
-
-
-
-[![Tim Jackson's GitHub stats](https://github-readme-stats.vercel.app/api?username=timjacksonm&count_private=true&show_icons=true&&theme=algolia)](https://github.com/anuraghazra/github-readme-stats)
