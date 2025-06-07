@@ -1,0 +1,2 @@
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=timothyjackson&layout=compact&theme=dark)
+[![GitHub Streak](https://streak-stats.demolab.com?user=timjacksonm&exclude_days=Sun%2CSat)](https://git.io/streak-stats)
