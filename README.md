@@ -1,6 +1,8 @@
+✨ My website found [here](https://www.timjacksonm.com/)
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/timjacksonm/timjacksonm/test/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="[github-snake.svg](https://raw.githubusercontent.com/timjacksonm/timjacksonm/test/github-snake.svg)" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/timjacksonm/timjacksonm/snkoutput/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="[github-snake.svg](https://raw.githubusercontent.com/timjacksonm/timjacksonm/snkoutput/github-snake.svg)" />
   <img alt="github-snake" src="github-snake.svg" />
 </picture>
 
