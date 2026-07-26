@@ -5,14 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Timothy Jackson</title>
+    <meta name="description"
+        content="Software engineer who likes to tinker with code and explore new ideas. Building practical systems by day, side projects for fun." />
     <link rel="stylesheet" href="/index.css">
-    <!-- font-awesome -->
-    <script src="https://kit.fontawesome.com/3b3b71c034.js" crossorigin="anonymous"></script>
+    <!-- theme -->
+    <meta name="theme-color" content="#f6f8f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#101413" media="(prefers-color-scheme: dark)">
     <!-- favicon -->
+    <link rel="icon" href="/public/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
     <link rel="manifest" href="/public/site.webmanifest">
+    <!-- social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.timjacksonm.com/">
+    <meta property="og:title" content="Timothy Jackson">
+    <meta property="og:description"
+        content="Software engineer who likes to tinker with code and explore new ideas. Building practical systems by day, side projects for fun.">
+    <meta property="og:image" content="https://www.timjacksonm.com/public/android-chrome-512x512.png">
+    <meta name="twitter:card" content="summary">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,50 +32,107 @@
 </head>
 
 <body>
-    <h1>Hi, I'm Timothy Jackson.</h1>
-
-    <main>
-    <section>
-        <p>
-            I like to tinker with code and explore new ideas, usually just for fun. By day, I’m a software engineer who enjoys building practical systems, and outside of work I value keeping things light, creative, and balanced. I also spend a lot of time with my small family and look forward to making the most of the upcoming summer!
-        </p>
-    </section>
-
-    <section>
-        <p>
-            Here is a project I've kept alive over time: a full-stack simulation of Conway's Game of Life.
-            It’s simple, nerdy, and kind of hypnotic.
-        </p>
-        <p>
-            <a href="https://play-life.netlify.app/gamehome" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-ghost fa-lg" style="color: #32CD32;"></i>
-                Game of Life Simulation
+    <div class="page">
+        <header class="masthead">
+            <p class="label wordmark">Timothy Jackson</p>
+            <a class="masthead__link" href="https://www.linkedin.com/in/timjacksonm/" target="_blank"
+                rel="noopener noreferrer">
+                <svg class="icon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor" aria-hidden="true"
+                    focusable="false">
+                    <path
+                        d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 15.9-44 31.3-2.3 5.5-2.9 13.2-2.9 20.9V448h-92.8s1.2-241.1 0-266.1h92.8v37.7c12.3-19 34.4-46.2 83.7-46.2 61.1 0 106.9 39.9 106.9 125.7z" />
+                </svg>
+                <span class="sr-only">LinkedIn</span>
             </a>
-        </p>
-    </section>
+        </header>
 
-    <section>
-        <p>
-            My most recent project is a mobile pre-navigation safety app that aggregates real-time weather and road condition data into a simple route verdict (Clear / Caution / Hazard). It helps users quickly assess travel risk before starting navigation in their preferred maps app. It’s still in early stages, but I recently completed an MVP and shared it with my local community to gauge interest.
-        </p>
-    </section>
+        <main>
+            <section class="hero">
+                <h1>Hi, I’m Timothy Jackson.</h1>
+                <p class="label role">Software Engineer</p>
+                <p class="lede">
+                    I like to tinker with code and explore new ideas, usually just for fun. By day, I’m a software
+                    engineer who enjoys building practical systems, and outside of work I value keeping things light,
+                    creative, and balanced. I also spend a lot of time with my small family and look forward to making
+                    the most of the upcoming summer!
+                </p>
+            </section>
 
-    <section>
-        <p>
-            At work, I recently finished phase one of a large microservices orchestration layer to integrate external partner Workday data into our internal systems. I leveraged AI development tools like Claude Code, along with my years of experience in client integrations, to design and deliver a significant piece of functionality that enables more on-demand data synchronization and supports onboarding new clients.
-        </p>
-    </section>
+            <section class="band" aria-labelledby="projects">
+                <h2 class="label eyebrow" id="projects">Projects</h2>
+                <div class="band__body">
+                    <article class="project">
+                        <h3 class="project__title">Route Safety App</h3>
+                        <p class="label project__meta">MVP</p>
+                        <p>
+                            My most recent project is a mobile pre-navigation safety app that aggregates real-time
+                            weather and road condition data into a simple route verdict (Clear / Caution / Hazard). It
+                            helps users quickly assess travel risk before starting navigation in their preferred maps
+                            app. It’s still in early stages, but I recently completed an MVP and shared it with my local
+                            community to gauge interest.
+                        </p>
+                    </article>
 
-    <section>
-        <p>
-            Any questions or inquiries? Feel free to reach out on:
-            <a href="https://www.linkedin.com/in/timjacksonm/" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin fa-lg" style="color: #0077B5;"></i>
-                timjacksonm
-            </a>
-        </p>
-    </section>
-</main>
+                    <article class="project">
+                        <h3 class="project__title">
+                            <svg class="icon icon--ghost" viewBox="0 0 384 512" width="1em" height="1em"
+                                aria-hidden="true" focusable="false">
+                                <path
+                                    d="M186.1.09C81.01 3.24 0 94.92 0 200.05v263.92c0 14.26 17.23 21.39 27.31 11.31l24.92-18.7c6.66-5 16.13-3.75 21.22 2.8l40.18 48.4c6.3 7.59 17.87 7.59 24.17 0l39.86-48.02c5.5-6.63 15.67-7.44 22.19-1.77l25.83 20.63c7.71 6.15 19.1 1.76 20.94-8.07l3.28-17.53c1.87-10 13.05-15.35 22.13-10.6l30.28 15.83c9.11 4.76 20.31-.66 22.17-10.72l3.29-17.79c1.87-10.06 13.11-15.44 22.22-10.62l30.34 16.05c9.79 5.18 21.64-1.75 21.64-12.66V192C384 84.02 294.83-3.22 186.1.09zM128 224c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm128 0c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z" />
+                            </svg>
+                            Game of Life Simulation
+                        </h3>
+                        <p>
+                            Here is a project I’ve kept alive over time: a full-stack simulation of Conway’s Game of
+                            Life. It’s simple, nerdy, and kind of hypnotic.
+                        </p>
+                        <p>
+                            <a class="link-out" href="https://play-life.netlify.app/gamehome" target="_blank"
+                                rel="noopener noreferrer">
+                                play-life.netlify.app
+                                <svg class="icon icon--arrow" viewBox="0 0 24 24" width="1em" height="1em" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                    <path d="M7 17 17 7M9 7h8v8" />
+                                </svg>
+                            </a>
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="band" aria-labelledby="work">
+                <h2 class="label eyebrow" id="work">At Work</h2>
+                <div class="band__body">
+                    <p>
+                        At work, I recently finished phase one of a large microservices orchestration layer to integrate
+                        external partner Workday data into our internal systems. I leveraged AI development tools like
+                        Claude Code, along with my years of experience in client integrations, to design and deliver a
+                        significant piece of functionality that enables more on-demand data synchronization and supports
+                        onboarding new clients.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="band" aria-labelledby="contact">
+            <h2 class="label eyebrow" id="contact">Get in Touch</h2>
+            <div class="band__body">
+                <p>Any questions or inquiries? Feel free to reach out on:</p>
+                <p>
+                    <a class="link-out" href="https://www.linkedin.com/in/timjacksonm/" target="_blank"
+                        rel="noopener noreferrer">
+                        <svg class="icon" viewBox="0 0 448 512" width="1em" height="1em" fill="currentColor"
+                            aria-hidden="true" focusable="false">
+                            <path
+                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 15.9-44 31.3-2.3 5.5-2.9 13.2-2.9 20.9V448h-92.8s1.2-241.1 0-266.1h92.8v37.7c12.3-19 34.4-46.2 83.7-46.2 61.1 0 106.9 39.9 106.9 125.7z" />
+                        </svg>
+                        timjacksonm
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
