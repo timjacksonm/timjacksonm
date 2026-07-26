@@ -153,6 +153,22 @@ p:last-child {
     animation: drift-octopus 61s ease-in-out infinite, rainbow 12s linear infinite;
 }
 
+.invader--beetle {
+    top: 26%;
+    right: 6%;
+    width: 22px;
+    color: #8b5cf6;
+    animation: drift-beetle 39s ease-in-out infinite;
+}
+
+.invader--jelly {
+    top: 63%;
+    left: 4%;
+    width: 24px;
+    color: #e8913a;
+    animation: drift-jelly 57s ease-in-out infinite;
+}
+
 .invader__frame {
     animation-duration: 1.1s;
     animation-iteration-count: infinite;
@@ -173,6 +189,14 @@ p:last-child {
 
 .invader--octopus .invader__frame {
     animation-duration: 0.85s;
+}
+
+.invader--beetle .invader__frame {
+    animation-duration: 1.25s;
+}
+
+.invader--jelly .invader__frame {
+    animation-duration: 0.95s;
 }
 
 @keyframes pose-a {
@@ -230,6 +254,20 @@ p:last-child {
     20% { transform: translate(7vw, -50px); }
     45% { transform: translate(13vw, 30px); }
     70% { transform: translate(4vw, -90px); }
+}
+
+@keyframes drift-beetle {
+    0%, 100% { transform: translate(0, 0); }
+    35% { transform: translate(-6vw, 80px); }
+    55% { transform: translate(-12vw, -40px); }
+    80% { transform: translate(-2vw, -110px); }
+}
+
+@keyframes drift-jelly {
+    0%, 100% { transform: translate(0, 0); }
+    22% { transform: translate(5vw, -70px); }
+    50% { transform: translate(11vw, 50px); }
+    78% { transform: translate(3vw, 130px); }
 }
 
 /* Shared treatment for the small mono labels: masthead, eyebrows, role, tag. */
@@ -503,6 +541,14 @@ h1 {
 
     .invader--octopus {
         width: 42px;
+    }
+
+    .invader--beetle {
+        width: 30px;
+    }
+
+    .invader--jelly {
+        width: 34px;
     }
 
     .page {
