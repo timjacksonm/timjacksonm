@@ -72,6 +72,7 @@
 }
 
 body {
+    position: relative;
     margin: 0;
     background-color: var(--bg);
     color: var(--text);
@@ -103,10 +104,11 @@ p:last-child {
 
 /* --- Invaders ------------------------------------------------------------ */
 
-/* An ambient layer behind the content. Sits above the page background but
-   below the text, and never takes a click. */
+/* An ambient layer behind the content, anchored to the document rather than
+   the viewport so the invaders scroll with the page and roam its full length.
+   Sits above the page background but below the text, and never takes a click. */
 .invaders {
-    position: fixed;
+    position: absolute;
     inset: 0;
     z-index: 0;
     overflow: hidden;
@@ -124,30 +126,31 @@ p:last-child {
     opacity: 0;
 }
 
+/* Spread down the length of the document, not bunched into one screenful. */
 .invader--crab {
-    top: 12%;
+    top: 9%;
     left: 3%;
     width: 26px;
     color: var(--accent);
-    animation: drift-crab 34s ease-in-out infinite;
+    animation: drift-crab 46s ease-in-out infinite;
 }
 
 .invader--squid {
-    top: 58%;
+    top: 45%;
     right: 4%;
     width: 20px;
     color: #32cd32;
-    animation: drift-squid 41s ease-in-out infinite;
+    animation: drift-squid 53s ease-in-out infinite;
 }
 
 /* The rainbow one. A saturated base hue cycled through the spectrum. */
 .invader--octopus {
-    bottom: 10%;
+    top: 78%;
     left: 6%;
     width: 30px;
     color: #ff0066;
     opacity: 0.5;
-    animation: drift-octopus 47s ease-in-out infinite, rainbow 12s linear infinite;
+    animation: drift-octopus 61s ease-in-out infinite, rainbow 12s linear infinite;
 }
 
 .invader__frame {
@@ -204,27 +207,29 @@ p:last-child {
     }
 }
 
-/* Closed loops, so freezing them under reduced-motion leaves each one where
-   it started rather than somewhere off-screen. */
+/* Long, wandering loops across the page. Each closes back on its start, so the
+   existing prefers-reduced-motion rule freezes the invader where it began
+   rather than somewhere off-screen. Horizontal drift is in vw so the range
+   scales with the viewport instead of crossing the text on a phone. */
 @keyframes drift-crab {
     0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(38px, 26px); }
-    50% { transform: translate(14px, 58px); }
-    75% { transform: translate(-22px, 24px); }
+    25% { transform: translate(9vw, 70px); }
+    50% { transform: translate(4vw, 170px); }
+    75% { transform: translate(1vw, 60px); }
 }
 
 @keyframes drift-squid {
     0%, 100% { transform: translate(0, 0); }
-    30% { transform: translate(-30px, -34px); }
-    60% { transform: translate(-8px, -62px); }
-    85% { transform: translate(18px, -20px); }
+    30% { transform: translate(-8vw, -60px); }
+    60% { transform: translate(-3vw, -150px); }
+    85% { transform: translate(-10vw, -50px); }
 }
 
 @keyframes drift-octopus {
     0%, 100% { transform: translate(0, 0); }
-    20% { transform: translate(26px, -18px); }
-    45% { transform: translate(58px, 16px); }
-    70% { transform: translate(20px, 40px); }
+    20% { transform: translate(7vw, -50px); }
+    45% { transform: translate(13vw, 30px); }
+    70% { transform: translate(4vw, -90px); }
 }
 
 /* Shared treatment for the small mono labels: masthead, eyebrows, role, tag. */
