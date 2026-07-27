@@ -328,11 +328,6 @@ a:focus-visible {
     vertical-align: -0.125em;
 }
 
-.icon--ghost {
-    fill: #32cd32;
-    margin-right: 0.15em;
-}
-
 .icon--arrow {
     align-self: center;
     transition: transform 150ms ease;

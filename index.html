@@ -7,6 +7,7 @@
     <title>Timothy Jackson</title>
     <meta name="description"
         content="Software engineer who likes to tinker with code and explore new ideas. Building practical systems by day, side projects for fun." />
+    <link rel="canonical" href="https://www.timjacksonm.com/">
     <link rel="stylesheet" href="/index.css">
     <!-- Set the stored theme before first paint so there is no flash of the wrong one. -->
     <script>
@@ -36,6 +37,19 @@
         content="Software engineer who likes to tinker with code and explore new ideas. Building practical systems by day, side projects for fun.">
     <meta property="og:image" content="https://www.timjacksonm.com/public/android-chrome-512x512.png">
     <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Timothy Jackson",
+            "url": "https://www.timjacksonm.com/",
+            "jobTitle": "Software Engineer",
+            "sameAs": [
+                "https://github.com/timjacksonm",
+                "https://www.linkedin.com/in/timjacksonm/"
+            ]
+        }
+    </script>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,8 +160,8 @@
                 <h1>Hi, I’m Timothy Jackson.</h1>
                 <p class="label role">Software Engineer</p>
                 <p class="lede">
-                    I like to tinker with code and explore new ideas, usually just for fun. By day, I’m a software
-                    engineer who enjoys building practical systems, and outside of work I value keeping things light,
+                    By day I’m a software engineer who builds practical systems and client integrations. Outside of
+                    work I like to tinker with code and explore new ideas, usually just for fun, keeping things light,
                     creative, and balanced. I also spend a lot of time with my small family and look forward to making
                     the most of the upcoming summer!
                 </p>
@@ -162,26 +176,19 @@
                             Aggregates real-time weather and road conditions into an AI summary for your route.
                         </p>
                         <p>
-                            My most recent project is a mobile pre-navigation safety app that aggregates real-time
-                            weather and road condition data into a simple route verdict (Clear / Caution / Hazard). It
-                            helps users quickly assess travel risk before starting navigation in their preferred maps
-                            app. It’s still in early stages, but I recently completed an MVP and shared it with my local
-                            community to gauge interest.
+                            A mobile pre-navigation safety app that turns live conditions into a simple route verdict
+                            (Clear / Caution / Hazard), so you can judge travel risk before starting navigation in your
+                            preferred maps app. I built it and shared it with my local community. React Native and Expo
+                            on the front end, with a TypeScript and Express API on Postgres.
                         </p>
                     </article>
 
                     <article class="project">
-                        <h3 class="project__title">
-                            <svg class="icon icon--ghost" viewBox="0 0 384 512" width="1em" height="1em"
-                                aria-hidden="true" focusable="false">
-                                <path
-                                    d="M186.1.09C81.01 3.24 0 94.92 0 200.05v263.92c0 14.26 17.23 21.39 27.31 11.31l24.92-18.7c6.66-5 16.13-3.75 21.22 2.8l40.18 48.4c6.3 7.59 17.87 7.59 24.17 0l39.86-48.02c5.5-6.63 15.67-7.44 22.19-1.77l25.83 20.63c7.71 6.15 19.1 1.76 20.94-8.07l3.28-17.53c1.87-10 13.05-15.35 22.13-10.6l30.28 15.83c9.11 4.76 20.31-.66 22.17-10.72l3.29-17.79c1.87-10.06 13.11-15.44 22.22-10.62l30.34 16.05c9.79 5.18 21.64-1.75 21.64-12.66V192C384 84.02 294.83-3.22 186.1.09zM128 224c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm128 0c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z" />
-                            </svg>
-                            Life Simulation
-                        </h3>
+                        <h3 class="project__title">Life Simulation</h3>
                         <p>
                             Here is a project I’ve kept alive over time: a full-stack simulation of Conway’s Game of
-                            Life. It’s simple, nerdy, and kind of hypnotic.
+                            Life. It’s simple, nerdy, and kind of hypnotic. Next.js and TypeScript on the front end,
+                            with an Express and MongoDB API.
                         </p>
                         <p>
                             <a class="link-out" href="https://play-life.netlify.app/gamehome" target="_blank"
@@ -202,11 +209,13 @@
                 <h2 class="label eyebrow" id="work">At Work</h2>
                 <div class="band__body">
                     <p>
-                        At work, I recently finished phase one of a large microservices orchestration layer to integrate
-                        external partner Workday data into our internal systems. I leveraged AI development tools like
-                        Claude Code, along with my years of experience in client integrations, to design and deliver a
-                        significant piece of functionality that enables more on-demand data synchronization and supports
-                        onboarding new clients.
+                        I recently delivered phase one of a large microservices orchestration layer that integrates
+                        external partner Workday data into our internal systems.
+                    </p>
+                    <p>
+                        It enables more on-demand data synchronization and supports onboarding new clients. I designed
+                        and built it using AI development tools like Claude Code, alongside years of experience in
+                        client integrations.
                     </p>
                 </div>
             </section>
@@ -225,7 +234,7 @@
                                 <path
                                     d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-12.4-58.4-43.4-58.4-23.7 0-37.8 15.9-44 31.3-2.3 5.5-2.9 13.2-2.9 20.9V448h-92.8s1.2-241.1 0-266.1h92.8v37.7c12.3-19 34.4-46.2 83.7-46.2 61.1 0 106.9 39.9 106.9 125.7z" />
                             </svg>
-                            timjacksonm
+                            LinkedIn
                         </a>
                     </li>
                     <li>
@@ -236,7 +245,7 @@
                                 <path
                                     d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z" />
                             </svg>
-                            timjacksonm
+                            GitHub
                         </a>
                     </li>
                 </ul>
