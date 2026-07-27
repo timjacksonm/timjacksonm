@@ -27,9 +27,8 @@
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
 
-    /* Vertical rhythm and the label gutter — both grow at the breakpoints below */
+    /* Vertical rhythm — grows at the breakpoints below */
     --band-space: 3rem;
-    --gutter: 9rem;
     --measure: 62ch;
 }
 
@@ -478,7 +477,7 @@ h1 {
     margin: 0 0 1.5rem;
 }
 
-/* Groups a band's content into a single grid cell at the wide breakpoint. */
+/* Groups a band's content beneath its label. */
 .band__body {
     min-width: 0;
 }
@@ -577,20 +576,6 @@ h1 {
         padding: 4rem 3rem 8rem;
     }
 
-    /* Editorial two-column: label sits in a left gutter beside its content. */
-    .band {
-        display: grid;
-        grid-template-columns: var(--gutter) minmax(0, 1fr);
-        gap: 0 2.5rem;
-    }
-
-    .eyebrow {
-        margin-bottom: 0;
-        padding-top: 0.45rem;
-    }
-
-    /* The hero stays a flush-left stack rather than joining the grid, so the
-       role label and the lede start on the same edge as the H of the heading. */
     .hero {
         padding-bottom: calc(var(--band-space) - 1rem);
     }
@@ -604,7 +589,6 @@ h1 {
 @media (min-width: 90em) {
     :root {
         --band-space: 6rem;
-        --gutter: 11rem;
         --measure: 68ch;
     }
 
