@@ -500,12 +500,6 @@ h1 {
     letter-spacing: -0.015em;
 }
 
-/* One-line descriptor sitting under a project title, ahead of the detail. */
-.project__summary {
-    margin: -0.25rem 0 1rem;
-    color: var(--muted);
-}
-
 /* --- Contact ------------------------------------------------------------- */
 
 .contact {
@@ -576,6 +570,7 @@ h1 {
         --band-space: 5rem;
         --measure: 72ch;
         --size-body: 1.1875rem;
+        --size-label: 0.8125rem;
     }
 
     .page {
@@ -597,6 +592,7 @@ h1 {
         --band-space: 6rem;
         --measure: 72ch;
         --size-body: 1.25rem;
+        --size-label: 0.875rem;
     }
 
     .page {
