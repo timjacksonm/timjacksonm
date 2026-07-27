@@ -22,7 +22,6 @@
 
     /* Fluid type scale */
     --size-display: clamp(2.5rem, 9vw, 5rem);
-    --size-lede: clamp(1.125rem, 3.5vw, 1.375rem);
     --size-title: clamp(1.25rem, 4vw, 1.5rem);
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
@@ -88,6 +87,7 @@ body {
 p {
     margin: 0 0 1rem;
     max-width: var(--measure);
+    text-wrap: pretty;
 }
 
 p:last-child {
@@ -449,22 +449,12 @@ h1 {
     text-wrap: balance;
 }
 
-/* Spaced away from the heading and tight to the lede, so the label reads as
-   belonging to the paragraph it introduces. */
+/* A subtitle sitting directly beneath the name. */
 .role {
-    margin: 2rem 0 0;
+    margin: 1.25rem 0 0;
     color: var(--accent);
 }
 
-.lede {
-    margin: 0.75rem 0 0;
-    max-width: 34ch;
-    font-size: var(--size-lede);
-    font-weight: 400;
-    line-height: 1.55;
-    color: var(--muted);
-    text-wrap: pretty;
-}
 
 /* --- Bands (labelled content sections) ----------------------------------- */
 
@@ -564,9 +554,6 @@ h1 {
         padding-bottom: 4rem;
     }
 
-    .lede {
-        max-width: 40ch;
-    }
 }
 
 @media (min-width: 64em) {
@@ -583,9 +570,6 @@ h1 {
         padding-bottom: calc(var(--band-space) - 1rem);
     }
 
-    .hero .lede {
-        max-width: 48ch;
-    }
 }
 
 /* Large monitors: more room, not just more empty margin. */
