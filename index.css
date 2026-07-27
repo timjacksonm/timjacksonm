@@ -450,13 +450,15 @@ h1 {
     text-wrap: balance;
 }
 
+/* Spaced away from the heading and tight to the lede, so the label reads as
+   belonging to the paragraph it introduces. */
 .role {
-    margin: 1.25rem 0 0;
+    margin: 2rem 0 0;
     color: var(--accent);
 }
 
 .lede {
-    margin: 1.5rem 0 0;
+    margin: 0.75rem 0 0;
     max-width: 34ch;
     font-size: var(--size-lede);
     font-weight: 400;
@@ -576,8 +578,7 @@ h1 {
     }
 
     /* Editorial two-column: label sits in a left gutter beside its content. */
-    .band,
-    .hero {
+    .band {
         display: grid;
         grid-template-columns: var(--gutter) minmax(0, 1fr);
         gap: 0 2.5rem;
@@ -588,28 +589,14 @@ h1 {
         padding-top: 0.45rem;
     }
 
-    /* The display heading takes the full width — indenting it into the content
-       column leaves it stranded beside a tiny label. Everything below it stays
-       in the content column, so the labels share one alignment down the page. */
-    .hero h1 {
-        grid-column: 1 / -1;
-    }
-
-    .role {
-        grid-column: 1;
-        margin-top: 2.25rem;
-        padding-top: 0.65rem;
-        text-align: right;
+    /* The hero stays a flush-left stack rather than joining the grid, so the
+       role label and the lede start on the same edge as the H of the heading. */
+    .hero {
+        padding-bottom: calc(var(--band-space) - 1rem);
     }
 
     .hero .lede {
-        grid-column: 2;
-        max-width: 46ch;
-        margin-top: 2.25rem;
-    }
-
-    .hero {
-        padding-bottom: calc(var(--band-space) - 1rem);
+        max-width: 48ch;
     }
 }
 
