@@ -21,14 +21,15 @@
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
     /* Fluid type scale */
-    --size-display: clamp(2.5rem, 11vw, 4.5rem);
+    --size-display: clamp(2.5rem, 9vw, 5rem);
     --size-lede: clamp(1.125rem, 3.5vw, 1.375rem);
     --size-title: clamp(1.25rem, 4vw, 1.5rem);
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
 
-    /* Vertical rhythm — grows at the breakpoints below */
+    /* Vertical rhythm and the label gutter — both grow at the breakpoints below */
     --band-space: 3rem;
+    --gutter: 9rem;
     --measure: 62ch;
 }
 
@@ -567,6 +568,7 @@ h1 {
 @media (min-width: 64em) {
     :root {
         --band-space: 5rem;
+        --measure: 66ch;
     }
 
     .page {
@@ -577,8 +579,8 @@ h1 {
     .band,
     .hero {
         display: grid;
-        grid-template-columns: 9rem minmax(0, 1fr);
-        gap: 2.5rem;
+        grid-template-columns: var(--gutter) minmax(0, 1fr);
+        gap: 0 2.5rem;
     }
 
     .eyebrow {
@@ -586,16 +588,46 @@ h1 {
         padding-top: 0.45rem;
     }
 
-    .hero h1,
-    .hero .lede {
-        grid-column: 2;
+    /* The display heading takes the full width — indenting it into the content
+       column leaves it stranded beside a tiny label. Everything below it stays
+       in the content column, so the labels share one alignment down the page. */
+    .hero h1 {
+        grid-column: 1 / -1;
     }
 
     .role {
         grid-column: 1;
-        grid-row: 1;
-        margin-top: 0.6rem;
+        margin-top: 2.25rem;
+        padding-top: 0.65rem;
         text-align: right;
+    }
+
+    .hero .lede {
+        grid-column: 2;
+        max-width: 46ch;
+        margin-top: 2.25rem;
+    }
+
+    .hero {
+        padding-bottom: calc(var(--band-space) - 1rem);
+    }
+}
+
+/* Large monitors: more room, not just more empty margin. */
+@media (min-width: 90em) {
+    :root {
+        --band-space: 6rem;
+        --gutter: 11rem;
+        --measure: 68ch;
+    }
+
+    .page {
+        max-width: 70rem;
+        padding: 5rem 4rem 9rem;
+    }
+
+    .masthead {
+        padding-bottom: 5rem;
     }
 }
 
