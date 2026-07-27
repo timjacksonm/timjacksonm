@@ -100,7 +100,7 @@ p:last-child {
 .page {
     position: relative;
     z-index: 1;
-    max-width: 58rem;
+    max-width: 56rem;
     margin: 0 auto;
     padding: 2.5rem 1.25rem 4rem;
 }
@@ -578,7 +578,7 @@ h1 {
     :root {
         --band-space: 5rem;
         --measure: 72ch;
-        --size-body: 1.25rem;
+        --size-body: 1.1875rem;
     }
 
     .page {
@@ -599,11 +599,11 @@ h1 {
     :root {
         --band-space: 6rem;
         --measure: 72ch;
-        --size-body: 1.3125rem;
+        --size-body: 1.25rem;
     }
 
     .page {
-        max-width: 62rem;
+        max-width: 60rem;
         padding: 5rem 4rem 9rem;
     }
 
