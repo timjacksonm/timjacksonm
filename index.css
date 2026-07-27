@@ -22,7 +22,7 @@
 
     /* Fluid type scale */
     --size-display: clamp(2.5rem, 9vw, 5rem);
-    --size-lede: clamp(1.125rem, 3.5vw, 1.375rem);
+    --size-lede: clamp(1.125rem, 3.5vw, 1.5rem);
     --size-title: clamp(1.25rem, 4vw, 1.5rem);
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
@@ -95,12 +95,12 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* Sized to sit just wider than --measure, so paragraphs fill their column and
-   the leftover space falls outside as margin instead of pooling beside them. */
+/* Sized so paragraphs nearly fill their column — the measure and the body size
+   below are tuned together to keep lines around 80 characters at this width. */
 .page {
     position: relative;
     z-index: 1;
-    max-width: 50rem;
+    max-width: 58rem;
     margin: 0 auto;
     padding: 2.5rem 1.25rem 4rem;
 }
@@ -577,7 +577,8 @@ h1 {
 @media (min-width: 64em) {
     :root {
         --band-space: 5rem;
-        --measure: 66ch;
+        --measure: 72ch;
+        --size-body: 1.25rem;
     }
 
     .page {
@@ -589,7 +590,7 @@ h1 {
     }
 
     .hero .lede {
-        max-width: 48ch;
+        max-width: 56ch;
     }
 }
 
@@ -597,11 +598,12 @@ h1 {
 @media (min-width: 90em) {
     :root {
         --band-space: 6rem;
-        --measure: 68ch;
+        --measure: 72ch;
+        --size-body: 1.3125rem;
     }
 
     .page {
-        max-width: 54rem;
+        max-width: 62rem;
         padding: 5rem 4rem 9rem;
     }
 
