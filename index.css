@@ -22,6 +22,7 @@
 
     /* Fluid type scale */
     --size-display: clamp(2.5rem, 9vw, 5rem);
+    --size-lede: clamp(1.125rem, 3.5vw, 1.375rem);
     --size-title: clamp(1.25rem, 4vw, 1.5rem);
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
@@ -449,10 +450,20 @@ h1 {
     text-wrap: balance;
 }
 
-/* A subtitle sitting directly beneath the name. */
+/* A subtitle sitting directly beneath the name — tight to the heading, with
+   the gap falling below it so it reads as part of the title block. */
 .role {
     margin: 1.25rem 0 0;
     color: var(--accent);
+}
+
+.lede {
+    margin: 2rem 0 0;
+    max-width: 34ch;
+    font-size: var(--size-lede);
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--muted);
 }
 
 
@@ -521,6 +532,10 @@ h1 {
         --band-space: 4rem;
     }
 
+    .lede {
+        max-width: 40ch;
+    }
+
     .contact {
         flex-direction: row;
         gap: 2rem;
@@ -570,6 +585,9 @@ h1 {
         padding-bottom: calc(var(--band-space) - 1rem);
     }
 
+    .hero .lede {
+        max-width: 48ch;
+    }
 }
 
 /* Large monitors: more room, not just more empty margin. */
