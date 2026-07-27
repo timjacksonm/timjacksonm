@@ -457,13 +457,14 @@ h1 {
     color: var(--accent);
 }
 
+/* Same ink as every other paragraph — size and measure carry the emphasis.
+   --muted is for chrome (labels, icon controls), not for prose. */
 .lede {
     margin: 2rem 0 0;
     max-width: 34ch;
     font-size: var(--size-lede);
     font-weight: 400;
     line-height: 1.55;
-    color: var(--muted);
 }
 
 
