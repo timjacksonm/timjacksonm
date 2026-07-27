@@ -450,10 +450,10 @@ h1 {
 }
 
 /* Spaced away from the heading and tight to the lede, so the label reads as
-   belonging to the paragraph it introduces. Colour comes from .label — the
-   accent is reserved for things you can actually click. */
+   belonging to the paragraph it introduces. */
 .role {
     margin: 2rem 0 0;
+    color: var(--accent);
 }
 
 .lede {
@@ -473,8 +473,11 @@ h1 {
     border-top: 1px solid var(--rule);
 }
 
+/* Section markers share the role line's accent. Overrides .label's muted
+   colour, so this rule has to stay after it in the cascade. */
 .eyebrow {
     margin: 0 0 1.5rem;
+    color: var(--accent);
 }
 
 /* Groups a band's content beneath its label. */
