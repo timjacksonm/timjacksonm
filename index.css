@@ -505,8 +505,10 @@ h1 {
     letter-spacing: -0.015em;
 }
 
-.project__meta {
-    margin: -0.5rem 0 0.75rem;
+/* One-line descriptor sitting under a project title, ahead of the detail. */
+.project__summary {
+    margin: -0.25rem 0 1rem;
+    color: var(--muted);
 }
 
 /* --- Contact ------------------------------------------------------------- */
