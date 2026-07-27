@@ -450,10 +450,10 @@ h1 {
 }
 
 /* Spaced away from the heading and tight to the lede, so the label reads as
-   belonging to the paragraph it introduces. */
+   belonging to the paragraph it introduces. Colour comes from .label — the
+   accent is reserved for things you can actually click. */
 .role {
     margin: 2rem 0 0;
-    color: var(--accent);
 }
 
 .lede {
