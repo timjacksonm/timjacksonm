@@ -21,8 +21,7 @@
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
     /* Fluid type scale */
-    --size-display: clamp(2.5rem, 9vw, 5rem);
-    --size-lede: clamp(1.125rem, 3.5vw, 1.5rem);
+    --size-display: clamp(2.25rem, 8vw, 4.5rem);
     --size-title: clamp(1.25rem, 4vw, 1.5rem);
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
@@ -454,12 +453,12 @@ h1 {
     color: var(--accent);
 }
 
-/* Same ink as every other paragraph — size and measure carry the emphasis.
-   --muted is for chrome (labels, icon controls), not for prose. */
+/* Same size and ink as every other paragraph — measure alone carries the
+   emphasis. --muted is for chrome (labels, icon controls), not for prose. */
 .lede {
     margin: 2rem 0 0;
-    max-width: 34ch;
-    font-size: var(--size-lede);
+    max-width: var(--measure);
+    font-size: var(--size-body);
     font-weight: 400;
     line-height: 1.55;
 }
@@ -512,22 +511,11 @@ h1 {
     list-style: none;
 }
 
-.colophon {
-    margin: 2rem 0 0;
-    letter-spacing: 0.08em;
-    text-transform: none;
-    opacity: 0.75;
-}
-
 /* --- Wider screens ------------------------------------------------------- */
 
 @media (min-width: 40em) {
     :root {
         --band-space: 4rem;
-    }
-
-    .lede {
-        max-width: 40ch;
     }
 
     .contact {
@@ -579,10 +567,6 @@ h1 {
 
     .hero {
         padding-bottom: calc(var(--band-space) - 1rem);
-    }
-
-    .hero .lede {
-        max-width: 56ch;
     }
 }
 
