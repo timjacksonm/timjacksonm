@@ -20,16 +20,13 @@
             } catch (e) { /* private mode — fall back to the OS preference */ }
         })();
     </script>
-    <!-- theme -->
     <meta name="theme-color" content="#f6f8f7" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#101413" media="(prefers-color-scheme: dark)">
-    <!-- favicon -->
     <link rel="icon" href="/public/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
     <link rel="manifest" href="/public/site.webmanifest">
-    <!-- social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.timjacksonm.com/">
     <meta property="og:title" content="Timothy Jackson">
@@ -50,7 +47,6 @@
             ]
         }
     </script>
-    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -280,7 +276,7 @@
             button.addEventListener("click", function () {
                 var next = current() === "dark" ? "light" : "dark";
                 root.dataset.theme = next;
-                try { localStorage.setItem("theme", next); } catch (e) { /* ignore */ }
+                try { localStorage.setItem("theme", next); } catch (e) { }
                 label();
             });
 

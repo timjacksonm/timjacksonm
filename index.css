@@ -1,11 +1,3 @@
-/* ==========================================================================
-   Timothy Jackson — timjacksonm.com
-   Hand-written, no build step. Mobile-first: base rules target small screens,
-   min-width queries layer on space and structure from there.
-   ========================================================================== */
-
-/* --- Tokens --------------------------------------------------------------- */
-
 :root {
     color-scheme: light dark;
 
@@ -20,13 +12,12 @@
     --font: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-    /* Fluid type scale */
     --size-display: clamp(2.25rem, 8vw, 4.5rem);
     --size-title: clamp(1.25rem, 4vw, 1.5rem);
     --size-body: 1.0625rem;
     --size-label: 0.6875rem;
 
-    /* Vertical rhythm — grows at the breakpoints below */
+    /* Redefined at the breakpoints below, growing with the viewport. */
     --band-space: 3rem;
     --measure: 62ch;
 }
@@ -62,8 +53,6 @@
     --accent: #0f6157;
 }
 
-/* --- Base ---------------------------------------------------------------- */
-
 *,
 *::before,
 *::after {
@@ -94,8 +83,8 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* Sized so paragraphs nearly fill their column — the measure and the body size
-   below are tuned together to keep lines around 80 characters at this width. */
+/* --measure and --size-body are tuned together to keep lines around
+   80 characters at this width. */
 .page {
     position: relative;
     z-index: 1;
@@ -104,11 +93,9 @@ p:last-child {
     padding: 2.5rem 1.25rem 4rem;
 }
 
-/* --- Invaders ------------------------------------------------------------ */
-
-/* An ambient layer behind the content, anchored to the document rather than
-   the viewport so the invaders scroll with the page and roam its full length.
-   Sits above the page background but below the text, and never takes a click. */
+/* Anchored to the document rather than the viewport so the invaders scroll
+   with the page and roam its full length. Sits above the page background
+   but below the text, and never takes a click. */
 .invaders {
     position: absolute;
     inset: 0;
@@ -123,7 +110,6 @@ p:last-child {
     opacity: 0.4;
 }
 
-/* Two poses, swapped on a timer — the originals animated the same way. */
 .invader__frame--b {
     opacity: 0;
 }
@@ -145,7 +131,6 @@ p:last-child {
     animation: drift-squid 53s ease-in-out infinite;
 }
 
-/* The rainbow one. A saturated base hue cycled through the spectrum. */
 .invader--octopus {
     top: 78%;
     left: 6%;
@@ -272,7 +257,8 @@ p:last-child {
     78% { transform: translate(3vw, 130px); }
 }
 
-/* Shared treatment for the small mono labels: masthead, eyebrows, role, tag. */
+/* Shared by the masthead wordmark, section eyebrows, role line, and status
+   tags — changes here ripple across all of them. */
 .label {
     font-family: var(--font-mono);
     font-size: var(--size-label);
@@ -293,8 +279,6 @@ p:last-child {
     white-space: nowrap;
     border: 0;
 }
-
-/* --- Links --------------------------------------------------------------- */
 
 a {
     color: var(--accent);
@@ -336,8 +320,6 @@ a:focus-visible {
     transform: translate(2px, -2px);
 }
 
-/* --- Masthead ------------------------------------------------------------ */
-
 .masthead {
     display: flex;
     align-items: center;
@@ -367,8 +349,6 @@ a:focus-visible {
 .masthead__link:hover {
     color: var(--accent);
 }
-
-/* --- Theme toggle -------------------------------------------------------- */
 
 /* Hidden until the head script confirms JS is available — a button that
    cannot do anything should not be offered. */
@@ -400,7 +380,7 @@ a:focus-visible {
     border-radius: 2px;
 }
 
-/* Show the icon for the theme you would switch *to*. */
+/* Shows the icon for the theme you would switch *to*, not the current one. */
 .theme-toggle .icon-sun {
     display: none;
 }
@@ -431,8 +411,6 @@ a:focus-visible {
     display: block;
 }
 
-/* --- Hero ---------------------------------------------------------------- */
-
 .hero {
     padding-bottom: var(--band-space);
 }
@@ -446,8 +424,6 @@ h1 {
     text-wrap: balance;
 }
 
-/* A subtitle sitting directly beneath the name — tight to the heading, with
-   the gap falling below it so it reads as part of the title block. */
 .role {
     margin: 1.25rem 0 0;
     color: var(--accent);
@@ -463,27 +439,21 @@ h1 {
     line-height: 1.55;
 }
 
-
-/* --- Bands (labelled content sections) ----------------------------------- */
-
 .band {
     padding-block: var(--band-space);
     border-top: 1px solid var(--rule);
 }
 
-/* Section markers share the role line's accent. Overrides .label's muted
-   colour, so this rule has to stay after it in the cascade. */
+/* Overrides .label's muted colour, so this rule has to stay after it in
+   the cascade. */
 .eyebrow {
     margin: 0 0 1.5rem;
     color: var(--accent);
 }
 
-/* Groups a band's content beneath its label. */
 .band__body {
     min-width: 0;
 }
-
-/* --- Projects ------------------------------------------------------------ */
 
 .project+.project {
     margin-top: 2.5rem;
@@ -503,15 +473,13 @@ h1 {
     letter-spacing: -0.015em;
 }
 
-/* Status flag sitting beside a project title, not on its own line. Sentence
-   case and body font, unlike the all-caps mono treatment of .label. */
+/* Deliberately sentence case and body font, not .label's all-caps mono
+   treatment — a status flag beside a title, not another eyebrow. */
 .project__meta {
     font-size: var(--size-label);
     font-weight: 500;
     color: var(--muted);
 }
-
-/* --- Contact ------------------------------------------------------------- */
 
 .contact {
     display: flex;
@@ -522,8 +490,6 @@ h1 {
     padding: 0;
     list-style: none;
 }
-
-/* --- Wider screens ------------------------------------------------------- */
 
 @media (min-width: 40em) {
     :root {
@@ -582,7 +548,6 @@ h1 {
     }
 }
 
-/* Large monitors: more room, not just more empty margin. */
 @media (min-width: 90em) {
     :root {
         --band-space: 6rem;
@@ -600,8 +565,6 @@ h1 {
         padding-bottom: 5rem;
     }
 }
-
-/* --- Motion preference --------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
 
