@@ -492,11 +492,23 @@ h1 {
 }
 
 .project__title {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     margin: 0 0 0.75rem;
     font-size: var(--size-title);
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.015em;
+}
+
+/* Status flag sitting beside a project title, not on its own line. Sentence
+   case and body font, unlike the all-caps mono treatment of .label. */
+.project__meta {
+    font-size: var(--size-label);
+    font-weight: 500;
+    color: var(--muted);
 }
 
 /* --- Contact ------------------------------------------------------------- */
