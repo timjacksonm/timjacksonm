@@ -481,24 +481,9 @@ h1 {
     color: var(--muted);
 }
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.625rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
 @media (min-width: 40em) {
     :root {
         --band-space: 4rem;
-    }
-
-    .contact {
-        flex-direction: row;
-        gap: 2rem;
     }
 
     .invader--crab {
