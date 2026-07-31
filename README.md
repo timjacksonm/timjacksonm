@@ -1,4 +1,4 @@
-✨ Welcome! You can find my website [here](https://www.timjacksonm.com/)
+Full-Stack Software Engineer. More about me at [timjacksonm.com](https://www.timjacksonm.com/).
 
 ---
 
