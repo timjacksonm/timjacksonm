@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="254" viewBox="0 0 495 254" role="img" aria-labelledby="t d">
+  <title id="t">How I build with AI</title>
+  <desc id="d">I treat AI agents as a capable engineering team I direct. I set clear goals, split work across parallel sessions, verify results against real systems, and keep architecture, product and irreversible decisions with me.</desc>
+  <rect x="0.5" y="0.5" width="494" height="253" rx="8" fill="#101413" stroke="#282e2c"/>
+  <text x="22" y="32" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" letter-spacing="1.8" fill="#5fd3bd">HOW I BUILD WITH AI</text>
+  <text x="473" y="32" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" letter-spacing="0.6" fill="#9aa39f">Claude Code · Aug 28 – Sep 27, 2026</text>
+  <text x="22" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#e8ebe9">I treat AI agents as a capable engineering team I direct. I set clear</text>
+  <text x="22" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#e8ebe9">goals, split work across parallel sessions, verify results against real</text>
+  <text x="22" y="94" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#e8ebe9">systems, and keep architecture, product and irreversible decisions with</text>
+  <text x="22" y="112" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#e8ebe9">me.</text>
+  <text x="22" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#e8ebe9">60</text>
+  <text x="22" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" letter-spacing="1.2" fill="#9aa39f">SESSIONS</text>
+  <text x="134.75" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#e8ebe9">206</text>
+  <text x="134.75" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" letter-spacing="1.2" fill="#9aa39f">HOURS</text>
+  <text x="247.5" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#e8ebe9">213</text>
+  <text x="247.5" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" letter-spacing="1.2" fill="#9aa39f">COMMITS</text>
+  <text x="360.25" y="152" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="24" font-weight="800" fill="#e8ebe9">56</text>
+  <text x="360.25" y="168" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" letter-spacing="1.2" fill="#9aa39f">PRS MERGED</text>
+  <rect x="22.0" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.37"/>
+  <rect x="36.6" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="51.2" y="210.8" width="12.6" height="9.3" rx="1.5" fill="#5fd3bd" fill-opacity="0.53"/>
+  <rect x="65.8" y="202.0" width="12.6" height="18.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.69"/>
+  <rect x="80.5" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="95.1" y="203.3" width="12.6" height="16.8" rx="1.5" fill="#5fd3bd" fill-opacity="0.67"/>
+  <rect x="109.7" y="202.3" width="12.6" height="17.8" rx="1.5" fill="#5fd3bd" fill-opacity="0.69"/>
+  <rect x="124.3" y="209.3" width="12.6" height="10.8" rx="1.5" fill="#5fd3bd" fill-opacity="0.56"/>
+  <rect x="138.9" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="153.5" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="168.1" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="182.7" y="186.0" width="12.6" height="34.0" rx="1.5" fill="#5fd3bd" fill-opacity="1.00"/>
+  <rect x="197.4" y="191.0" width="12.6" height="29.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.90"/>
+  <rect x="212.0" y="217.8" width="12.6" height="2.3" rx="1.5" fill="#5fd3bd" fill-opacity="0.39"/>
+  <rect x="226.6" y="216.3" width="12.6" height="3.8" rx="1.5" fill="#5fd3bd" fill-opacity="0.42"/>
+  <rect x="241.2" y="212.3" width="12.6" height="7.8" rx="1.5" fill="#5fd3bd" fill-opacity="0.50"/>
+  <rect x="255.8" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.36"/>
+  <rect x="270.4" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="285.0" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="299.6" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="314.3" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="328.9" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="343.5" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="358.1" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="372.7" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="387.3" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="401.9" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="416.5" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="431.2" y="218.0" width="12.6" height="2.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.15"/>
+  <rect x="445.8" y="217.8" width="12.6" height="2.3" rx="1.5" fill="#5fd3bd" fill-opacity="0.39"/>
+  <rect x="460.4" y="193.0" width="12.6" height="27.0" rx="1.5" fill="#5fd3bd" fill-opacity="0.87"/>
+  <text x="22" y="240" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" fill="#9aa39f">Prompts per day · since Aug 2026</text>
+  <text x="473" y="240" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5" fill="#9aa39f">timjacksonm.com</text>
+</svg>
