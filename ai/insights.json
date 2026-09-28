@@ -1,0 +1,344 @@
+{
+  "generatedAt": "2026-09-28T07:45:21.375Z",
+  "window": {
+    "start": "2026-08-28",
+    "end": "2026-09-27",
+    "days": 31
+  },
+  "persona": "I treat AI agents as a capable engineering team I direct. I set clear goals, split work across parallel sessions, verify results against real systems, and keep architecture, product and irreversible decisions with me.",
+  "principles": [
+    {
+      "title": "Orchestrate agents in parallel",
+      "body": "I run separate agents per repo and hand plans between them, so mobile and API changes move in lockstep instead of drifting apart.",
+      "metric": "agentSessions"
+    },
+    {
+      "title": "Verify against real data",
+      "body": "I don't take a result on trust. Agents run the code, replay cached routes, query logs and cross-check public data feeds, and they revise findings when the evidence disagrees.",
+      "metric": "shell"
+    },
+    {
+      "title": "Humans own the judgment calls",
+      "body": "Agents surface trade-offs and pause on product, data and deployment decisions. I make those calls myself, especially anything that is hard to undo.",
+      "metric": "questionsAsked"
+    },
+    {
+      "title": "Ship small, reviewed, green",
+      "body": "Work lands as focused pull requests with passing tests, typecheck and lint. I push back on tangents and verbose output until the code reads like it belongs.",
+      "metric": "prs"
+    }
+  ],
+  "headline": [
+    "sessions",
+    "hours",
+    "commits",
+    "prs"
+  ],
+  "metrics": {
+    "sessions": {
+      "value": 60,
+      "label": "sessions"
+    },
+    "hours": {
+      "value": 206,
+      "label": "hours paired with Claude"
+    },
+    "commits": {
+      "value": 213,
+      "label": "commits"
+    },
+    "prs": {
+      "value": 56,
+      "label": "pull requests merged"
+    },
+    "prompts": {
+      "value": 725,
+      "label": "prompts written"
+    },
+    "shell": {
+      "value": 3765,
+      "label": "shell commands run by agents"
+    },
+    "browser": {
+      "value": 1059,
+      "label": "browser actions automated"
+    },
+    "edits": {
+      "value": 233,
+      "label": "file edits"
+    },
+    "linesAdded": {
+      "value": 8852,
+      "label": "lines added"
+    },
+    "agentSessions": {
+      "value": 14,
+      "label": "sessions coordinating multiple agents"
+    },
+    "goalsMet": {
+      "value": 89,
+      "suffix": "%",
+      "label": "of session goals fully or mostly met"
+    },
+    "questionsAsked": {
+      "value": 28,
+      "label": "decisions Claude handed back to me"
+    }
+  },
+  "heatmap": [
+    {
+      "date": "2026-08-28",
+      "count": 4
+    },
+    {
+      "date": "2026-08-29",
+      "count": 0
+    },
+    {
+      "date": "2026-08-30",
+      "count": 37
+    },
+    {
+      "date": "2026-08-31",
+      "count": 72
+    },
+    {
+      "date": "2026-09-01",
+      "count": 0
+    },
+    {
+      "date": "2026-09-02",
+      "count": 67
+    },
+    {
+      "date": "2026-09-03",
+      "count": 71
+    },
+    {
+      "date": "2026-09-04",
+      "count": 43
+    },
+    {
+      "date": "2026-09-05",
+      "count": 0
+    },
+    {
+      "date": "2026-09-06",
+      "count": 0
+    },
+    {
+      "date": "2026-09-07",
+      "count": 0
+    },
+    {
+      "date": "2026-09-08",
+      "count": 136
+    },
+    {
+      "date": "2026-09-09",
+      "count": 116
+    },
+    {
+      "date": "2026-09-10",
+      "count": 9
+    },
+    {
+      "date": "2026-09-11",
+      "count": 15
+    },
+    {
+      "date": "2026-09-12",
+      "count": 31
+    },
+    {
+      "date": "2026-09-13",
+      "count": 3
+    },
+    {
+      "date": "2026-09-14",
+      "count": 0
+    },
+    {
+      "date": "2026-09-15",
+      "count": 0
+    },
+    {
+      "date": "2026-09-16",
+      "count": 0
+    },
+    {
+      "date": "2026-09-17",
+      "count": 0
+    },
+    {
+      "date": "2026-09-18",
+      "count": 0
+    },
+    {
+      "date": "2026-09-19",
+      "count": 0
+    },
+    {
+      "date": "2026-09-20",
+      "count": 0
+    },
+    {
+      "date": "2026-09-21",
+      "count": 0
+    },
+    {
+      "date": "2026-09-22",
+      "count": 0
+    },
+    {
+      "date": "2026-09-23",
+      "count": 0
+    },
+    {
+      "date": "2026-09-24",
+      "count": 0
+    },
+    {
+      "date": "2026-09-25",
+      "count": 0
+    },
+    {
+      "date": "2026-09-26",
+      "count": 9
+    },
+    {
+      "date": "2026-09-27",
+      "count": 108
+    }
+  ],
+  "hours": [
+    24,
+    19,
+    11,
+    2,
+    0,
+    0,
+    0,
+    0,
+    19,
+    55,
+    29,
+    32,
+    50,
+    43,
+    33,
+    56,
+    35,
+    39,
+    46,
+    55,
+    59,
+    50,
+    27,
+    41
+  ],
+  "sessionMix": [
+    {
+      "label": "Multi-step builds",
+      "count": 24
+    },
+    {
+      "label": "Iterative refinement",
+      "count": 10
+    },
+    {
+      "label": "Focused tasks",
+      "count": 9
+    },
+    {
+      "label": "Exploration",
+      "count": 3
+    },
+    {
+      "label": "Quick questions",
+      "count": 1
+    }
+  ],
+  "strengths": [
+    {
+      "label": "Multi-file changes",
+      "count": 15
+    },
+    {
+      "label": "Proactive fixes",
+      "count": 11
+    },
+    {
+      "label": "Debugging",
+      "count": 10
+    },
+    {
+      "label": "Explaining systems",
+      "count": 7
+    },
+    {
+      "label": "Precise edits",
+      "count": 2
+    },
+    {
+      "label": "Codebase search",
+      "count": 2
+    }
+  ],
+  "analyzedSessions": 47,
+  "toolMix": [
+    {
+      "label": "Shell",
+      "count": 3765
+    },
+    {
+      "label": "Browser",
+      "count": 1059
+    },
+    {
+      "label": "Edits",
+      "count": 233
+    },
+    {
+      "label": "Reading & search",
+      "count": 186
+    },
+    {
+      "label": "Agents",
+      "count": 76
+    }
+  ],
+  "languages": [
+    "TypeScript",
+    "Markdown",
+    "HTML",
+    "Python"
+  ],
+  "projects": [
+    {
+      "label": "TravelDot",
+      "blurb": "A mobile app that turns official road, incident and weather data for your route into a short AI travel summary, so you can decide whether the trip is worth taking before you leave.",
+      "sessions": 26,
+      "commits": 148,
+      "lastActive": "2026-09-27",
+      "recent": []
+    }
+  ],
+  "days": {
+    "2026-08-28": {"sessions":1,"minutes":977,"prompts":4,"active":4,"linesAdded":0,"agentSessions":0,"analyzed":1,"achieved":1,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,0,0],"tools":{"shell":190,"questions":1},"types":{"multi_task":1},"strengths":{"multi_file_changes":1},"languages":{},"projects":{}},
+    "2026-08-30": {"sessions":3,"minutes":128,"prompts":37,"active":37,"linesAdded":1470,"agentSessions":0,"analyzed":3,"achieved":3,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,20,4,0,0,0,0,0,0,0],"tools":{"shell":303,"questions":3,"read":25,"browser":68,"edits":38},"types":{"iterative_refinement":2,"single_task":1},"strengths":{"multi_file_changes":1,"correct_code_edits":1,"good_debugging":1},"languages":{"TypeScript":43,"Markdown":2,"HTML":2},"projects":{}},
+    "2026-08-31": {"sessions":9,"minutes":1667,"prompts":72,"active":72,"linesAdded":654,"agentSessions":4,"analyzed":6,"achieved":6,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,13,17,8,5,0,0,0,11,9,9,0,0],"tools":{"agents":45,"shell":241,"edits":28,"questions":4,"browser":99},"types":{"multi_task":5,"single_task":1},"strengths":{"multi_file_changes":1,"proactive_help":3,"good_debugging":2},"languages":{"Markdown":5,"TypeScript":23},"projects":{}},
+    "2026-09-02": {"sessions":15,"minutes":767,"prompts":67,"active":67,"linesAdded":103,"agentSessions":2,"analyzed":10,"achieved":10,"hours":[0,0,0,0,0,0,0,0,18,36,0,0,0,1,2,4,0,0,6,0,0,0,0,0],"tools":{"shell":219,"questions":4,"edits":11,"browser":270,"agents":2},"types":{"single_task":5,"multi_task":3,"quick_question":1,"iterative_refinement":1},"strengths":{"proactive_help":6,"fast_accurate_search":1,"multi_file_changes":1,"good_debugging":1,"good_explanations":1},"languages":{"Markdown":4,"Python":1,"TypeScript":6},"projects":{"TravelDot":3}},
+    "2026-09-03": {"sessions":7,"minutes":1333,"prompts":76,"active":71,"linesAdded":1058,"agentSessions":1,"analyzed":6,"achieved":6,"hours":[0,0,2,2,0,0,0,0,0,0,1,0,3,0,1,8,19,17,11,11,0,0,0,1],"tools":{"agents":9,"shell":479,"edits":16,"browser":412,"read":2,"questions":3},"types":{"iterative_refinement":2,"multi_task":3,"single_task":1},"strengths":{"multi_file_changes":3,"good_debugging":1,"good_explanations":1,"proactive_help":1},"languages":{"Markdown":7,"TypeScript":10,"YAML":1},"projects":{}},
+    "2026-09-04": {"sessions":3,"minutes":276,"prompts":38,"active":43,"linesAdded":726,"agentSessions":0,"analyzed":3,"achieved":2,"hours":[0,0,0,0,0,0,0,0,0,0,7,10,8,3,2,8,0,0,0,0,0,0,0,0],"tools":{"shell":193,"read":27,"edits":27,"browser":54},"types":{"multi_task":2,"iterative_refinement":1},"strengths":{"multi_file_changes":2,"good_debugging":1},"languages":{"TypeScript":26,"Markdown":1},"projects":{"TravelDot":2}},
+    "2026-09-08": {"sessions":3,"minutes":2461,"prompts":191,"active":136,"linesAdded":495,"agentSessions":3,"analyzed":3,"achieved":2,"hours":[19,10,0,0,0,0,0,0,0,0,10,16,13,12,7,10,7,8,11,22,10,20,8,8],"tools":{"shell":929,"agents":13,"read":29,"browser":97,"edits":17,"questions":3},"types":{"multi_task":3},"strengths":{"correct_code_edits":1,"good_explanations":1,"multi_file_changes":1},"languages":{"TypeScript":26},"projects":{"TravelDot":3}},
+    "2026-09-09": {"sessions":6,"minutes":1650,"prompts":68,"active":116,"linesAdded":1444,"agentSessions":3,"analyzed":5,"achieved":5,"hours":[0,0,0,0,0,0,0,0,0,6,1,6,9,7,0,1,2,7,8,1,11,9,0,0],"tools":{"shell":563,"read":54,"edits":43,"agents":6,"questions":1},"types":{"multi_task":4,"iterative_refinement":1},"strengths":{"good_debugging":2,"multi_file_changes":2,"good_explanations":1},"languages":{"TypeScript":79,"Markdown":5,"YAML":1},"projects":{"TravelDot":6}},
+    "2026-09-10": {"sessions":1,"minutes":10,"prompts":2,"active":9,"linesAdded":0,"agentSessions":0,"analyzed":1,"achieved":1,"hours":[0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"tools":{"shell":2},"types":{"single_task":1},"strengths":{"good_explanations":1},"languages":{},"projects":{"TravelDot":1}},
+    "2026-09-11": {"sessions":3,"minutes":749,"prompts":46,"active":15,"linesAdded":1451,"agentSessions":1,"analyzed":3,"achieved":2,"hours":[1,9,9,0,0,0,0,0,1,11,0,0,0,0,0,0,0,0,0,0,8,1,6,0],"tools":{"shell":314,"questions":5,"read":27,"edits":21,"agents":1},"types":{"iterative_refinement":1,"multi_task":1,"exploration":1},"strengths":{"multi_file_changes":1,"proactive_help":1,"good_debugging":1},"languages":{"TypeScript":15,"Markdown":3},"projects":{"TravelDot":3}},
+    "2026-09-12": {"sessions":0,"minutes":0,"prompts":0,"active":31,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"tools":{},"types":{},"strengths":{},"languages":{},"projects":{}},
+    "2026-09-13": {"sessions":2,"minutes":0,"prompts":3,"active":3,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0],"tools":{"shell":4},"types":{},"strengths":{},"languages":{},"projects":{"TravelDot":2}},
+    "2026-09-26": {"sessions":2,"minutes":1805,"prompts":15,"active":9,"linesAdded":781,"agentSessions":0,"analyzed":2,"achieved":2,"hours":[0,0,0,0,0,0,0,0,0,0,9,0,4,1,0,0,1,0,0,0,0,0,0,0],"tools":{"shell":149,"read":9,"edits":7},"types":{"multi_task":1,"iterative_refinement":1},"strengths":{"multi_file_changes":2},"languages":{"TypeScript":2,"Markdown":7,"Python":1},"projects":{"TravelDot":2}},
+    "2026-09-27": {"sessions":5,"minutes":541,"prompts":106,"active":108,"linesAdded":670,"agentSessions":0,"analyzed":4,"achieved":2,"hours":[4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,7,10,10,18,10,13,32],"tools":{"shell":179,"questions":4,"read":13,"edits":25,"browser":59},"types":{"multi_task":1,"exploration":2,"iterative_refinement":1},"strengths":{"good_explanations":2,"fast_accurate_search":1,"good_debugging":1},"languages":{"Markdown":24,"Shell":2,"TypeScript":1},"projects":{"TravelDot":4}},
+    "2026-09-28": {"sessions":0,"minutes":0,"prompts":0,"active":4,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"tools":{},"types":{},"strengths":{},"languages":{},"projects":{}}
+  }
+}

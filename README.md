@@ -7,3 +7,9 @@ Full-Stack Software Engineer. More about me at [timjacksonm.com](https://www.tim
   <source media="(prefers-color-scheme: light)" srcset="[github-snake.svg](https://raw.githubusercontent.com/timjacksonm/timjacksonm/snkoutput/github-snake.svg)" />
   <img alt="github-snake" src="github-snake.svg" />
 </picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/timjacksonm/timjacksonm/aioutput/ai-card-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/timjacksonm/timjacksonm/aioutput/ai-card.svg" />
+  <img alt="How I build with AI: sessions, hours, commits and pull requests merged with Claude Code" src="https://raw.githubusercontent.com/timjacksonm/timjacksonm/aioutput/ai-card.svg" />
+</picture>
