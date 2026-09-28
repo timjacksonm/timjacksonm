@@ -1,0 +1,20 @@
+{
+  "githubUser": "your-github-user",
+  "authorEmails": ["you@example.com"],
+  "recentDays": 30,
+  "staleAfterDays": 7,
+  "projects": {
+    "/path/to/public-project": {
+      "label": "Public project",
+      "blurb": "One line about what it is.",
+      "repo": "public-project"
+    },
+    "/path/to/private-project": {
+      "hidden": true,
+      "repo": "private-project"
+    }
+  },
+  "excludePathPrefixes": ["/private/", "/var/folders/", "/tmp/"],
+  "denylist": ["private-project", "/Users/"],
+  "denyPatterns": ["\\b[A-Z]{2,}-\\d+\\b", "\\b\\d{1,3}(\\.\\d{1,3}){3}\\b"]
+}
