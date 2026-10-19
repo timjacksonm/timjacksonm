@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T04:35:07.961Z",
+  "generatedAt": "2026-10-19T05:14:28.990Z",
   "window": {
     "start": "2026-08-28",
     "end": "2026-10-18",
@@ -30,9 +30,15 @@
   ],
   "headline": [
     "sessions",
-    "hours",
     "commits",
     "prs"
+  ],
+  "tools": [
+    "Claude Code",
+    "Claude Opus",
+    "Claude in Chrome",
+    "ChatGPT",
+    "iTerm2"
   ],
   "metrics": {
     "sessions": {
@@ -44,11 +50,11 @@
       "label": "hours paired with Claude"
     },
     "commits": {
-      "value": 657,
+      "value": 659,
       "label": "commits"
     },
     "prs": {
-      "value": 204,
+      "value": 205,
       "label": "pull requests merged"
     },
     "prompts": {
@@ -411,7 +417,7 @@
       "label": "This site",
       "blurb": "Static portfolio, including the pipeline that generates this section.",
       "sessions": 3,
-      "commits": 6,
+      "commits": 8,
       "lastActive": "2026-10-01",
       "recent": [
         "Update TravelDot to Pre-Launch with site link",
