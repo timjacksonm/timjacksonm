@@ -1,30 +1,30 @@
 {
-  "generatedAt": "2026-09-28T07:45:21.375Z",
+  "generatedAt": "2026-10-19T04:35:07.961Z",
   "window": {
     "start": "2026-08-28",
-    "end": "2026-09-27",
-    "days": 31
+    "end": "2026-10-18",
+    "days": 52
   },
-  "persona": "I treat AI agents as a capable engineering team I direct. I set clear goals, split work across parallel sessions, verify results against real systems, and keep architecture, product and irreversible decisions with me.",
+  "persona": "I run AI agents like a small engineering team. I split the work across parallel sessions, give each a clear brief, check what comes back against real systems, and make the calls that can't be undone myself.",
   "principles": [
     {
-      "title": "Orchestrate agents in parallel",
-      "body": "I run separate agents per repo and hand plans between them, so mobile and API changes move in lockstep instead of drifting apart.",
+      "title": "Coordinate agents in parallel",
+      "body": "Backend, mobile and review agents run side by side and pass plans and findings to each other. I decide how the pieces fit together.",
       "metric": "agentSessions"
     },
     {
       "title": "Verify against real data",
-      "body": "I don't take a result on trust. Agents run the code, replay cached routes, query logs and cross-check public data feeds, and they revise findings when the evidence disagrees.",
+      "body": "I don't take a fix on trust. Agents check production logs, database queries, simulator runs and the public road data feeds before I treat anything as done.",
       "metric": "shell"
     },
     {
-      "title": "Humans own the judgment calls",
-      "body": "Agents surface trade-offs and pause on product, data and deployment decisions. I make those calls myself, especially anything that is hard to undo.",
+      "title": "I make the irreversible calls",
+      "body": "Merges and production access stay with me. Agents bring tradeoffs to me instead of guessing, and ask before touching work they don't own.",
       "metric": "questionsAsked"
     },
     {
-      "title": "Ship small, reviewed, green",
-      "body": "Work lands as focused pull requests with passing tests, typecheck and lint. I push back on tangents and verbose output until the code reads like it belongs.",
+      "title": "Ship small, reviewed changes",
+      "body": "Work lands as focused pull requests with tests and checks passing. Agents review each other's pull requests, and I regularly strip out comment noise and stale docs.",
       "metric": "prs"
     }
   ],
@@ -36,52 +36,52 @@
   ],
   "metrics": {
     "sessions": {
-      "value": 60,
+      "value": 185,
       "label": "sessions"
     },
     "hours": {
-      "value": 206,
+      "value": 681,
       "label": "hours paired with Claude"
     },
     "commits": {
-      "value": 213,
+      "value": 657,
       "label": "commits"
     },
     "prs": {
-      "value": 56,
+      "value": 204,
       "label": "pull requests merged"
     },
     "prompts": {
-      "value": 725,
+      "value": 2485,
       "label": "prompts written"
     },
     "shell": {
-      "value": 3765,
+      "value": 9578,
       "label": "shell commands run by agents"
     },
     "browser": {
-      "value": 1059,
+      "value": 2217,
       "label": "browser actions automated"
     },
     "edits": {
-      "value": 233,
+      "value": 659,
       "label": "file edits"
     },
     "linesAdded": {
-      "value": 8852,
+      "value": 38118,
       "label": "lines added"
     },
     "agentSessions": {
-      "value": 14,
+      "value": 66,
       "label": "sessions coordinating multiple agents"
     },
     "goalsMet": {
-      "value": 89,
+      "value": 92,
       "suffix": "%",
       "label": "of session goals fully or mostly met"
     },
     "questionsAsked": {
-      "value": 28,
+      "value": 43,
       "label": "decisions Claude handed back to me"
     }
   },
@@ -209,119 +209,215 @@
     {
       "date": "2026-09-27",
       "count": 108
+    },
+    {
+      "date": "2026-09-28",
+      "count": 117
+    },
+    {
+      "date": "2026-09-29",
+      "count": 85
+    },
+    {
+      "date": "2026-09-30",
+      "count": 94
+    },
+    {
+      "date": "2026-10-01",
+      "count": 86
+    },
+    {
+      "date": "2026-10-02",
+      "count": 209
+    },
+    {
+      "date": "2026-10-03",
+      "count": 0
+    },
+    {
+      "date": "2026-10-04",
+      "count": 0
+    },
+    {
+      "date": "2026-10-05",
+      "count": 3
+    },
+    {
+      "date": "2026-10-06",
+      "count": 102
+    },
+    {
+      "date": "2026-10-07",
+      "count": 40
+    },
+    {
+      "date": "2026-10-08",
+      "count": 43
+    },
+    {
+      "date": "2026-10-09",
+      "count": 25
+    },
+    {
+      "date": "2026-10-10",
+      "count": 129
+    },
+    {
+      "date": "2026-10-11",
+      "count": 129
+    },
+    {
+      "date": "2026-10-12",
+      "count": 222
+    },
+    {
+      "date": "2026-10-13",
+      "count": 101
+    },
+    {
+      "date": "2026-10-14",
+      "count": 78
+    },
+    {
+      "date": "2026-10-15",
+      "count": 157
+    },
+    {
+      "date": "2026-10-16",
+      "count": 67
+    },
+    {
+      "date": "2026-10-17",
+      "count": 25
+    },
+    {
+      "date": "2026-10-18",
+      "count": 52
     }
   ],
   "hours": [
-    24,
-    19,
-    11,
+    198,
+    194,
+    144,
+    33,
+    5,
     2,
     0,
     0,
-    0,
-    0,
-    19,
-    55,
-    29,
-    32,
-    50,
-    43,
-    33,
-    56,
-    35,
-    39,
-    46,
-    55,
-    59,
-    50,
-    27,
-    41
+    25,
+    77,
+    45,
+    86,
+    142,
+    136,
+    112,
+    82,
+    88,
+    82,
+    148,
+    180,
+    201,
+    143,
+    199,
+    163
   ],
   "sessionMix": [
     {
       "label": "Multi-step builds",
-      "count": 24
+      "count": 59
     },
     {
       "label": "Iterative refinement",
-      "count": 10
+      "count": 17
     },
     {
       "label": "Focused tasks",
-      "count": 9
+      "count": 13
     },
     {
       "label": "Exploration",
-      "count": 3
+      "count": 5
     },
     {
       "label": "Quick questions",
-      "count": 1
+      "count": 3
     }
   ],
   "strengths": [
     {
       "label": "Multi-file changes",
-      "count": 15
-    },
-    {
-      "label": "Proactive fixes",
-      "count": 11
+      "count": 32
     },
     {
       "label": "Debugging",
-      "count": 10
+      "count": 22
     },
     {
       "label": "Explaining systems",
-      "count": 7
+      "count": 22
     },
     {
-      "label": "Precise edits",
-      "count": 2
+      "label": "Proactive fixes",
+      "count": 12
     },
     {
       "label": "Codebase search",
-      "count": 2
+      "count": 5
+    },
+    {
+      "label": "Precise edits",
+      "count": 4
     }
   ],
-  "analyzedSessions": 47,
+  "analyzedSessions": 97,
   "toolMix": [
     {
       "label": "Shell",
-      "count": 3765
+      "count": 9578
     },
     {
       "label": "Browser",
-      "count": 1059
+      "count": 2217
     },
     {
       "label": "Edits",
-      "count": 233
+      "count": 659
     },
     {
       "label": "Reading & search",
-      "count": 186
+      "count": 789
     },
     {
       "label": "Agents",
-      "count": 76
+      "count": 266
     }
   ],
   "languages": [
     "TypeScript",
     "Markdown",
-    "HTML",
-    "Python"
+    "JavaScript",
+    "HTML"
   ],
   "projects": [
     {
       "label": "TravelDot",
       "blurb": "A mobile app that turns official road, incident and weather data for your route into a short AI travel summary, so you can decide whether the trip is worth taking before you leave.",
-      "sessions": 26,
-      "commits": 148,
-      "lastActive": "2026-09-27",
+      "sessions": 144,
+      "commits": 586,
+      "lastActive": "2026-10-18",
       "recent": []
+    },
+    {
+      "label": "This site",
+      "blurb": "Static portfolio, including the pipeline that generates this section.",
+      "sessions": 3,
+      "commits": 6,
+      "lastActive": "2026-10-01",
+      "recent": [
+        "Update TravelDot to Pre-Launch with site link",
+        "Fix broken light-mode snake image in README (#22)",
+        "Add \"How I Build with AI\" page generated from Claude Code usage (#21)"
+      ]
     }
   ],
   "days": {
@@ -338,7 +434,25 @@
     "2026-09-12": {"sessions":0,"minutes":0,"prompts":0,"active":31,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"tools":{},"types":{},"strengths":{},"languages":{},"projects":{}},
     "2026-09-13": {"sessions":2,"minutes":0,"prompts":3,"active":3,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,1,0,0,2,0,0,0,0,0,0,0,0,0,0],"tools":{"shell":4},"types":{},"strengths":{},"languages":{},"projects":{"TravelDot":2}},
     "2026-09-26": {"sessions":2,"minutes":1805,"prompts":15,"active":9,"linesAdded":781,"agentSessions":0,"analyzed":2,"achieved":2,"hours":[0,0,0,0,0,0,0,0,0,0,9,0,4,1,0,0,1,0,0,0,0,0,0,0],"tools":{"shell":149,"read":9,"edits":7},"types":{"multi_task":1,"iterative_refinement":1},"strengths":{"multi_file_changes":2},"languages":{"TypeScript":2,"Markdown":7,"Python":1},"projects":{"TravelDot":2}},
-    "2026-09-27": {"sessions":5,"minutes":541,"prompts":106,"active":108,"linesAdded":670,"agentSessions":0,"analyzed":4,"achieved":2,"hours":[4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,7,10,10,18,10,13,32],"tools":{"shell":179,"questions":4,"read":13,"edits":25,"browser":59},"types":{"multi_task":1,"exploration":2,"iterative_refinement":1},"strengths":{"good_explanations":2,"fast_accurate_search":1,"good_debugging":1},"languages":{"Markdown":24,"Shell":2,"TypeScript":1},"projects":{"TravelDot":4}},
-    "2026-09-28": {"sessions":0,"minutes":0,"prompts":0,"active":4,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"tools":{},"types":{},"strengths":{},"languages":{},"projects":{}}
+    "2026-09-27": {"sessions":5,"minutes":4810,"prompts":163,"active":108,"linesAdded":1343,"agentSessions":1,"analyzed":4,"achieved":2,"hours":[20,14,19,2,0,0,0,0,0,0,0,0,3,0,0,0,2,7,10,10,19,10,13,34],"tools":{"shell":278,"questions":5,"read":21,"edits":41,"agents":2,"browser":106},"types":{"multi_task":1,"exploration":2,"iterative_refinement":1},"strengths":{"good_explanations":2,"fast_accurate_search":1,"good_debugging":1},"languages":{"Markdown":31,"Shell":2,"TypeScript":10,"JSON":1,"HTML":2},"projects":{"TravelDot":4}},
+    "2026-09-28": {"sessions":8,"minutes":3247,"prompts":159,"active":117,"linesAdded":4837,"agentSessions":3,"analyzed":0,"achieved":0,"hours":[25,17,32,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,7,8,20,12,17,18],"tools":{"shell":356,"agents":6,"edits":75,"read":46,"browser":250},"types":{},"strengths":{},"languages":{"Markdown":12,"TypeScript":16,"CSS":4,"HTML":1,"YAML":1},"projects":{"TravelDot":3,"This site":2}},
+    "2026-09-29": {"sessions":3,"minutes":996,"prompts":44,"active":85,"linesAdded":539,"agentSessions":1,"analyzed":0,"achieved":0,"hours":[2,16,15,3,0,0,0,0,0,0,0,3,0,0,0,0,0,3,0,0,0,1,1,0],"tools":{"shell":105,"edits":18,"agents":2,"read":11},"types":{},"strengths":{},"languages":{"JSON":2,"TypeScript":18,"HTML":3,"Shell":1},"projects":{"TravelDot":3}},
+    "2026-09-30": {"sessions":3,"minutes":176,"prompts":32,"active":94,"linesAdded":27,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,0,0,0,0,0,0,0,0,0,0,6,7,7,0,0,0,1,11,0,0,0,0,0],"tools":{"shell":81,"edits":2,"browser":66,"questions":1,"read":5},"types":{},"strengths":{},"languages":{"TypeScript":1},"projects":{"TravelDot":2}},
+    "2026-10-01": {"sessions":6,"minutes":766,"prompts":159,"active":86,"linesAdded":825,"agentSessions":3,"analyzed":0,"achieved":0,"hours":[23,20,26,4,0,0,0,0,0,0,0,0,8,2,0,0,0,0,0,3,18,7,36,12],"tools":{"shell":470,"read":61,"agents":29,"edits":25,"browser":64,"questions":5},"types":{},"strengths":{},"languages":{"TypeScript":17,"Markdown":5,"JSON":4},"projects":{"TravelDot":5,"This site":1}},
+    "2026-10-02": {"sessions":16,"minutes":1659,"prompts":136,"active":209,"linesAdded":984,"agentSessions":9,"analyzed":0,"achieved":0,"hours":[12,10,2,14,0,0,0,0,0,0,0,5,14,24,20,3,0,0,8,16,8,0,0,0],"tools":{"shell":708,"edits":19,"read":68,"agents":24,"questions":2},"types":{},"strengths":{},"languages":{"TypeScript":18,"Markdown":8},"projects":{"TravelDot":16}},
+    "2026-10-05": {"sessions":1,"minutes":807,"prompts":13,"active":3,"linesAdded":1,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[0,1,5,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,3,0],"tools":{"browser":54,"shell":4,"read":2,"edits":1},"types":{},"strengths":{},"languages":{"Markdown":1},"projects":{"TravelDot":1}},
+    "2026-10-06": {"sessions":8,"minutes":3155,"prompts":139,"active":102,"linesAdded":7071,"agentSessions":4,"analyzed":0,"achieved":0,"hours":[14,7,0,1,0,0,0,0,0,1,5,8,2,1,2,0,0,9,18,17,9,4,30,11],"tools":{"shell":796,"read":61,"agents":13,"edits":95,"browser":27,"questions":2},"types":{},"strengths":{},"languages":{"TypeScript":92,"Markdown":13,"HTML":4,"JSON":1,"JavaScript":38},"projects":{"TravelDot":8}},
+    "2026-10-07": {"sessions":2,"minutes":0,"prompts":3,"active":40,"linesAdded":0,"agentSessions":0,"analyzed":0,"achieved":0,"hours":[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"tools":{},"types":{},"strengths":{},"languages":{},"projects":{"TravelDot":2}},
+    "2026-10-08": {"sessions":6,"minutes":2155,"prompts":38,"active":43,"linesAdded":4414,"agentSessions":2,"analyzed":0,"achieved":0,"hours":[0,4,0,0,3,0,0,0,0,2,0,8,3,8,6,0,0,0,0,4,0,0,0,0],"tools":{"shell":217,"read":4,"agents":2,"edits":29,"browser":20},"types":{},"strengths":{},"languages":{"TypeScript":31,"HTML":1},"projects":{"TravelDot":6}},
+    "2026-10-09": {"sessions":3,"minutes":511,"prompts":75,"active":25,"linesAdded":2508,"agentSessions":2,"analyzed":0,"achieved":0,"hours":[18,17,17,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,3,11],"tools":{"shell":294,"edits":28,"read":16,"agents":2},"types":{},"strengths":{},"languages":{"Markdown":5,"TypeScript":33},"projects":{"TravelDot":3}},
+    "2026-10-10": {"sessions":15,"minutes":660,"prompts":74,"active":129,"linesAdded":226,"agentSessions":1,"analyzed":8,"achieved":7,"hours":[0,2,7,2,0,0,0,0,0,0,0,0,2,14,6,0,0,0,2,12,11,5,2,9],"tools":{"shell":152,"browser":41,"edits":4,"read":5,"agents":2},"types":{"multi_task":6,"single_task":1,"iterative_refinement":1},"strengths":{"multi_file_changes":1,"good_explanations":5,"good_debugging":2},"languages":{"TypeScript":5},"projects":{"TravelDot":15}},
+    "2026-10-11": {"sessions":3,"minutes":896,"prompts":160,"active":129,"linesAdded":183,"agentSessions":1,"analyzed":3,"achieved":2,"hours":[9,21,1,0,0,0,0,0,0,0,0,0,20,8,7,3,1,0,2,6,22,9,34,17],"tools":{"shell":434,"read":72,"agents":18,"edits":2,"browser":2},"types":{"multi_task":2,"iterative_refinement":1},"strengths":{"good_debugging":1,"multi_file_changes":2},"languages":{"TypeScript":3},"projects":{"TravelDot":3}},
+    "2026-10-12": {"sessions":20,"minutes":1687,"prompts":206,"active":222,"linesAdded":4090,"agentSessions":11,"analyzed":15,"achieved":14,"hours":[6,0,1,0,0,0,0,0,6,18,7,20,27,10,6,7,0,8,15,20,13,20,17,5],"tools":{"shell":760,"agents":18,"edits":35,"read":110,"questions":1},"types":{"multi_task":9,"single_task":2,"iterative_refinement":2,"exploration":1,"quick_question":1},"strengths":{"good_explanations":6,"multi_file_changes":4,"correct_code_edits":2,"good_debugging":3},"languages":{"TypeScript":47,"Markdown":9},"projects":{"TravelDot":20}},
+    "2026-10-13": {"sessions":9,"minutes":846,"prompts":107,"active":101,"linesAdded":682,"agentSessions":4,"analyzed":8,"achieved":8,"hours":[21,0,0,0,0,0,0,0,0,0,0,0,0,14,10,2,0,3,14,12,5,17,3,6],"tools":{"shell":411,"read":47,"agents":14,"edits":24,"browser":178,"questions":1},"types":{"single_task":1,"quick_question":1,"iterative_refinement":2,"multi_task":4},"strengths":{"multi_file_changes":4,"good_explanations":2,"good_debugging":1,"fast_accurate_search":1},"languages":{"TypeScript":18,"Markdown":13},"projects":{"TravelDot":9}},
+    "2026-10-14": {"sessions":2,"minutes":2208,"prompts":59,"active":78,"linesAdded":617,"agentSessions":2,"analyzed":2,"achieved":2,"hours":[17,26,7,1,0,0,0,0,0,0,0,0,2,0,2,2,0,0,0,2,0,0,0,0],"tools":{"read":12,"shell":191,"edits":13,"agents":11,"questions":1},"types":{"multi_task":2},"strengths":{"multi_file_changes":1,"good_debugging":1},"languages":{"TypeScript":8,"Markdown":7,"YAML":1},"projects":{"TravelDot":2}},
+    "2026-10-15": {"sessions":10,"minutes":1983,"prompts":157,"active":157,"linesAdded":1552,"agentSessions":4,"analyzed":6,"achieved":6,"hours":[2,0,1,1,2,1,0,0,0,0,0,0,0,5,7,6,36,10,21,24,9,5,13,14],"tools":{"shell":488,"agents":40,"edits":35,"read":61,"browser":13,"questions":1},"types":{"multi_task":5,"exploration":1},"strengths":{"multi_file_changes":4,"good_explanations":1,"good_debugging":1},"languages":{"TypeScript":9,"Python":2,"HTML":14,"Markdown":4},"projects":{"TravelDot":10}},
+    "2026-10-16": {"sessions":5,"minutes":2255,"prompts":85,"active":67,"linesAdded":37,"agentSessions":3,"analyzed":5,"achieved":5,"hours":[6,16,0,0,0,1,0,0,0,1,1,0,1,0,13,3,16,9,4,0,7,1,0,6],"tools":{"shell":229,"agents":6,"browser":28,"edits":5,"read":14},"types":{"multi_task":5},"strengths":{"multi_file_changes":1,"fast_accurate_search":1,"good_explanations":1,"good_debugging":2},"languages":{"YAML":5,"Markdown":2,"HTML":3},"projects":{"TravelDot":5}},
+    "2026-10-17": {"sessions":2,"minutes":5,"prompts":5,"active":25,"linesAdded":0,"agentSessions":1,"analyzed":1,"achieved":1,"hours":[0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0],"tools":{"agents":1,"shell":13},"types":{"multi_task":1},"strengths":{"good_debugging":1},"languages":{},"projects":{"TravelDot":2}},
+    "2026-10-18": {"sessions":3,"minutes":194,"prompts":52,"active":52,"linesAdded":0,"agentSessions":0,"analyzed":2,"achieved":2,"hours":[0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,17,9,12,11],"tools":{"browser":368,"shell":5},"types":{"multi_task":1,"iterative_refinement":1},"strengths":{"fast_accurate_search":1,"proactive_help":1},"languages":{},"projects":{"TravelDot":3}}
   }
 }
