@@ -3,6 +3,7 @@
   "authorEmails": ["you@example.com"],
   "recentDays": 30,
   "staleAfterDays": 7,
+  "tools": ["Claude Code", "iTerm2"],
   "projects": {
     "/path/to/public-project": {
       "label": "Public project",

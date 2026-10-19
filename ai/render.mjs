@@ -100,6 +100,7 @@ const projectList = (h) => data.projects
     .join("\n                        ");
 
 const since = day(data.window.start, { month: "long", year: "numeric" });
+const tools = (data.tools || []).join(" · ");
 const hero = `<section class="hero">
                 <p class="hero__back">
                     <a class="link-out" href="/">
@@ -123,7 +124,8 @@ const page = `${hero}
                 <div class="band__body">
                     <dl class="ai-stats">
                         ${stats}
-                    </dl>
+                    </dl>${tools ? `
+                    <p class="ai-tools"><span class="label">Tools</span> ${esc(tools)}</p>` : ""}
 
                     <div class="ai-block">
                         <h3 class="label ai-block__title">Rhythm</h3>
@@ -230,7 +232,8 @@ function card(c) {
     const personaY = 58;
     const statsY = personaY + persona.length * 18 + 22;
     const colW = (W - pad * 2) / data.headline.length;
-    const barsTop = statsY + 34;
+    const toolsY = statsY + 42;
+    const barsTop = (tools ? toolsY : statsY) + 26;
     const barsH = 34;
     const barGap = 2;
     const barW = (W - pad * 2 - barGap * (buckets.length - 1)) / buckets.length;
@@ -263,6 +266,8 @@ function card(c) {
   <text x="${W - pad}" y="32" text-anchor="end" font-family="${mono}" font-size="10" letter-spacing="0.6" fill="${c.muted}">Claude Code · ${esc(range)}</text>
   ${persona.map((l, i) => `<text x="${pad}" y="${personaY + i * 18}" font-family="${sans}" font-size="13" fill="${c.text}">${esc(l)}</text>`).join("\n  ")}
   ${statSvg}
+  ${tools ? `<text x="${pad}" y="${toolsY}" font-family="${mono}" font-size="9.5" letter-spacing="1.2" fill="${c.accent}">TOOLS</text>
+  <text x="${pad + 52}" y="${toolsY}" font-family="${sans}" font-size="12" fill="${c.text}">${esc(tools)}</text>` : ""}
   ${bars}
   <text x="${pad}" y="${H - 14}" font-family="${mono}" font-size="9.5" fill="${c.muted}">Prompts per ${unit} · since ${esc(day(data.window.start, { month: "short", year: "numeric" }))}</text>
   <text x="${W - pad}" y="${H - 14}" text-anchor="end" font-family="${mono}" font-size="9.5" fill="${c.muted}">timjacksonm.com</text>
